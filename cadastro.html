@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> SGP - Sistema de Gerenciamento de Permutas </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
+        rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/estiloscadastro.css">
+    
+</head>
+
+<body>
+    <div class="registration-form">
+        <form>
+            <div style="margin-left: 35%; margin-right: 35%; padding-top: 3%;"><img src="imgs/logoorinal.png" alt="SGP" /></div>
+
+            <div>
+                
+                
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
+                    Cadastro de Usuário
+                </button>    
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado2">
+                        Cadastro de Instituição
+                </button>
+                
+                      
+                 
+
+                  <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="TituloModalCentralizado">Cadastro de Usuário</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="PessoaFisica">
+                
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer01">Primeiro nome</label>
+                                        <input type="text" class="form-control is-filled" id="validationServer01" placeholder="Nome"
+                                            value="" required>
+                                        <div class="valid-feedback">
+                                            Tudo certo!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer02">Sobrenome</label>
+                                        <input type="text" class="form-control is-filled" id="validationServer02" placeholder="Sobrenome"
+                                            value="" required>
+                                        <div class="valid-feedback">
+                                            Tudo certo!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServerUsername">Usuário</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                                            </div>
+                                            <input type="text" class="form-control is-filled" id="validationServerUsername"
+                                                placeholder="Usuário" aria-describedby="inputGroupPrepend3" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, escolha um nome de usuário.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-8 mb-3">
+                                        <label for="validationServer03">Email</label>
+                                        <input type="text" class="form-control is-filled" id="validationServer03" placeholder="Email"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            Por favor, informe uma cidade válida.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-1">
+                                        <label for="validationServer04">Senha</label>
+                                        <input type="password" class="form-control is-filled" id="validationServer04" placeholder="Senha"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            Por favor, informe um estado válido.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input is-filled" type="checkbox" value="" id="invalidCheck3" required>
+                                        <label class="form-check-label" for="invalidCheck3">
+                                            Concordo com os termos e condições
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Você deve concordar, antes de continuar.
+                                        </div>
+                                    </div>
+                                </div>
+                
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                          <button class="btn btn-primary" type="submit">Cadastrar</button>
+
+                        </div>
+
+                        <div id="Sucesso" style="padding-top: 5%">
+                            <div class="alert alert-success" role="alert">
+                                <h4 class="alert-heading">Muito bem!</h4>
+                                <p>Aêêê! Você conseguiu fazer o cadastro :)</p>
+                                <hr>
+                                <p class="mb-0">Sempre que precisar, use utilitários de margem para manter as coisas perfeitas.</p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+            </div>
+
+            
+              <div class="modal fade" id="ExemploModalCentralizado2" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="TituloModalCentralizado">Cadastro de Instituição</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="PessoaJuridica">
+            
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationServer01">Primeiro nome</label>
+                                    <input type="text" class="form-control is-filled" id="validationServer01" placeholder="Nome"
+                                        value="" required>
+                                    <div class="valid-feedback">
+                                        Tudo certo!
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationServer02">Sobrenome</label>
+                                    <input type="text" class="form-control is-filled" id="validationServer02" placeholder="Sobrenome"
+                                        value="" required>
+                                    <div class="valid-feedback">
+                                        Tudo certo!
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationServerUsername">Usuário</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                                        </div>
+                                        <input type="text" class="form-control is-filled" id="validationServerUsername"
+                                            placeholder="Usuário" aria-describedby="inputGroupPrepend3" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, escolha um nome de usuário.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-8 mb-3">
+                                    <label for="validationServer03">Email</label>
+                                    <input type="text" class="form-control is-filled" id="validationServer03" placeholder="Email"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Por favor, informe uma cidade válida.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-1">
+                                    <label for="validationServer04">Senha</label>
+                                    <input type="password" class="form-control is-filled" id="validationServer04" placeholder="Senha"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Por favor, informe um estado válido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input is-filled" type="checkbox" value="" id="invalidCheck3" required>
+                                    <label class="form-check-label" for="invalidCheck3">
+                                        Concordo com os termos e condições
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Você deve concordar, antes de continuar.
+                                    </div>
+                                </div>
+                            </div>
+            
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                      <button class="btn btn-primary" type="submit">Cadastrar</button>
+
+                    </div>
+
+                    <div id="Sucesso" style="padding-top: 5%">
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">Muito bem!</h4>
+                            <p>Aêêê! Você conseguiu fazer o cadastro :)</p>
+                            <hr>
+                            <p class="mb-0">Sempre que precisar, use utilitários de margem para manter as coisas perfeitas.</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+        </div>
+            
+                
+        </form>
+
+
+
+
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/telefone.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
