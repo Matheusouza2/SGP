@@ -24,7 +24,9 @@
   /* Cor de fundo da div */
   background-color: green;  
 
-  float: left;
+  position: fixed;
+
+  left:0pt;
 } 
 
 #conteudo2{
@@ -38,6 +40,8 @@
 
   padding-right: 0%;
   
-  float: right;
+  position: fixed;
+
+  right:0pt;
 } 
 

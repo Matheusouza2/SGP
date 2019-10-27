@@ -1,0 +1,47 @@
+#site{
+    /* Definimos a largura da página */
+    width: 1280px;
+    /* Definirmos a altura da página*/
+    height:700px;
+    /* Aqui definiremos a posição que a página ocupará na tela, nesse caso estamos definindo que fique centralizado na tela*/
+    /*top : posição de cima */
+    margin-top:0%;
+    /* left: posição de esquerda*/
+    margin-left:0%;
+    /* bottom : posição de baixo */
+    margin-bottom:0%;
+    /* right : posição de direita */
+    margin-right: 0%;
+    /* Aqui definiremos a cor de fundo da página */
+    background-color:rgb(255, 255, 255);
+  }
+  
+  #conteudo1{
+    /*Novamente definimos a largura da div*/
+    width:40%;
+    height: 100%;
+    
+    /* Cor de fundo da div */
+    background-color: rgb(0, 102, 170);  
+  
+    position: fixed;
+
+    right:0pt;
+   
+  } 
+  
+  #conteudo2{
+    /*Novamente definimos a largura da div*/
+    width:24%;
+    height: 100%;
+    /* altura da div */
+    
+    /* Cor de fundo da div */
+    background-color:rgb(255, 255, 255); 
+  
+    position:fixed;
+
+    left:0pt;
+  } 
+  
+  

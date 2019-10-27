@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> SGP - Sistema de Gerenciamento de Permutas </title>
     
-    <link rel="stylesheet" href="../beta 2/assets/css/bodycomimagem.css"/>
+    <link rel="stylesheet" href="../beta 2/assets/css/atualizarcomimagem.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="assets/css/material-kit2.css?v=2.0.6" rel="stylesheet" />
+    <link href="assets/css/material-kit3.css" rel="stylesheet" />
     <link href="assets/demo/demo.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -21,7 +21,7 @@
 
 <body id="site">
 
-    <script>
+        <script>
         
         function MudarestadoUsuario(el,el2) {
         var display = document.getElementById(el).style.display;
@@ -48,12 +48,14 @@
     </script>
 
 
-<div id="conteudo1">
 
-    <img src="imgs/logobranco.png" alt="logomarca" style="margin-top: 50px; margin-left: 35%; margin-right: 35%;">
+
+<div id="conteudo1" style="padding-left: 3%;">
+
+    <img src="imgs/logobranco.png" alt="logomarca" style="margin-top: 50px; margin-left: 35%;">
     
-    <div style="margin-top: 5%; margin-left:20%; margin-right: 20%;" class="btn-group" data-toggle="buttons">
-        <label class="btn btn-secondary" onclick="MudarestadoUsuario('CadastroUsuario','CadastroInstituição')"> Usuário Padrão
+    <div style="margin-top: 5%; margin-left:15%;" class="btn-group" data-toggle="buttons">
+        <label class="btn btn-secondary" onclick="MudarestadoUsuario('CadastroUsuario', 'CadastroInstituição')"> Usuário Padrão
             <input type="radio" name="botao" id="" autocomplete="off">
         </label>
         <label class="btn btn-secondary" onclick="MudarestadoInstituicao('CadastroInstituição','CadastroUsuario')"> Instituição
@@ -64,7 +66,7 @@
 
    
 
-    <div  style="margin-left: 10%; margin-top: 3%; display: none;"  id="CadastroUsuario">  
+    <div  style="margin-left: 6%; margin-top: 3%; display: none;"  id="CadastroUsuario">  
         
         <form class="form">
             
@@ -134,28 +136,29 @@
 
                             <div style="margin-top: 5%;" class="input-group">
                 
-                                    <div class="input-group-prepend">
-                                
-                                            <span  style="margin-right: 2%;"  class="input-group-text-white">
-                                                    <i class="fa fa-calendar"></i>
-                                            </span>
-                                       
-                                        <input style="color: white; margin-right: 5%;" class="form-control col-sm-15" type="text" class="form-control" placeholder="Data de Nascimento">
-                                   
+                                <div class="input-group-prepend">
+                            
                                         <span  style="margin-right: 2%;"  class="input-group-text-white">
-                                            <i class="fa fa-briefcase"></i>
+                                                <i class="fa fa-calendar"></i>
                                         </span>
                                    
-                                    <input style="color: white;" class="form-control col-sm-8" type="text" class="form-control" placeholder="Profissão">
-                                   
-                                    </div>
-            
+                                    <input style="color: white; margin-right: 5%;" class="form-control col-sm-15" type="text" class="form-control" placeholder="Data de Nascimento">
+                               
+                                    <span  style="margin-right: 2%;"  class="input-group-text-white">
+                                        <i class="fa fa-briefcase"></i>
+                                    </span>
+                               
+                                <input style="color: white;" class="form-control col-sm-8" type="text" class="form-control" placeholder="Profissão">
+                               
                                 </div>
+        
+                            </div>
+                            
+                            <div style="padding-top: 5%; margin-left: 30%;" class="text-center">
+                                <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-light"  style="color: white; background: rgb(2, 3, 99);">Atualizar</a>
+                        </div>
 
                         
-                        <div style="padding-top: 5%; margin-left: 30%;" class="text-center">
-                                <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-light"  style="color: white; background: rgb(0, 92, 0);">Cadastrar</a>
-                        </div>
                 
                 </div>
                 
@@ -163,7 +166,7 @@
 
                 </div>
 
-                <div  style="margin-left: 10%; margin-top: 3%; display: none;"  id="CadastroInstituição">  
+                <div  style="margin-left: 6%; margin-top: 3%; display: none;"  id="CadastroInstituição">  
         
                     <form class="form">
                         
@@ -233,27 +236,28 @@
             
                                         <div style="margin-top: 5%;" class="input-group">
                             
-                                                <div class="input-group-prepend">
-                                            
-                                                        <span  style="margin-right: 2%;"  class="input-group-text-white">
-                                                                <i class="fa fa-calendar"></i>
-                                                        </span>
-                                                   
-                                                    <input style="color: white; margin-right: 5%;" class="form-control col-sm-15" type="text" class="form-control" placeholder="Data de Fundação">
+                                            <div class="input-group-prepend">
+                                        
+                                                    <span  style="margin-right: 2%;"  class="input-group-text-white">
+                                                            <i class="fa fa-calendar"></i>
+                                                    </span>
                                                
-                                                    <span style="margin-right: 2%;" class="input-group-text-white">
-                                                        <i class="fa fa-users"></i>  
-                                                    </span>                       
-                                                <input style="color: white;" class="form-control col-sm-8" type="text" class="form-control" placeholder="Numero de Empregados">
-                                               
-                                                </div>
-                        
+                                                <input style="color: white; margin-right: 5%;" class="form-control col-sm-15" type="text" class="form-control" placeholder="Data de Fundação">
+                                           
+                                                <span style="margin-right: 2%;" class="input-group-text-white">
+                                                    <i class="fa fa-users"></i>  
+                                                </span>                       
+                                            <input style="color: white;" class="form-control col-sm-8" type="text" class="form-control" placeholder="Numero de Empregados">
+                                           
                                             </div>
+                    
+                                        </div>
             
                                     
-                                    <div style="padding-top: 5%; margin-left: 30%;" class="text-center">
-                                            <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-light"  style="color: white; background: rgb(0, 92, 0);">Cadastrar</a>
-                                    </div>
+                                            <div style="padding-top: 5%; margin-left: 30%;" class="text-center">
+                                                <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-light"  style="color: white; background: rgb(2, 3, 99);">Atualizar</a>
+                                        </div>
+                
                             
                             </div>
                             
@@ -269,7 +273,7 @@
 
 <div id="conteudo2">
 
-        <img src="imgs/vetorlogin.png" alt="Trulli" width="600" height="510" style="margin-top: 75px; margin-left: 23%; margin-right: 30%;">
+        <img src="imgs/vetoratualizar.png" alt="Trulli" width="600" height="510" style="margin-top: 75px; margin-left: 23%; margin-right: 30%;">
 
 </div>
 
