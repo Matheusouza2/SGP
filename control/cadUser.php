@@ -1,14 +1,14 @@
-<?php
+<?php   
 
-$nome = [$_GET(nome)];
-$email = [$_GET(email)];
-$cpf= [$_GET(cpf)];
-$senha= [$_GET(senha)];
-$endereco= [$_GET(endereco)];
-$uf= [$_GET(uf)];
-$cidade= [$_GET(cidade)];
-$dataN= [$_GET(dataN)];
-$prof= [$_GET(prof)];
+$nome = [$_POST(nome)];
+$email = [$_POST(email)];
+$cpf= [$_POST(cpf)];
+$senha= [$_POST(senha)];
+$endereco= [$_POST(endereco)];
+$uf= [$_POST(uf)];
+$cidade= [$_POST(cidade)];
+$dataN= [$_POST(dataN)];
+$prof= [$_POST(prof)];
 
 
 $userDao = new UsuarioDao;
