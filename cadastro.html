@@ -19,7 +19,7 @@
 
 
 
-<body id="site">
+<body id="site" style="overflow: hidden;">
 
     <script>
         
@@ -48,9 +48,9 @@
     </script>
 
 
-<div id="conteudo1">
+<div id="conteudo1" class="container-fluid">
 
-    <img src="imgs/logobranco.png" alt="logomarca" style="margin-top: 50px; margin-left: 35%; margin-right: 35%;">
+    <img src="imgs/logosvgbranco.svg" width="170" alt="logomarca" style="margin-top: 50px; margin-left: 35%; margin-right: 35%;">
     
     <div style="margin-top: 5%; margin-left:20%; margin-right: 20%;" class="btn-group" data-toggle="buttons">
         <label class="btn btn-secondary" onclick="MudarestadoUsuario('CadastroUsuario','CadastroInstituição')"> Usuário Padrão
@@ -226,7 +226,7 @@
                                                             <i class="fa fa-building"></i>
                                                     </span>
                                                
-                                                <input name="cidade" style="color: white;" class="form-control col-sm-3" type="text" class="form-control" placeholder="Cidade">
+                                                <input name="cidade" style="color: white;" class="form-control col-sm-3" type="combo-box" class="form-control" placeholder="Cidade">
                                             </div>
                     
                                         </div>
@@ -239,7 +239,7 @@
                                                                 <i class="fa fa-calendar"></i>
                                                         </span>
                                                    
-                                                    <input name="dataF" style="color: white; margin-right: 5%;" class="form-control col-sm-15" type="text" class="form-control" placeholder="Data de Fundação">
+                                                    <input name="dataF" style="color: white; margin-right: 5%;" class="form-control col-sm-5" type="date" class="form-control" placeholder="Data de Fundação">
                                                
                                                     <span style="margin-right: 2%;" class="input-group-text-white">
                                                         <i class="fa fa-users"></i>  
@@ -260,12 +260,11 @@
                             </form>
             
                             </div>
-
-        
-
     </div>
 
 </div>
+
+
 
 <div id="conteudo2">
 

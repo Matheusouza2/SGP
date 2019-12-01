@@ -39,7 +39,7 @@
     /* Cor de fundo da div */
     background-color:rgb(255, 255, 255); 
   
-    position:fixed;
+    position:flex;
 
     left:0pt;
   } 
