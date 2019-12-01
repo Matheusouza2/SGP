@@ -121,7 +121,7 @@
 				class="col-2 text-center border  black">
 
 				<label>Permutas Criadas:</label>
-				<h1 style="color: green;">0</h1>
+				<h1 id="permutCriada" style="color: green;">0</h1>
 
 				<label>Permutas Canceladas:</label>
 				<h1 style="color: red;">0</h1>
@@ -142,7 +142,6 @@
 
 				<label>Permutas Solicitadas:</label>
 				<h1 style="color: orange;">0</h1>
-
 			</div>
 
 
@@ -156,24 +155,39 @@
 			
 			var cabecalho = document.getElementById("cabecalho").value;
 			var descricao = document.getElementById("descricao").value;
+			var dataInicio = document.getElementById("DataInicio").value;
+			var dataFinal = document.getElementById("DataFinal").value;
 
-			
+			var permuta = document.getElementById("permutCriada");
 			
 			var container = document.getElementById("card");
+			container.className = "row";
 			
 			// conta quantos elementos com classe linha existem
 			// isso vai servir para montar o label e o id dos novos elementos
 			var i = document.querySelectorAll(".linha").length;
-
+			
+			permuta.textContent = i+1;
+			
+			var divCard = document.createElement("div");
 			var div1 = document.createElement("div");
 			var label = document.createElement("label");
 			var label1 = document.createElement("label");
+			var label2 = document.createElement("label");
+			var label3 = document.createElement("label");
+			
+			divCard.className = "col-sm-4";
 			div1.className = "linha card border-success";
-			label.textContent = cabecalho;
-			label1.textContent = descricao;
-			container.appendChild(div1);
+			label.textContent = "Titulo: "+cabecalho;
+			label1.textContent = "Descrição: "+descricao;
+			label2.textContent = "Data Inicial: "+dataInicio;
+			label3.textContent = "Data Final: "+dataFinal;
+			container.appendChild(divCard);
+			divCard.appendChild(div1);
 			div1.appendChild(label);
 			div1.appendChild(label1);
+			div1.appendChild(label2);
+			div1.appendChild(label3);
 		}
 	</script>
 
