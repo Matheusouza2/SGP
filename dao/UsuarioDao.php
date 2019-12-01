@@ -19,5 +19,17 @@ class UsuarioDao{
         }
         return null;
     }
+
+    function cadastrar($nome, $email,$cpf, $senha, $endereco,$uf,$cidade,$dataN,$prof,$flag){
+
+        $con = Conexao::getInstance();
+
+        $sql = "INSERT INTO usuario (Nome,Email,CPF,Senha,Endereco,Estado,Cidade,DataDeNascimento,Profissao,Flag) values ('.$nome.','.$email.','.$cpf.','.$senha.','.$endereco.','.$uf.','.$cidade.','.$dataN.','.$prof.','.$flag.');'";
+
+        $stmt = $con->prepare($sql);
+       
+        $stmt->execute();
+
+    }
 }
 ?>
