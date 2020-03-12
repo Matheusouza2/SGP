@@ -131,31 +131,31 @@ form {
 }
 
 form .input-block:nth-child(1) {
-  animation: move 800ms;
+  animation: move 500ms;
 }
 
 form .input-block:nth-child(2) {
-  animation: move 800ms;
+  animation: move 400ms;
   animation-delay: 100ms;
   animation-fill-mode: backwards;
 }
 
 form .input-block:nth-child(3) {
-  animation: move 800ms;
-  animation-delay: 120ms;
+  animation: move 300ms;
+  animation-delay: 150ms;
   animation-fill-mode: backwards;
 
 }
 
 form .input-block:nth-child(4) {
-  animation: move 800ms;
-  animation-delay: 140ms;
+  animation: move 200ms;
+  animation-delay: 200ms;
   animation-fill-mode: backwards;
 }
 
 form .btn-login {
-  animation: move 800ms;
-  animation-delay: 300ms;
+  animation: move 400ms;
+  animation-delay: 350ms;
   animation-fill-mode: backwards;
 }
 
