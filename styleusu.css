@@ -26,16 +26,17 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 }
 
-img {
-  margin: 20px 0;
-  color: white;
-  margin-top: 4%;
-  margin-right: 650px;
-
+section .imgcentro {
+  
+  margin-top: 5%;
+  margin-left: 18%;
+  
 }
+
+
 
 form {
   width: 65vh;
@@ -43,7 +44,7 @@ form {
   background-color: white;
   padding: 30px 25px;
   border-radius: 5px;
-  margin-right: 650px;
+  margin-left: 7%;
  
 }
 
@@ -86,6 +87,22 @@ form .input-block input {
   border-radius: 2px;
   border: 1px solid #999999;
   outline-color: rgb(0, 66, 0);
+  
+}
+
+form .input-block input:invalid{
+
+    border: 1px solid crimson;
+    box-shadow: 0px 0px 3px crimson;
+ 
+}
+
+form .input-block input:focus:invalid{
+  box-shadow: none;
+}
+
+span{
+  color: crimson;
 }
 
 select .input-block input {
