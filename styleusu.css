@@ -19,6 +19,7 @@ body {
   background-color: green;
   font-family: Roboto, Arial, sans-serif;
   overflow: auto;
+  image-orientation: fixed;
 }
 
 
