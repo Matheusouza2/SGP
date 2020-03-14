@@ -7,7 +7,8 @@
 
 html,
 body {
-  height: 100vh;
+  height: auto;
+  overflow-y: scroll;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
   background-size:50%;
   background-color: green;
   font-family: Roboto, Arial, sans-serif;
+  overflow: auto;
 }
 
 
@@ -27,6 +29,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: left;
+  overflow: auto;
 }
 
 section .imgcentro {
@@ -39,12 +42,13 @@ section .imgcentro {
 
 
 form {
-  width: 65vh;
+  width: 75vh;
   margin: 20px 0;
   background-color: white;
   padding: 30px 25px;
   border-radius: 5px;
   margin-left: 7%;
+  overflow: auto;
  
 }
 
