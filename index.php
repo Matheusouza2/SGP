@@ -17,6 +17,7 @@
      
 
       <form action=".php" method="POST" class="needs-validation" novalidate>
+          
         <div class="form">
           <div class="col-lg-15 mb-10">
             <label for="validationCustom01">Email</label>
