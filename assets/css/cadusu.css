@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,37 +7,49 @@
 
 html,
 body {
-  height: 100vh;
+  height: auto;
+  overflow-y: scroll;
 }
 
 body {
-  background-image: url('imgs/backindex.png');
-  background-position: left bottom;
+  background-image: url('../img/backusu.png');
+  background-position: right;
   background-repeat: no-repeat;
-  background-size:52%;
+  background-size:50%;
   background-color: green;
   font-family: Roboto, Arial, sans-serif;
+  overflow: auto;
+  image-orientation: fixed;
 }
+
+
 
 
 section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+  overflow: auto;
 }
 
-img {
-  margin: 20px 0;
-  color: white;
-  margin-top: 6%;
+section .imgcentro {
+  
+  margin-top: 5%;
+  margin-left: 18%;
+  
 }
+
+
 
 form {
+  width: 75vh;
   margin: 20px 0;
   background-color: white;
   padding: 30px 25px;
   border-radius: 5px;
+  margin-left: 7%;
+  overflow: auto;
  
 }
 
@@ -54,6 +67,8 @@ a:hover{
 
 form .input-block {
   margin-bottom: 20px;
+  
+  
 }
 
 
@@ -62,7 +77,52 @@ form .input-block label {
   color: rgb(161, 161, 161);
 }
 
+select .input-block label {
+  font-size: 14px;
+  color: rgb(161, 161, 161);
+}
+
 form .input-block input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  color: rgb(165, 165, 165);
+  border-radius: 2px;
+  border: 1px solid #999999;
+  outline-color: rgb(0, 66, 0);
+  
+}
+
+form .input-block input:invalid{
+
+    border: 1px solid crimson;
+    box-shadow: 0px 0px 3px crimson;
+ 
+}
+
+form .input-block input:focus:invalid{
+  box-shadow: none;
+}
+
+span{
+  color: crimson;
+}
+
+select .input-block input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  color: rgb(165, 165, 165);
+  border-radius: 2px;
+  border: 1px solid #999999;
+  outline-color: rgb(0, 66, 0);
+}
+
+select {
   width: 100%;
   display: block;
   margin-top: 8px;
@@ -101,9 +161,22 @@ form .input-block:nth-child(2) {
   animation-fill-mode: backwards;
 }
 
+form .input-block:nth-child(3) {
+  animation: move 300ms;
+  animation-delay: 150ms;
+  animation-fill-mode: backwards;
+
+}
+
+form .input-block:nth-child(4) {
+  animation: move 200ms;
+  animation-delay: 200ms;
+  animation-fill-mode: backwards;
+}
+
 form .btn-login {
   animation: move 400ms;
-  animation-delay: 250ms;
+  animation-delay: 350ms;
   animation-fill-mode: backwards;
 }
 

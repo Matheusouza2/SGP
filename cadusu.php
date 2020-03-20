@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="styleusu.css" />
+  <link rel="stylesheet" href="assets/css/cadusu.css" />
   <script src="https://use.fontawesome.com/0147a96ddf.js"></script>
+  <link id="favicon" rel="shortcut icon" type="image/png" href="assets/img/Programar Software - 2019.png">
+
 
 
 </head>
