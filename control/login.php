@@ -11,8 +11,7 @@ $usuLogado = $usuDao->login($email, $senha);
 if (! empty($usuLogado)) {
     $_SESSION['id'] = $usuLogado['Id'];
     $_SESSION['nome'] = $usuLogado['Nome'];
+    header('location: ../dashboardusu/index.html');
 } else {
     header('location: ../telaLogin.php');
 }
-
-?>

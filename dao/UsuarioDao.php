@@ -32,3 +32,5 @@ class UsuarioDao {
 
 
         $stmt->execute();
+    }
+}
