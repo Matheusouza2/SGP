@@ -26,7 +26,8 @@ class UsuarioDao {
 
     
     // verifica se esta cadastrado
-        $con = Conexao::getInstance();
+        try {
+           $con = Conexao::getInstance();
         $sql= "SELECT email FROM usuario WHERE email='$email'";
         $stmt = $con->prepare($sql);
         $stmt->execute();
@@ -41,6 +42,11 @@ class UsuarioDao {
         $stmt = $con->prepare($sql);
         $stmt->execute();
         }
+
+        } catch (PDOException $e) {
+          echo "Ocorreu um erro! ---  <br>".$e;  
+        }
+        
     }
 
 
