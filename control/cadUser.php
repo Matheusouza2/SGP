@@ -30,4 +30,4 @@ $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep
 
 
 
-header('location: ../view/telaLogin.php');
+//header('location: ../view/telaLogin.php');
