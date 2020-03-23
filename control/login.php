@@ -12,7 +12,7 @@ if (! empty($usuLogado)) {
     $_SESSION['id'] = $usuLogado['Id'];
     $_SESSION['nome'] = $usuLogado['Nome'];
 } else {
-    header('location: ../index.html');
+    header('location: ../telaLogin.php');
 }
 
 ?>

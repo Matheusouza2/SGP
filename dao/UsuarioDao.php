@@ -2,34 +2,33 @@
 
 include_once 'Conexao.php';
 
-class UsuarioDao{
-    
+class UsuarioDao {
+
     private $con;
-    
+
     function login($email, $senha) {
         $con = Conexao::getInstance();
-        
-        $sql = 'SELECT Id, Nome, Flag FROM usuario WHERE email = "'.$email.'" AND senha = "'.$senha.'"';
+
+        $sql = 'SELECT email, nome FROM usuario WHERE email = "' . $email . '" AND senha = "' . $senha . '"';
         $stmt = $con->prepare($sql);
-       
+
         $stmt->execute();
-        
-        if($stmt->rowCount() == 1){
+
+        if ($stmt->rowCount() == 1) {
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
         return null;
     }
 
-    function cadastrar($nome, $email,$cpf, $senha, $endereco,$uf,$cidade,$dataN,$prof,$flag){
+    function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha) {
 
+    
+    
         $con = Conexao::getInstance();
 
-        $sql = "INSERT INTO usuario (Nome,Email,CPF,Senha,Endereco,Estado,Cidade,DataDeNascimento,Profissao,Flag) values ('.$nome.','.$email.','.$cpf.','.$senha.','.$endereco.','.$uf.','.$cidade.','.$dataN.','.$prof.','.$flag.');'";
+        $sql = "INSERT INTO usuario (nome,endereco,bairro,numero,cidade,estado,cep,telefone,email,cpf,rg,idinstituicao,matricula,cursoLeciona,senha) values ('$nome','$endereco','$bairro','$numero','$cidade','$estado','$cep','$telefone','$email','$cpf','$rg','$idInstituicao','$matricula','$cursoLeciona','$senha')";
 
         $stmt = $con->prepare($sql);
-       
-        $stmt->execute();
 
-    }
-}
-?>
+
+        $stmt->execute();
