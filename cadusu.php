@@ -21,7 +21,7 @@
 
   <section class="form-section">
 
-    <form action="cadUser.php" method="POST" class="needs-validation" novalidate>
+    <form action="control/cadUser.php" method="POST" class="needs-validation" novalidate>
 
       <div class="form-group">
         <label for="validationCustom01">Nome</label>

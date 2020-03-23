@@ -19,7 +19,7 @@
       <img src="assets/img/logosvgbranco.svg" width="160">
      
 
-      <form action=".php" method="POST" class="needs-validation" novalidate>
+      <form action="control/login.php" method="POST" class="needs-validation" novalidate>
         <div class="form">
           <div class="col-lg-15 mb-10">
             <label for="validationCustom01">Email</label>
@@ -46,7 +46,7 @@
       </div>
 
       <div style="text-align: center;">
-      <a>Ainda não tem conta? <a href="cadusu.html" style="color: green;">Cadastre-se</a></a>
+      <a>Ainda não tem conta? <a href="cadusu.php" style="color: green;">Cadastre-se</a></a>
     </div>
       </form>
     </section>
