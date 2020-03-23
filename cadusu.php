@@ -38,14 +38,14 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="validationCustom02">Endereço</label>
-            <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Cidade" required>
+            <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" required>
             <div class="invalid-feedback">
               Por favor, informe um Endereço.
             </div>
           </div>
           <div class="col-md-6 mb-6">
             <label for="validationCustom03">Bairro</label>
-            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Estado" required>
+            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
             <div class="invalid-feedback">
               Por favor, informe um bairro válido.
             </div>
