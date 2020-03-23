@@ -23,7 +23,7 @@
         <div class="form">
           <div class="col-lg-15 mb-10">
             <label for="validationCustom01">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email"required>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email"required>
             <div class="valid-feedback">
               Tudo certo!
             </div>
@@ -34,7 +34,7 @@
 
           <div class="col-lg-15 mb-10">
             <label for="validationCustom02">Senha</label>
-            <input type="password" class="form-control" id="validationCustom02" placeholder="Senha" required>
+            <input type="password" class="form-control" id="validationCustom02" name="senha" placeholder="Senha" required>
     
             <div class="invalid-feedback">
               Inserir Senha!
@@ -42,7 +42,7 @@
           </div>         
         </div>
         <div style="text-align: center; padding-top: 8%;">
-        <button class="btn btn-success" onclick="validar()" type="submit">Login</button>
+        <button class="btn btn-success" onclick="validar()" name="login" type="submit">Login</button>
       </div>
 
       <div style="text-align: center;">
