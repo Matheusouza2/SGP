@@ -10,12 +10,14 @@ class UsuarioDao {
         $con = Conexao::getInstance();
 
         $sql = 'SELECT email, nome FROM usuario WHERE email = "' . $email . '" AND senha = "' . $senha . '"';
+        
         $stmt = $con->prepare($sql);
 
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
             return $stmt->fetch(PDO::FETCH_ASSOC);
+                    
         }else{
            return null; 
         }

@@ -3,22 +3,22 @@
 include_once '../dao/UsuarioDao.php"';
 
 
-$nome = $_POST['nome'];
-$endereco = $_POST['endereco'];
-$bairro = $_POST['bairro'];
-$numero = $_POST['numero'];
-$cidade = $_POST['cidade'];
-$estado = $_POST['estado'];
-$cep = $_POST['cep'];
-$telefone = $_POST['telefone'];
-$email = $_POST['email'];
-$cpf = $_POST['cpf'];
-$rg = $_POST['rg'];
-$idInstituicao = $_POST['idInstituicao'];
-$matricula = $_POST['matricula'];
-$cursoLeciona = $_POST['cursoLeciona'];
+$nome = addslashes($_POST['nome']);
+$endereco = addslashes($_POST['endereco']);
+$bairro = addslashes($_POST['bairro']);
+$numero = addslashes($_POST['numero']);
+$cidade = addslashes($_POST['cidade']);
+$estado = addslashes($_POST['estado']);
+$cep = addslashes($_POST['cep']);
+$telefone = addslashes($_POST['telefone']);
+$email = addslashes($_POST['email']);
+$cpf = addslashes($_POST['cpf']);
+$rg = addslashes($_POST['rg']);
+$idInstituicao = addslashes($_POST['idInstituicao']);
+$matricula = addslashes($_POST['matricula']);
+$cursoLeciona = addslashes($_POST['cursoLeciona']);
 
-$senha = $_POST['senha'];
+$senha = addslashes($_POST['senha']);
 
 
 
@@ -30,4 +30,4 @@ $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep
 
 
 
-//header('location: ../view/telaLogin.php');
+header('location: ../view/telaLogin.php');
