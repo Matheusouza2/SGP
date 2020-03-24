@@ -16,7 +16,7 @@ exit();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>SGP - Sistema de Gerenciamento de Permuatas</title>
 
-  <a href="../control/logout.php"> sair</a>
+  
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
@@ -60,7 +60,7 @@ exit();
               <span class="hidden-xs">
                 <?php
                 
-                echo $_SESSION['nome']; 
+                echo $_SESSION['email']; 
 
                  ?>
                   
@@ -72,7 +72,7 @@ exit();
                 <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Fulano Junior - Web Developer
+                  <?php echo $_SESSION['nome'];  ?> - Web Developer
                   <small>Membro desde Abr. 2018</small>
                 </p>
               </li>
@@ -97,7 +97,7 @@ exit();
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sair</a>
+                  <a href="../control/logout.php" class="btn btn-default btn-flat">Sair</a>
                 </div>
               </li>
             </ul>
@@ -118,7 +118,7 @@ exit();
           <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Fulano Junior</p>
+          <p><?php echo $_SESSION['nome'];  ?></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -262,7 +262,7 @@ exit();
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" id="form-user-create">
+            <form role="form" id="form-user-create" action="../control/permuta/criaPermuta.php" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputName">Título</label>
@@ -328,6 +328,7 @@ exit();
                 <button type="submit" class="btn btn-success">Criar Permuta</button>
               </div>
             </form>
+
           </div>
 
         </div>
