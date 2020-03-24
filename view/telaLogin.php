@@ -23,7 +23,7 @@
         <div class="form">
           <div class="col-lg-15 mb-10">
             <label for="validationCustom01">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email"required name="email">
+            <input type="email" class="form-control" id="email"  placeholder="Email"required name="email">
             <div class="valid-feedback">
               Tudo certo!
             </div>
