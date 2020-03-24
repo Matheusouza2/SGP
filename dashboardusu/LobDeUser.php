@@ -72,7 +72,7 @@ exit();
                 <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Fulano Junior - Web Developer
+                  <?=$_SESSION['nome']?> - Web Developer
                   <small>Membro desde Abr. 2018</small>
                 </p>
               </li>

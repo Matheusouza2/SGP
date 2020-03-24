@@ -17,8 +17,8 @@ if (! empty($usuLogado)) {
    $_SESSION['email'] = $usuLogado['email'];
    
     
-    header('location: ../dashboardusu/lobDeUser.php');
+    header('location: ../index.php');
 
 } else {
-    header('location: ../view/telaLogin.php');
+    header('location: ../index.php');
 }
