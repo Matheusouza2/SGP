@@ -1,179 +1,146 @@
 <?php
 
 class Usuario{
-    
-    private $id;
-    private $nome;
-    private $cpf;
-    private $email;
-    private $senha;
-    private $endereco;
-    private $cidade;
-    private $estado;
-    private $dataDeNascimento;
-    private $profissao;
+private $nome;
+private $endereco;
+private $bairro;
+private $numero;
+private $cidade;
+private $estado;
+private $cep;
+private $telefone;
+private $email;
+private $cpf;
+private $rg;
+private $idInstituicao;
+private $matricula;
+private $cursoLeciona;
+
+private $senha;
     
     function __construct() {
         
     }
-    
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNome()
-    {
+    function getNome() {
         return $this->nome;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCpf()
-    {
-        return $this->cpf;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSenha()
-    {
-        return $this->senha;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEndereco()
-    {
+    function getEndereco() {
         return $this->endereco;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCidade()
-    {
+    function getBairro() {
+        return $this->bairro;
+    }
+
+    function getNumero() {
+        return $this->numero;
+    }
+
+    function getCidade() {
         return $this->cidade;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEstado()
-    {
+    function getEstado() {
         return $this->estado;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDataDeNascimento()
-    {
-        return $this->dataDeNascimento;
+    function getCep() {
+        return $this->cep;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getProfissao()
-    {
-        return $this->profissao;
+    function getTelefone() {
+        return $this->telefone;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
+    function getEmail() {
+        return $this->email;
     }
 
-    /**
-     * @param mixed $nome
-     */
-    public function setNome($nome)
-    {
+    function getCpf() {
+        return $this->cpf;
+    }
+
+    function getRg() {
+        return $this->rg;
+    }
+
+    function getIdInstituicao() {
+        return $this->idInstituicao;
+    }
+
+    function getMatricula() {
+        return $this->matricula;
+    }
+
+    function getCursoLeciona() {
+        return $this->cursoLeciona;
+    }
+
+    function getSenha() {
+        return $this->senha;
+    }
+
+    function setNome($nome): void {
         $this->nome = $nome;
     }
 
-    /**
-     * @param mixed $cpf
-     */
-    public function setCpf($cpf)
-    {
-        $this->cpf = $cpf;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @param mixed $senha
-     */
-    public function setSenha($senha)
-    {
-        $this->senha = $senha;
-    }
-
-    /**
-     * @param mixed $endereco
-     */
-    public function setEndereco($endereco)
-    {
+    function setEndereco($endereco): void {
         $this->endereco = $endereco;
     }
 
-    /**
-     * @param mixed $cidade
-     */
-    public function setCidade($cidade)
-    {
+    function setBairro($bairro): void {
+        $this->bairro = $bairro;
+    }
+
+    function setNumero($numero): void {
+        $this->numero = $numero;
+    }
+
+    function setCidade($cidade): void {
         $this->cidade = $cidade;
     }
 
-    /**
-     * @param mixed $estado
-     */
-    public function setEstado($estado)
-    {
+    function setEstado($estado): void {
         $this->estado = $estado;
     }
 
-    /**
-     * @param mixed $dataDeNascimento
-     */
-    public function setDataDeNascimento($dataDeNascimento)
-    {
-        $this->dataDeNascimento = $dataDeNascimento;
+    function setCep($cep): void {
+        $this->cep = $cep;
     }
 
-    /**
-     * @param mixed $profissao
-     */
-    public function setProfissao($profissao)
-    {
-        $this->profissao = $profissao;
-    }    
-}
+    function setTelefone($telefone): void {
+        $this->telefone = $telefone;
+    }
+
+    function setEmail($email): void {
+        $this->email = $email;
+    }
+
+    function setCpf($cpf): void {
+        $this->cpf = $cpf;
+    }
+
+    function setRg($rg): void {
+        $this->rg = $rg;
+    }
+
+    function setIdInstituicao($idInstituicao): void {
+        $this->idInstituicao = $idInstituicao;
+    }
+
+    function setMatricula($matricula): void {
+        $this->matricula = $matricula;
+    }
+
+    function setCursoLeciona($cursoLeciona): void {
+        $this->cursoLeciona = $cursoLeciona;
+    }
+
+    function setSenha($senha): void {
+        $this->senha = $senha;
+    }
+
+
+    
+    }

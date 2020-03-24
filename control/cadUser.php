@@ -1,21 +1,33 @@
-<?php   
+<?php
 
-include_once '../dao/UsuarioDao.php';
-
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$cpf= $_POST['cpf'];
-$senha= $_POST['senha'];
-$endereco= $_POST['endereco'];
-$uf= $_POST['uf'];
-$cidade= $_POST['cidade'];
-$dataN= $_POST['dataN'];
-$prof= $_POST['prof'];
+include_once '../dao/UsuarioDao.php"';
 
 
-$userDao = new UsuarioDao();
+$nome = addslashes($_POST['nome']);
+$endereco = addslashes($_POST['endereco']);
+$bairro = addslashes($_POST['bairro']);
+$numero = addslashes($_POST['numero']);
+$cidade = addslashes($_POST['cidade']);
+$estado = addslashes($_POST['estado']);
+$cep = addslashes($_POST['cep']);
+$telefone = addslashes($_POST['telefone']);
+$email = addslashes($_POST['email']);
+$cpf = addslashes($_POST['cpf']);
+$rg = addslashes($_POST['rg']);
+$idInstituicao = addslashes($_POST['idInstituicao']);
+$matricula = addslashes($_POST['matricula']);
+$cursoLeciona = addslashes($_POST['cursoLeciona']);
 
-$userDao->cadastrar($nome,$email,$cpf,$senha,$endereco,$uf,$cidade,$dataN,$prof,0);
+$senha = addslashes($_POST['senha']);
 
 
-?>
+
+	
+
+$usuarioDao = new UsuarioDao();
+$usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha);
+
+
+
+
+header('location: ../view/telaLogin.php');

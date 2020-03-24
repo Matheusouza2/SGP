@@ -1,18 +1,24 @@
 <?php
 include_once '..\dao\UsuarioDao.php';
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+session_start();
+$email = addslashes($_POST['email']);
+$senha = addslashes($_POST['senha']);
 
 $usuDao = new UsuarioDao();
 
 $usuLogado = $usuDao->login($email, $senha);
 
-if (! empty($usuLogado)) {
-    $_SESSION['id'] = $usuLogado['Id'];
-    $_SESSION['nome'] = $usuLogado['Nome'];
-} else {
-    header('location: ../index.html');
-}
 
-?>
+
+if (! empty($usuLogado)) {
+	
+   $_SESSION['nome'] = $usuLogado['nome'];
+   $_SESSION['email'] = $usuLogado['email'];
+   
+    
+    header('location: ../dashboardusu/lobDeUser.php');
+
+} else {
+    header('location: ../view/telaLogin.php');
+}
