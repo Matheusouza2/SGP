@@ -16,8 +16,7 @@ if (! empty($usuLogado)) {
    $_SESSION['nome'] = $usuLogado['nome'];
    $_SESSION['email'] = $usuLogado['email'];
    
-    
-    header('location: ../index.php');
+    header('location: ../dashboardusu/LobDeUser.php');
 
 } else {
     header('location: ../index.php');
