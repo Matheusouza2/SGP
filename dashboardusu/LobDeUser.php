@@ -59,7 +59,7 @@ exit();
               <span class="hidden-xs">
                 <?php
                 
-                echo $_SESSION['nome']; 
+                echo $_SESSION['email']; 
 
                  ?>
                   
@@ -117,7 +117,7 @@ exit();
           <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Fulano Junior</p>
+          <p><?php echo $_SESSION['nome'];  ?></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -261,7 +261,7 @@ exit();
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" id="form-user-create">
+            <form role="form" id="form-user-create" action="../control/permuta/criaPermuta.php" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputName">Título</label>
@@ -327,6 +327,7 @@ exit();
                 <button type="submit" class="btn btn-success">Criar Permuta</button>
               </div>
             </form>
+
           </div>
 
         </div>
