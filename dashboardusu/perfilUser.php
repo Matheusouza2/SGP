@@ -150,7 +150,7 @@
 
                             <div class="col-xs-6">
                                 <label for="senha">
-                                    <h4>Password</h4>
+                                    <h4>Senha</h4>
                                 </label>
                                 <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
                             </div>
