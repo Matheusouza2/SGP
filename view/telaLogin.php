@@ -11,6 +11,40 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script>
+
+function menssagemErro(){
+
+Swal.fire({
+ icon: 'error',
+ title: 'Oops...',
+ text: 'Email ou senha não cadastrados !',
+})
+
+}
+
+   </script>
+
+<script>
+      (function validar() {
+        'use strict';
+        window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
 
   
   </head>
@@ -42,7 +76,7 @@
           </div>         
         </div>
         <div style="text-align: center; padding-top: 8%;">
-        <button class="btn btn-success" onclick="validar()" type="submit">Login</button>
+        <button class="btn btn-success" onclick="validar(), menssagemErro()" type="submit">Login</button>
       </div>
 
       <div style="text-align: center;">
@@ -51,23 +85,7 @@
       </form>
     </section>
 
-    <script>
-      (function validar() {
-        'use strict';
-        window.addEventListener('load', function() {
-          var forms = document.getElementsByClassName('needs-validation');
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
+  
 
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
