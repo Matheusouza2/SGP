@@ -89,7 +89,7 @@
         <div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">Dados</a></li>
-                <li><a data-toggle="tab" href="#messages">Endereços</a></li>
+                <li><a data-toggle="tab" href="#messages">Endereço</a></li>
                 <li><a data-toggle="tab" href="#settings">Disciplinas</a></li>
             </ul>
 
