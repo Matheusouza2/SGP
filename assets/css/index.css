@@ -10,8 +10,8 @@ body {
 }
 
 body {
-  background-image: url("../img/backindex.png");
-  background-position: left bottom;
+  background-image: url("../img/backindex.png") ; 
+  background-position: left bottom ;
   background-repeat: no-repeat;
   background-size:52%;
   background-color: green;
