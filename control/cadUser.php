@@ -28,6 +28,6 @@ $usuarioDao = new UsuarioDao();
 $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha);
 
 
-
 $_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Seja bem vindo ao SGP, você já pode entrar no sistema :)', 'success')</script>";
+
 header('location: ../index.php');
