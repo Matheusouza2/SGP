@@ -19,6 +19,6 @@ if (! empty($usuLogado)) {
     header('location: ../dashboardusu/LobDeUser.php');
 
 } else {
-    $_SESSION['erro']['login'] = "<script> Swal.fire({icon: 'error', title: 'Oops...', text: 'Email ou senha não cadastrados !'}); </script>";
+    $_SESSION['msg']['erroLogin'] = "<script> Swal.fire({icon: 'error', title: 'Oops...', text: 'Email ou senha não cadastrados !'}); </script>";
     header('location: ../view/telaLogin.php');
 }

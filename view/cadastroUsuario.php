@@ -14,22 +14,6 @@
   <link id="favicon" rel="shortcut icon" type="image/png" href="../assets/img/Programar Software - 2019.png">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-  <script>
-
-function mensagemSucesso(){
-
-  Swal.fire(
-  'Tudo certo !!!!',
-  'Seja bem vindo ao SGP :)',
-  'success'
-)
-}
-
-  </script>
-
-
-
-
 </head>
 
 <body>
@@ -244,7 +228,7 @@ function mensagemSucesso(){
 
       </div>
       <div style="text-align: center;">
-        <button type="submit" onclick="validar() , mensagemSucesso()" class="btn btn-success">Cadastrar</button>
+        <button type="submit" onclick="validar()" class="btn btn-success">Cadastrar</button>
       </div>
     </form>
   </section>

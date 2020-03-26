@@ -51,13 +51,6 @@ class UsuarioDao {
         
     }
 
-
-
-
-
-
-
-
     public function atualiaza(Usuario $u){
     
     }

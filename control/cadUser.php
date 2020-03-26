@@ -1,7 +1,7 @@
 <?php
 
 include_once '../dao/UsuarioDao.php"';
-
+session_start();
 
 $nome = addslashes($_POST['nome']);
 $endereco = addslashes($_POST['endereco']);
@@ -29,5 +29,5 @@ $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep
 
 
 
-
-header('location: /index.php');
+$_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Seja bem vindo ao SGP, você já pode entrar no sistema :)', 'success')</script>";
+header('location: ../index.php');

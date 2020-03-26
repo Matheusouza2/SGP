@@ -25,10 +25,15 @@ if (isset($_SESSION['nome']))
 
 <?php
 
-if(isset($_SESSION['erro']['login'])){
+if(isset($_SESSION['msg']['erroLogin'])){
     echo".";
-    echo $_SESSION['erro']['login'];
-   unset($_SESSION['erro']['login']);
+    echo $_SESSION['msg']['erroLogin'];
+   unset($_SESSION['msg']['erroLogin']);
+   
+}else if(isset($_SESSION['msg']['usuCadSuccess'])){
+    echo".";
+    echo $_SESSION['msg']['usuCadSuccess'];
+    unset($_SESSION['msg']['usuCadSuccess']);
 }
 ?>
 <script>
