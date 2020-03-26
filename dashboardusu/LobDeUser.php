@@ -2,9 +2,8 @@
 session_start();
 if (!isset($_SESSION['nome'])) 
 {
-header("location: ../view/telaLogin.php");
-exit();
-  }
+include_once '../control/logout.php';
+}
 
 ?>
 
