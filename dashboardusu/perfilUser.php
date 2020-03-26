@@ -99,8 +99,8 @@ exit();
         <div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">Dados</a></li>
-                <li><a data-toggle="tab" href="#messages">Endereço</a></li>
-                <li><a data-toggle="tab" href="#settings">Disciplinas</a></li>
+                <li><a data-toggle="tab" href="#endereco">Endereço</a></li>
+                <li><a data-toggle="tab" href="#disciplinas">Disciplinas</a></li>
             </ul>
 
 
@@ -180,7 +180,7 @@ exit();
 
                 </div>
                 <!--/tab-pane-->
-                <div class="tab-pane" id="messages">
+                <div class="tab-pane" id="endereco">
 
                     <h2></h2>
 
@@ -252,7 +252,7 @@ exit();
 
                 </div>
                 <!--/tab-pane-->
-                <div class="tab-pane" id="settings">
+                <div class="tab-pane" id="disciplinas">
 
                  
                     <form class="form" action="##" method="post" id="registrationForm">
