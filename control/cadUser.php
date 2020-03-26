@@ -28,6 +28,8 @@ $usuarioDao = new UsuarioDao();
 $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha);
 
 
-$_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Seja bem vindo ao SGP, você já pode entrar no sistema :)', 'success')</script>";
+$_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Seja bem vindo ao SGP, você já pode entrar no sistema :)', 'success')</script>",
+
+$_SESSION['msg'['usuCadError'] = "<script> Swal.fire({icon: 'Erro!!!',title: 'Oops...',text: 'Email já cadastrado !'})</script>"
 
 header('location: ../index.php');
