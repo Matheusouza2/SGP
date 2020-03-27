@@ -25,11 +25,30 @@ $senha = addslashes($_POST['senha']);
 	
 
 $usuarioDao = new UsuarioDao();
-$usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha);
+
+$verifica=$usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha);
 
 
-$_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Seja bem vindo ao SGP, você já pode entrar no sistema :)', 'success')</script>",
 
-$_SESSION['msg'['usuCadError'] = "<script> Swal.fire({icon: 'Erro!!!',title: 'Oops...',text: 'Email já cadastrado !'})</script>"
 
-header('location: ../index.php');
+
+
+if ($verifica){
+	
+	$_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Seja bem vindo ao SGP, você já pode entrar no sistema :)', 'success')</script>";
+
+    header('location: ../index.php');	
+
+}else  {
+
+    $_SESSION['msg']['usuCadSuccess'] = "<script> Swal.fire({icon: 'error', title: 'ERRO...', text: 'Email Ja cadastrados ! tente outro email ou tente  fazer login!!'}); </script>";
+
+    header('location: ../index.php');
+}
+
+
+
+
+
+
+

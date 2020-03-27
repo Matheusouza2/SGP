@@ -35,7 +35,7 @@ class UsuarioDao {
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-            echo "ja cadastrado";
+            return false;
 
         }else{             
 
@@ -43,6 +43,8 @@ class UsuarioDao {
 
         $stmt = $con->prepare($sql);
         $stmt->execute();
+
+            return true;
         }
 
         } catch (PDOException $e) {
