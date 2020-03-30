@@ -5,10 +5,13 @@
     session_start();
 
     $usuario = new UsuarioDao();
-    
+    // sessao tem q ta ativa 
     $consulta = $usuario->buscar($_SESSION['email']);
     
     echo $consulta['nome'];
  
     
 ?>
+ 
+    
+
