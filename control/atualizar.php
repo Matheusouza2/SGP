@@ -1,9 +1,5 @@
 <?php
+    session_start();
 
-class Atualizar{
-    
-    function __construct() {
-        
-    }
-}
-?>
+    echo $_SESSION['email'];
+ ?>
