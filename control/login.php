@@ -10,7 +10,6 @@ $usuDao = new UsuarioDao();
 $usuLogado = $usuDao->login($email, $senha);
 
 
-
 if (! empty($usuLogado)) {
 	
    // $usuDao->buscar($emal); ver depois nao apagar
