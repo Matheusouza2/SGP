@@ -60,11 +60,7 @@ include_once '../control/logout.php';
               <img src="dist/img/avatar5.png" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">
-                <?php
-                
-                echo $_SESSION['email']; 
-
-                 ?>
+                <?=$_SESSION['email'];?>
                   
                 </span>
             </a>
@@ -319,10 +315,6 @@ include_once '../control/logout.php';
                 <div class="form-group">
                   <label for="exampleInputPassword1">Senha</label>
                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Crie uma senha" name="password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">Foto</label>
-                  <input type="file" id="exampleInputFile" name="photo">
                 </div>
               </div>
               <!-- /.box-body -->          
