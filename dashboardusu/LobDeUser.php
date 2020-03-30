@@ -2,6 +2,8 @@
 session_start();
 if (!isset($_SESSION['nome'])) 
 {
+
+  //verificar isso
 include_once '../control/logout.php';
 }
 

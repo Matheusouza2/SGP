@@ -13,6 +13,7 @@ $usuLogado = $usuDao->login($email, $senha);
 
 if (! empty($usuLogado)) {
 	
+   // $usuDao->buscar($emal); ver depois nao apagar
    $_SESSION['nome'] = $usuLogado['nome'];
    $_SESSION['email'] = $usuLogado['email'];
    

@@ -21,7 +21,7 @@ class UsuarioDao {
         }else{
            return null; 
         }
-        
+        mysql_close($con);
     }
 
     function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha) {
@@ -29,10 +29,10 @@ class UsuarioDao {
     
     // verifica se esta cadastrado
         try {
-           $con = Conexao::getInstance();
-        $sql= "SELECT email FROM usuario WHERE email='$email'";
-        $stmt = $con->prepare($sql);
-        $stmt->execute();
+            $con = Conexao::getInstance();
+            $sql= "SELECT email FROM usuario WHERE email='$email'";
+            $stmt = $con->prepare($sql);
+            $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
             return false;
@@ -46,9 +46,10 @@ class UsuarioDao {
 
             return true;
         }
+        mysql_close($con);
 
         } catch (PDOException $e) {
-          echo "Ocorreu um erro! ---  <br>".$e;  
+          echo "Ocorreu um erro! ---  ".$e;  
         }
         
     }
@@ -68,11 +69,13 @@ class UsuarioDao {
 
 
 
-    public function mostrar(){
+    public function buscar($email){
 
     $con = Conexao::getInstance();
+// colocar retono e parametros para usar funçao em outras paginasus
 
-        $sql = 'SELECT * FROM usuario';
+    // testar funçao no login php e passa dados pela sessao!
+        $sql = 'SELECT * FROM usuario WHERE email=$email';
 
         $stmt = $con->prepare($sql);
 
