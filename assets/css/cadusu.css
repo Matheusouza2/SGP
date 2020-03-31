@@ -107,7 +107,11 @@ form .input-block input:focus:invalid{
 }
 
 span{
-  color: crimson;
+  color: black;
+}
+
+span:hover{
+  color: white;
 }
 
 select .input-block input {
