@@ -92,7 +92,7 @@ include_once '../control/logout.php';
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                    <a href="../dashboardusu/perfilUser.php" class="btn btn-default btn-flat">Perfil</a>
+                    <a href="../control/listar.php" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
                   <a href="../control/logout.php" class="btn btn-default btn-flat">Sair</a>
