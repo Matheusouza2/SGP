@@ -5,10 +5,10 @@
     session_start();
 
     $usuario = new UsuarioDao();
-    
+  
     $consulta = $usuario->buscar($_SESSION['email']);
     
-    echo $consulta['nome'];
+    echo $consulta['email'];
  
     
 ?>

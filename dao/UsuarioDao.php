@@ -63,19 +63,19 @@ class UsuarioDao {
     }
 
     public function buscar($email) {
-
+		
         $con = Conexao::getInstance();
         // colocar retono e parametros para usar funçao em outras paginasus
         // testar funçao no login php e passa dados pela sessao!
 
-        $sql = 'select * from usuario where email = "' . $email . '"';
+        $sql = "select * from usuario where email = '$email'";
 
         $stmt = $con->prepare($sql);
 
         $stmt->execute();
 
         if ($stmt->rowCount() == 1){
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $stmt->fetch(PDO::FETCH_ASSOC);
         }
         else {
             return null;
