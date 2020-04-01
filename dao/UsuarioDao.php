@@ -50,7 +50,7 @@ class UsuarioDao {
         }
     }
 
-    public function atualiaza($u) {
+    public function atualiazar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha) {
         
     }
 
