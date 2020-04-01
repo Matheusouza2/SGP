@@ -147,32 +147,8 @@
 
       <div class="form-group">
 
-        <div class="form-row">
-          <div class="col-md-4 mb-4">
-            <label for="validationCustom07">Id Instituicao(CNPJ)</label>
-            <input type="text" class="form-control" id="idprofessor" name="idInstituicao" placeholder="CNPJ" required>
-            <div class="valid-feedback">
-              Tudo certo!
-            </div>
-
-            <div class="invalid-feedback">
-              Por favor, informe um Telefone válido.
-            </div>
-          </div>
-          <div class="col-md-8 mb-6">
-            <label for="validationCustom08">Matricula</label>
-            <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matricula" required>
-            <div class="valid-feedback">
-              Tudo certo!
-            </div>
-
-            <div class="invalid-feedback">
-              Por favor, informe um matricula válido.
-            </div>
-          </div>
-</div>
       
-
+        <label>Cursos Superiores:</label>
             <div class="row">
               <div class="col-md-12 mb-6">
                 <select multiple id="select2" required>
