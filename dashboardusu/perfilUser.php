@@ -5,7 +5,7 @@ if (!isset($_SESSION['email']))
 header("location: ../view/telaLogin.php");
 exit();
   }
-    
+  
     include_once '../dao/UsuarioDao.php';
 
 
@@ -13,10 +13,9 @@ exit();
     // sessao tem q ta ativa 
     $consulta = $usuario->buscar($_SESSION['email']);
     
-
+    
     
 
- 
     
 ?>
 

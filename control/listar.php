@@ -5,11 +5,6 @@ include_once '../dao/Usuario.php';
 
 session_start();
 
-class Listar {
-
-    function getUser() {
-
-
         $usuario = new UsuarioDao();
 // sessao tem q ta ativa 
         $consulta = $usuario->buscar($_SESSION['email']);
@@ -32,11 +27,6 @@ class Listar {
         $user->setCursoLeciona($consulta['cursoLeciona']);
         $user->setSenha($consulta['senha']);
         $user->setCep($consulta['cep']);
-
-        return $this->user;
-    }
-
-}
 
 header('Location: ../dashboardusu/perfilUser.php');
 
