@@ -18,126 +18,126 @@ private $cursoLeciona;
 
 private $senha;
     
-    function __construct() {
+     function __construct() {
         
     }
-    function getNome() {
+    public function getNome() {
         return $this->nome;
     }
 
-    function getEndereco() {
+    public function getEndereco() {
         return $this->endereco;
     }
 
-    function getBairro() {
+    public function getBairro() {
         return $this->bairro;
     }
 
-    function getNumero() {
+    public function getNumero() {
         return $this->numero;
     }
 
-    function getCidade() {
+    public function getCidade() {
         return $this->cidade;
     }
 
-    function getEstado() {
+    public function getEstado() {
         return $this->estado;
     }
 
-    function getCep() {
+    public function getCep() {
         return $this->cep;
     }
 
-    function getTelefone() {
+    public function getTelefone() {
         return $this->telefone;
     }
 
-    function getEmail() {
+    public function getEmail() {
         return $this->email;
     }
 
-    function getCpf() {
+    public function getCpf() {
         return $this->cpf;
     }
 
-    function getRg() {
+    public function getRg() {
         return $this->rg;
     }
 
-    function getIdInstituicao() {
+    public function getIdInstituicao() {
         return $this->idInstituicao;
     }
 
-    function getMatricula() {
+    public function getMatricula() {
         return $this->matricula;
     }
 
-    function getCursoLeciona() {
+    public function getCursoLeciona() {
         return $this->cursoLeciona;
     }
 
-    function getSenha() {
+    public function getSenha() {
         return $this->senha;
     }
 
-    function setNome($nome): void {
+    public function setNome($nome): void {
         $this->nome = $nome;
     }
 
-    function setEndereco($endereco): void {
+    public function setEndereco($endereco): void {
         $this->endereco = $endereco;
     }
 
-    function setBairro($bairro): void {
+    public function setBairro($bairro): void {
         $this->bairro = $bairro;
     }
 
-    function setNumero($numero): void {
+    public function setNumero($numero): void {
         $this->numero = $numero;
     }
 
-    function setCidade($cidade): void {
+    public function setCidade($cidade): void {
         $this->cidade = $cidade;
     }
 
-    function setEstado($estado): void {
+    public function setEstado($estado): void {
         $this->estado = $estado;
     }
 
-    function setCep($cep): void {
+    public function setCep($cep): void {
         $this->cep = $cep;
     }
 
-    function setTelefone($telefone): void {
+    public function setTelefone($telefone): void {
         $this->telefone = $telefone;
     }
 
-    function setEmail($email): void {
+    public function setEmail($email): void {
         $this->email = $email;
     }
 
-    function setCpf($cpf): void {
+    public function setCpf($cpf): void {
         $this->cpf = $cpf;
     }
 
-    function setRg($rg): void {
+    public function setRg($rg): void {
         $this->rg = $rg;
     }
 
-    function setIdInstituicao($idInstituicao): void {
+    public function setIdInstituicao($idInstituicao): void {
         $this->idInstituicao = $idInstituicao;
     }
 
-    function setMatricula($matricula): void {
+    public function setMatricula($matricula): void {
         $this->matricula = $matricula;
     }
 
-    function setCursoLeciona($cursoLeciona): void {
+    public function setCursoLeciona($cursoLeciona): void {
         $this->cursoLeciona = $cursoLeciona;
     }
 
-    function setSenha($senha): void {
+    public function setSenha($senha): void {
         $this->senha = $senha;
     }
 
