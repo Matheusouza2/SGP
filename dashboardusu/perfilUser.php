@@ -1,12 +1,25 @@
 <?php
 session_start();
-if (!isset($_SESSION['nome'])) 
+if (!isset($_SESSION['email'])) 
 {
 header("location: ../view/telaLogin.php");
 exit();
   }
+  
+    include_once '../dao/UsuarioDao.php';
 
+
+    $usuario = new UsuarioDao();
+    // sessao tem q ta ativa 
+    $consulta = $usuario->buscar($_SESSION['email']);
+    
+    
+    
+
+    
 ?>
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -114,7 +127,7 @@ exit();
                                 <label for="nome">
                                     <h4>Nome</h4>
                                 </label>
-                                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
+                                <input type="text" class="form-control" name="nome" id="nome" value="<?php echo $consulta['nome'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -123,7 +136,7 @@ exit();
                                 <label for="telefone">
                                     <h4>Telefone</h4>
                                 </label>
-                                <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone">
+                                <input type="text" class="form-control" name="telefone" id="telefone" value="<?php echo $consulta['telefone'] ?>">
                             </div>
                         </div>
 
@@ -133,7 +146,7 @@ exit();
                                 <label for="cpf">
                                     <h4>CPF</h4>
                                 </label>
-                                <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF">
+                                <input type="text" class="form-control" name="cpf" id="cpf" value="<?php echo $consulta['cpf'] ?>" disabled="disabled">
                             </div>
                         </div>
 
@@ -142,7 +155,7 @@ exit();
                                 <label for="rg">
                                     <h4>RG</h4>
                                 </label>
-                                <input type="text" class="form-control" name="rg" id="rg" placeholder="RG">
+                                <input type="text" class="form-control" name="rg" id="rg" value="<?php echo $consulta['rg'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -151,7 +164,7 @@ exit();
                                 <label for="email">
                                     <h4>Email</h4>
                                 </label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                <input type="email" class="form-control" name="email" id="email" value="<?php echo $consulta['email'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -162,7 +175,7 @@ exit();
                                 <label for="senha">
                                     <h4>Senha</h4>
                                 </label>
-                                <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
+                                <input type="password" class="form-control" name="senha" id="senha" value="<?php echo $consulta['senha'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -192,7 +205,7 @@ exit();
                                 <label for="rua">
                                     <h4>Rua</h4>
                                 </label>
-                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua">
+                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua" value="<?php echo $consulta['endereco'] ?>" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -201,7 +214,7 @@ exit();
                                 <label for="bairro">
                                     <h4>Bairro</h4>
                                 </label>
-                                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
+                                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro" value="<?php echo $consulta['bairro'] ?>"  >
                             </div>
                         </div>
 
@@ -211,7 +224,7 @@ exit();
                                 <label for="numero">
                                     <h4>Número</h4>
                                 </label>
-                                <input type="number" class="form-control" name="numero" id="numero" placeholder="numero">
+                                <input type="number" class="form-control" name="numero" id="numero" placeholder="numero" value="<?php echo $consulta['numero'] ?>" >
                             </div>
                         </div>
 
@@ -220,7 +233,7 @@ exit();
                                 <label for="cidad">
                                     <h4>Cidade</h4>
                                 </label>
-                                <input type="text" class="form-control" name="cidade" id="cidad" placeholder="Cidade">
+                                <input type="text" class="form-control" name="cidade" id="cidad" placeholder="Cidade" value="<?php echo $consulta['cidade'] ?>" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -229,7 +242,7 @@ exit();
                                 <label for="estado">
                                     <h4>Estado</h4>
                                 </label>
-                                <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado">
+                                <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado" value="<?php echo $consulta['estado'] ?>" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -238,7 +251,7 @@ exit();
                                 <label for="cep">
                                     <h4>CEP</h4>
                                 </label>
-                                <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP">
+                                <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP" value="<?php echo $consulta['cep'] ?>" >  
                             </div>
                         </div>
 

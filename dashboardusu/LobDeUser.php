@@ -1,10 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION['nome'])) 
-{
+if (!isset($_SESSION['nome'])) {
 
   //verificar isso
-include_once '../control/logout.php';
+  include_once '../control/logout.php';
 }
 
 ?>
@@ -12,6 +11,7 @@ include_once '../control/logout.php';
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,270 +24,294 @@ include_once '../control/logout.php';
   <link rel="stylesheet" href="dist/css/skins/skin-green-light.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link id="favicon" rel="shortcut icon" type="image/png" href="../assets/img/Programar Software - 2019.png">
+  <link rel="stylesheet" href="../seletorCursos\css\bootstrap4\tail.select-default.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 
 
 
 </head>
 
 <body class="hold-transition skin-green-light sidebar-mini">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <!-- Main Header -->
-  <header class="main-header">
+    <!-- Main Header -->
+    <header class="main-header">
 
-    <!-- Logo -->
-    <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><img src="dist/img/logosvgbranco.svg" sizes="50x50"></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><img style="margin-top: 7%;" src="dist/img/logosvgbranco.svg" width="130"></span>
-    </a>
-
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+      <!-- Logo -->
+      <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><img src="dist/img/logosvgbranco.svg" sizes="50x50"></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><img style="margin-top: 7%;" src="dist/img/logosvgbranco.svg" width="130"></span>
       </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="dist/img/avatar5.png" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">
-                <?=$_SESSION['email'];?>
-                  
+
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account Menu -->
+            <li class="dropdown user user-menu">
+              <!-- Menu Toggle Button -->
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!-- The user image in the navbar-->
+                <img src="dist/img/avatar5.png" class="user-image" alt="User Image">
+                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                <span class="hidden-xs">
+                  <?= $_SESSION['email']; ?>
+
                 </span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
+              </a>
+              <ul class="dropdown-menu">
+                <!-- The user image in the menu -->
+                <li class="user-header">
+                  <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
 
-                <p>
-                  <?=$_SESSION['nome']?> - Web Developer
-                  <small>Membro desde Abr. 2018</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
+                  <p>
+                    <?= $_SESSION['nome'] ?> - Web Developer
+                    <small>Membro desde Abr. 2018</small>
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                <li class="user-body">
+                  <div class="row">
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Sales</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Friends</a>
+                    </div>
                   </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
+                  <!-- /.row -->
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
                     <a href="../control/listar.php" class="btn btn-default btn-flat">Perfil</a>
-                </div>
-                <div class="pull-right">
-                  <a href="../control/logout.php" class="btn btn-default btn-flat">Sair</a>
-                </div>
-              </li>
-            </ul>
-          </li>
+                  </div>
+                  <div class="pull-right">
+                    <a href="../control/logout.php" class="btn btn-default btn-flat">Sair</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <p><?php echo $_SESSION['nome'];  ?></p>
+            <!-- Status -->
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">MENU</li>
+          <!-- Optionally, you can add icons to the links -->
+          <li class="active"><a href="#"><i class="fa fa-users"></i> <span>Permutas</span></a></li>
         </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
 
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Permutas
+          <small>Gerenciamento de permutas no sistema</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+          <li class="active">Permutas</li>
+        </ol>
+      </section>
 
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p><?php echo $_SESSION['nome'];  ?></p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
+      <!-- Main content -->
+      <section class="content container-fluid">
 
-      <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MENU</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-users"></i> <span>Permutas</span></a></li>
-      </ul>
-      <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+        <div class="row">
+          <div class="col-md-8">
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Permutas
-        <small>Gerenciamento de permutas no sistema</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">Permutas</li>
-      </ol>
-    </section>
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">Lista de Permutas</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">Foto</th>
+                      <th>Nome</th>
+                      <th>Whastapp</th>
+                      <th>Disciplinas</th>
+                      <th>Criado em</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
-    <!-- Main content -->
-    <section class="content container-fluid">
+                    <tr>
+                      <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
+                      <td>Fulano</td>
+                      <td>fulano@hcode.com.br</td>
+                      <td>Sim</td>
+                      <td>02/04/2018</td>
+                      <td>
+                        <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
+                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                      </td>
+                    </tr>
 
-      <div class="row">
-        <div class="col-md-8">
+                    <tr>
+                      <td>
+                        <img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm">
+                      </td>
+                      <td>Fulano</td>
+                      <td>fulano@hcode.com.br</td>
+                      <td>Sim</td>
+                      <td>02/04/2018</td>
+                      <td>
+                        <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
+                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                      </td>
+                    </tr>
 
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Lista de Permutas</h3>
+                    <tr>
+                      <td>
+                        <img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm">
+                      </td>
+                      <td>Fulano</td>
+                      <td>fulano@hcode.com.br</td>
+                      <td>Sim</td>
+                      <td>02/04/2018</td>
+                      <td>
+                        <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
+                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
             </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th style="width: 10px">Foto</th>
-                    <th>Nome</th>
-                    <th>Whastapp</th>
-                    <th>Disciplinas</th>
-                    <th>Criado em</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-                <tbody>
 
-                  <tr>
-                    <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
-                    <td>Fulano</td>
-                    <td>fulano@hcode.com.br</td>
-                    <td>Sim</td>
-                    <td>02/04/2018</td>
-                    <td>
-                      <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
-                      <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm">
-                    </td>
-                    <td>Fulano</td>
-                    <td>fulano@hcode.com.br</td>
-                    <td>Sim</td>
-                    <td>02/04/2018</td>
-                    <td>
-                      <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
-                      <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm">
-                    </td>
-                    <td>Fulano</td>
-                    <td>fulano@hcode.com.br</td>
-                    <td>Sim</td>
-                    <td>02/04/2018</td>
-                    <td>
-                      <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
-                      <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
-                    </td>
-                  </tr>
-                  
-                </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
           </div>
+          <div class="col-md-4">
 
-        </div>
-        <div class="col-md-4">
+            <div style="margin-left: auto;" class="row">
 
-          <div style="margin-left: auto;" class="row">
-          
-            <!-- ./col -->
-            <div class="col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3>1</h3>
-          
-                  <p>Permutas Criadas</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
+              <!-- ./col -->
+              <div class="col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                  <div class="inner">
+                    <h3>1</h3>
+
+                    <p>Permutas Criadas</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3>1</h3>
-          
-                  <p>Permutas Pegas</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
+              <!-- ./col -->
+              <div class="col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                  <div class="inner">
+                    <h3>1</h3>
+
+                    <p>Permutas Pegas</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
                 </div>
               </div>
+              <!-- ./col -->
             </div>
-            <!-- ./col -->
-          </div>
 
-          <div class="box box-success">
-            <div style="text-align: center;" class="box-header with-border">
-              <h3 class="box-title">Nova Permuta</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" id="form-user-create" action="../control/permuta/criaPermuta.php" method="post">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputName">Título</label>
-                  <input type="text" class="form-control" id="exampleInputName" placeholder="Titulo" name="titulo">
-                </div>
+            <div class="box box-success">
+              <div style="text-align: center;" class="box-header with-border">
+                <h3 class="box-title">Nova Permuta</h3>
+              </div>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <form role="form" id="form-user-create" action="../control/permuta/criaPermuta.php" method="post">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="exampleInputName">Título</label>
+                    <input type="text" class="form-control" id="exampleInputName" placeholder="Titulo" name="titulo">
+                  </div>
 
-               
 
-                <div class="form-group">
-                  <label for="exampleInputBirth">Data da Permuta:</label>
-                  <input type="date" class="form-control" id="exampleInputBirth" name="birth">
-                </div>
+                  <div class="form-group">
+                    <label for="inputCursos">Disciplinas:</label>
+                    <select class="form-control" id="inputCurso" name="disciplinas">
 
-                <div class="form-group">
-                  <label for="inputCursos">Curso:</label>
-                  <select class="form-control" id="inputCurso" name="cursos">
-                    <option value="" selected="selected">Selecione um Curso</option>
-                    <option value="Sistemas p/ Internet">Sistemas p/ Internet</option>
-                    <option value="Física">Física</option>
-                    <option value="Alimentos">Alimentos</option>
-                    <option value="Edificações">Edificações</option>
-                    <option value="Agropecuária">Agropecuária</option>
-                    <option value="Informática">Informática</option>         
-                  </select>
-                </div>
 
-                <div class="form-group">
+
+                      </optgroup>
+                    </select>
+                  </div>
+
+            
+                    <div class="row">
+                      <div class="col-sm-12 mb-6">
+                        <div class="form-group">
+                          <label>Data da Permuta</label>
+                          <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" placeholder="" />
+                            <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                              <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <script type="text/javascript">
+                        $(function() {
+                          $('#datetimepicker3').datetimepicker({
+                            format: 'LT'
+                          });
+                        });
+
+                        
+                      </script>
+                    </div>
+
+
+                    <div class="form-group">
+                    <label for="qtdaulas">Quantidades de Aulas</label>
+                    <input type="number" class="form-control" id="qtdaulas" name="qtdaulas">
+                  </div>
+
+              
+                  <!-- <div class="form-group">
                   <label for="inputTurnos">Turnos:</label>
                    <div class="form-check form-check-inline">
                      <label class="form-check-label">
@@ -306,48 +330,55 @@ include_once '../control/logout.php';
                       <input class="form-check-input" type="checkbox" name="noite" id="noite" value="checkedValue"> Noite
                     </label>
                   </div>
-                  </div>
+                  </div> -->
 
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Telefone / Whastapp:</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o número" name="numero">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Telefone / Whastapp:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o número" name="numero">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Senha</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Crie uma senha" name="password">
+                <!-- /.box-body -->
+                <div style="text-align: center;" class="box-footer">
+                  <button type="submit" class="btn btn-success">Criar Permuta</button>
                 </div>
-              </div>
-              <!-- /.box-body -->          
-              <div style="text-align: center;" class="box-footer">
-                <button type="submit" class="btn btn-success">Criar Permuta</button>
-              </div>
-            </form>
+              </form>
+
+            </div>
 
           </div>
-
         </div>
-      </div>
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      <a target="_blank" href="https://www.ifsertao-pe.edu.br/index.php/campus/salgueiro">IF-Sertão Pernambucano / Campus Salgueiro</a>
+      </section>
+      <!-- /.content -->
     </div>
-    <!-- Default to the left -->
-    Projeto desenvolvido no curso de Sistemas para Internet.
-  </footer>
+    <!-- /.content-wrapper -->
 
-</div>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+        <a target="_blank" href="https://www.ifsertao-pe.edu.br/index.php/campus/salgueiro">IF-Sertão Pernambucano / Campus Salgueiro</a>
+      </div>
+      <!-- Default to the left -->
+      Projeto desenvolvido no curso de Sistemas para Internet.
+    </footer>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </div>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="../seletorCursos\js\tail.select-full.js"></script>
+  <script>
+    tail.select("#select2", {
+
+
+
+    });
+  </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 </body>
+
 </html>
