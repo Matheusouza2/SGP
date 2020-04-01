@@ -10,5 +10,6 @@
     
     echo $consulta['nome'];
  
+    header('Location: ../dashboardusu/perfilUser.php');
     
 ?>
