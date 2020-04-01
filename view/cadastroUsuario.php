@@ -17,7 +17,6 @@
   <script src="https://use.fontawesome.com/0147a96ddf.js"></script>
   <link id="favicon" rel="shortcut icon" type="image/png" href="../assets/img/Programar Software - 2019.png">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
 </head>
 
 <body>
@@ -145,7 +144,7 @@
 
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
 
       
         <label>Cursos Superiores:</label>
@@ -171,7 +170,7 @@
 
        
 
-      </div>
+      </div> -->
 
 
 
