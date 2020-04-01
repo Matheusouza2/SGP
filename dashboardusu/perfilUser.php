@@ -206,7 +206,7 @@ exit();
                                 <label for="rua">
                                     <h4>Rua</h4>
                                 </label>
-                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua" value='<?php echo $consulta['']?>' >
+                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua" value="<?php echo $consulta['endereco'] ?>" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -215,7 +215,7 @@ exit();
                                 <label for="bairro">
                                     <h4>Bairro</h4>
                                 </label>
-                                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
+                                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro" value="<?php echo $consulta['bairro'] ?>"  >
                             </div>
                         </div>
 
@@ -225,7 +225,7 @@ exit();
                                 <label for="numero">
                                     <h4>Número</h4>
                                 </label>
-                                <input type="number" class="form-control" name="numero" id="numero" placeholder="numero">
+                                <input type="number" class="form-control" name="numero" id="numero" placeholder="numero" value="<?php echo $consulta['numero'] ?>" >
                             </div>
                         </div>
 
@@ -234,7 +234,7 @@ exit();
                                 <label for="cidad">
                                     <h4>Cidade</h4>
                                 </label>
-                                <input type="text" class="form-control" name="cidade" id="cidad" placeholder="Cidade">
+                                <input type="text" class="form-control" name="cidade" id="cidad" placeholder="Cidade" value="<?php echo $consulta['cidade'] ?>" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -243,7 +243,7 @@ exit();
                                 <label for="estado">
                                     <h4>Estado</h4>
                                 </label>
-                                <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado">
+                                <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado" value="<?php echo $consulta['estado'] ?>" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -252,7 +252,7 @@ exit();
                                 <label for="cep">
                                     <h4>CEP</h4>
                                 </label>
-                                <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP">
+                                <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP" value="<?php echo $consulta['cep'] ?>" >  
                             </div>
                         </div>
 
