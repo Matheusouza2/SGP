@@ -5,14 +5,15 @@ if (!isset($_SESSION['email']))
 header("location: ../view/telaLogin.php");
 exit();
   }
-
-  
+    
     include_once '../dao/UsuarioDao.php';
 
 
     $usuario = new UsuarioDao();
     // sessao tem q ta ativa 
     $consulta = $usuario->buscar($_SESSION['email']);
+    
+
     
 
  
@@ -205,7 +206,7 @@ exit();
                                 <label for="rua">
                                     <h4>Rua</h4>
                                 </label>
-                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua">
+                                <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua" value='<?php echo $consulta['']?>' >
                             </div>
                         </div>
                         <div class="form-group">
