@@ -26,29 +26,28 @@ if (!isset($_SESSION['nome'])) {
   <link id="favicon" rel="shortcut icon" type="image/png" href="../assets/img/Programar Software - 2019.png">
   <link rel="stylesheet" href="../seletorCursos\css\bootstrap4\tail.select-default.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+  <link rel="stylesheet" href="../assets\css\bootstrap.css" />
 
-<script>
+  <script>
+    function mudarTelapermutas() {
 
-function mudarTelapermutas(){
-
-var tela1 = document.querySelector('#permutas').style.display = "flex";
-var tela2 = document.querySelector('#professores').style.display = "none";
-
-
-
-}
-
-
-function mudarTelaprofessores(){
-
-var tela1 = document.querySelector('#permutas').style.display = "none";
-var tela2 = document.querySelector('#professores').style.display = "flex";
+      var tela1 = document.querySelector('#permutas').style.display = "flex";
+      var tela2 = document.querySelector('#professores').style.display = "none";
 
 
 
-}
+    }
 
-</script>
+
+    function mudarTelaprofessores() {
+
+      var tela1 = document.querySelector('#permutas').style.display = "none";
+      var tela2 = document.querySelector('#professores').style.display = "flex";
+
+
+
+    }
+  </script>
 
 </head>
 
@@ -149,8 +148,8 @@ var tela2 = document.querySelector('#professores').style.display = "flex";
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MENU</li>
           <!-- Optionally, you can add icons to the links -->
-          <li onclick="mudarTelapermutas()" class="active"><a href="#"><i  class="fa fa-users"></i> <span >Permutas</span></a></li>
-          <li onclick="mudarTelaprofessores()" class="active"><a href="#"><i  class="fa fa-paste"></i> <span >Professores</span></a></li>
+          <li onclick="mudarTelapermutas()" class="active"><a href="#"><i class="fa fa-users"></i> <span>Permutas</span></a></li>
+          <li onclick="mudarTelaprofessores()" class="active"><a href="#"><i class="fa fa-paste"></i> <span>Professores</span></a></li>
 
         </ul>
         <!-- /.sidebar-menu -->
@@ -482,18 +481,26 @@ var tela2 = document.querySelector('#professores').style.display = "flex";
 
 
                   <div class="form-group">
-                  <label for="validationCustom01">Disciplina</label>
-                                    <select class="custom-select" required>
-                                        <option value="">Escolher...</option>
-                                        <option value="1">Disciplina 1</option>
-                                        <option value="2">Disciplina 2</option>
-                                        <option value="3">Disciplina 3</option>
-                                    </select>
-                                    <div class="invalid-feedback">Selecione uma disciplina</div>
-                                    <div class="valid-feedback">
-                                        Tudo certo!
-                                    </div>
+                    <label for="validationCustom01">Disciplina</label>
+                    <select class="custom-select" required>
+                      <option value="">Escolher...</option>
+                      <option value="1">Disciplina 1</option>
+                      <option value="2">Disciplina 2</option>
+                      <option value="3">Disciplina 3</option>
+                    </select>
+                    <div class="invalid-feedback">Selecione uma disciplina</div>
+                    <div class="valid-feedback">
+                      Tudo certo!
+                    </div>
                   </div>
+
+                  <div class="form-group">
+                  <div class="custom-file">
+                    <input id="my-input" class="custom-file-input" type="file" name="img" content="Buscar">
+                    <label for="my-input" class="custom-file-label">Adiconar Imagem</label>
+                  </div>
+                  </div>
+
                 </div>
                 <!-- /.box-body -->
                 <div style="text-align: center;" class="box-footer">
