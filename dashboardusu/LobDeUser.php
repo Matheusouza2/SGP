@@ -148,8 +148,8 @@ if (!isset($_SESSION['nome'])) {
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MENU</li>
           <!-- Optionally, you can add icons to the links -->
-          <li onclick="mudarTelapermutas()" class="active"><a href="#"><i class="fa fa-users"></i> <span>Permutas</span></a></li>
-          <li onclick="mudarTelaprofessores()" class="active"><a href="#"><i class="fa fa-paste"></i> <span>Professores</span></a></li>
+          <li onclick="mudarTelapermutas()" class="active"><a href="#"><i class="fa fa-paste"></i> <span>Permutas</span></a></li>
+          <li onclick="mudarTelaprofessores()" class="active"><a href="#"><i class="fa fa-users"></i> <span>Professores</span></a></li>
 
         </ul>
         <!-- /.sidebar-menu -->
