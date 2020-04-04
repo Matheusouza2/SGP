@@ -27,11 +27,32 @@ if (!isset($_SESSION['nome'])) {
   <link rel="stylesheet" href="../seletorCursos\css\bootstrap4\tail.select-default.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 
+<script>
 
+function mudarTelapermutas(){
+
+var tela1 = document.querySelector('#permutas').style.display = "flex";
+var tela2 = document.querySelector('#professores').style.display = "none";
+
+
+
+}
+
+
+function mudarTelaprofessores(){
+
+var tela1 = document.querySelector('#permutas').style.display = "none";
+var tela2 = document.querySelector('#professores').style.display = "flex";
+
+
+
+}
+
+</script>
 
 </head>
 
-<body class="hold-transition skin-green-light sidebar-mini">
+<body style="overflow: hidden" class="hold-transition skin-green-light sidebar-mini">
   <div class="wrapper">
 
     <!-- Main Header -->
@@ -128,7 +149,9 @@ if (!isset($_SESSION['nome'])) {
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MENU</li>
           <!-- Optionally, you can add icons to the links -->
-          <li class="active"><a href="#"><i class="fa fa-users"></i> <span>Permutas</span></a></li>
+          <li onclick="mudarTelapermutas()" class="active"><a href="#"><i  class="fa fa-users"></i> <span >Permutas</span></a></li>
+          <li onclick="mudarTelaprofessores()" class="active"><a href="#"><i  class="fa fa-paste"></i> <span >Professores</span></a></li>
+
         </ul>
         <!-- /.sidebar-menu -->
       </section>
@@ -146,13 +169,16 @@ if (!isset($_SESSION['nome'])) {
         <ol class="breadcrumb">
           <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
           <li class="active">Permutas</li>
+          <li class="desactive">Professores</li>
         </ol>
+
+
       </section>
 
       <!-- Main content -->
       <section class="content container-fluid">
 
-        <div class="row">
+        <div style="display: flex" class="row" id="permutas">
           <div class="col-md-8">
 
             <div class="box">
@@ -162,7 +188,7 @@ if (!isset($_SESSION['nome'])) {
               <!-- /.box-header -->
               <div class="box-body no-padding">
                 <table class="table table-striped">
-                  <thead>
+                  <thead style="text-align: center">
                     <tr>
                       <th style="width: 10px">Foto</th>
                       <th>Nome</th>
@@ -186,33 +212,6 @@ if (!isset($_SESSION['nome'])) {
                       </td>
                     </tr>
 
-                    <tr>
-                      <td>
-                        <img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm">
-                      </td>
-                      <td>Fulano</td>
-                      <td>fulano@hcode.com.br</td>
-                      <td>Sim</td>
-                      <td>02/04/2018</td>
-                      <td>
-                        <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
-                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm">
-                      </td>
-                      <td>Fulano</td>
-                      <td>fulano@hcode.com.br</td>
-                      <td>Sim</td>
-                      <td>02/04/2018</td>
-                      <td>
-                        <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
-                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
-                      </td>
-                    </tr>
 
                   </tbody>
                 </table>
@@ -223,10 +222,10 @@ if (!isset($_SESSION['nome'])) {
           </div>
           <div class="col-md-4">
 
-            <div style="margin-left: auto;" class="row">
+            <div class="row">
 
               <!-- ./col -->
-              <div class="col-xs-6">
+              <div class="col-md-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
                   <div class="inner">
@@ -240,7 +239,7 @@ if (!isset($_SESSION['nome'])) {
                 </div>
               </div>
               <!-- ./col -->
-              <div class="col-xs-6">
+              <div class="col-md-6">
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                   <div class="inner">
@@ -280,57 +279,34 @@ if (!isset($_SESSION['nome'])) {
                     </select>
                   </div>
 
-            
-                    <div class="row">
-                      <div class="col-sm-12 mb-6">
-                        <div class="form-group">
-                          <label>Data da Permuta</label>
-                          <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" placeholder="" />
-                            <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
-                              <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
-                            </div>
+
+                  <div class="row">
+                    <div class="col-sm-12 mb-6">
+                      <div class="form-group">
+                        <label>Data da Permuta</label>
+                        <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+                          <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" placeholder="" />
+                          <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
                           </div>
                         </div>
                       </div>
-                      <script type="text/javascript">
-                        $(function() {
-                          $('#datetimepicker3').datetimepicker({
-                            format: 'LT'
-                          });
-                        });
-
-                        
-                      </script>
                     </div>
+                    <script type="text/javascript">
+                      $(function() {
+                        $('#datetimepicker3').datetimepicker({
+                          format: 'LT'
+                        });
+                      });
+                    </script>
+                  </div>
 
 
-                    <div class="form-group">
+                  <div class="form-group">
                     <label for="qtdaulas">Quantidades de Aulas</label>
                     <input type="number" class="form-control" id="qtdaulas" name="qtdaulas">
                   </div>
 
-              
-                  <!-- <div class="form-group">
-                  <label for="inputTurnos">Turnos:</label>
-                   <div class="form-check form-check-inline">
-                     <label class="form-check-label">
-                       <input class="form-check-input" type="checkbox" name="manha" id="manha" value="checkedValue"> Manhã
-                     </label>
-                   </div>
-  
-                   <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" name="tarde" id="tarde" value="checkedValue"> Tarde
-                    </label>
-                  </div>
-  
-                  <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" name="noite" id="noite" value="checkedValue"> Noite
-                    </label>
-                  </div>
-                  </div> -->
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Telefone / Whastapp:</label>
@@ -348,20 +324,202 @@ if (!isset($_SESSION['nome'])) {
           </div>
         </div>
 
+        <div style="display: none" class="row" id="professores">
+          <div class="col-md-8">
+
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">Professores Cadastrados</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <table class="table table-striped">
+                  <thead style="text-align: center">
+                    <tr>
+                      <th style="width: 5px">Foto</th>
+                      <th>Nome</th>
+                      <th>Disciplinas</th>
+                      <th>Turnos</th>
+                      <th>Hoarios</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td style="text-align: center">
+                        <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
+                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <div class="row">
+
+              <!-- ./col -->
+              <div class="col-md-12">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                  <div class="inner">
+                    <h3>1</h3>
+
+                    <p>Professores Cadastrados</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                  </div>
+                </div>
+              </div>
+              <!-- ./col -->
+
+              <!-- ./col -->
+            </div>
+
+            <div class="box box-success">
+              <div style="text-align: center;" class="box-header with-border">
+                <h3 class="box-title">Cadastrar Professor(a)</h3>
+              </div>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <form role="form" id="form-user-create" action="../control/permuta/criaPermuta.php" method="post">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="validationCustom01">Nome</label>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
+                    <div class="valid-feedback">
+                      Tudo certo!
+                    </div>
+
+                    <div class="invalid-feedback">
+                      Inserir Nome!
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label for="validationCustom01">Curso</label>
+                    <select class="custom-select" required>
+                      <option value="">Escolher...</option>
+                      <option value="1">Sistemas para Internet</option>
+                    </select>
+                    <div class="invalid-feedback">Selecione um curso!</div>
+                    <div class="valid-feedback">
+                      Tudo certo!
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-sm-12 mb-6">
+                      <div class="form-group">
+                        <label for="validationCustom01">Turnos</label>
+                        <select class="custom-select" required>
+                          <option value="">Escolher...</option>
+                          <option value="1">Manhã</option>
+                          <option value="2">Tarde</option>
+                          <option value="3">Noite</option>
+                        </select>
+                        <div class="invalid-feedback">Selecione um Turno!</div>
+                        <div class="valid-feedback">
+                          Tudo certo!
+                        </div>
+                      </div>
+                    </div>
+                    <script type="text/javascript">
+                      $(function() {
+                        $('#datetimepicker3').datetimepicker({
+                          format: 'LT'
+                        });
+                      });
+                    </script>
+                  </div>
+
+
+                  <div class="form-group">
+                    <div class="form-row">
+
+                      <div class="col-md-6 mb-3">
+                        <label for="validationCustom01">de</label>
+                        <input style="text-align: center;" type="time" class="form-control" id="validationCustom01" required>
+
+                        <div class="valid-feedback">
+                          Tudo certo!
+                        </div>
+
+                        <div class="invalid-feedback">
+                          Inserir Hora!
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="validationCustom01">até</label>
+                        <input style="text-align: center;" type="time" class="form-control" id="validationCustom01" required>
+
+                        <div class="valid-feedback">
+                          Tudo certo!
+                        </div>
+
+                        <div class="invalid-feedback">
+                          Inserir Hora!
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                  <label for="validationCustom01">Disciplina</label>
+                                    <select class="custom-select" required>
+                                        <option value="">Escolher...</option>
+                                        <option value="1">Disciplina 1</option>
+                                        <option value="2">Disciplina 2</option>
+                                        <option value="3">Disciplina 3</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma disciplina</div>
+                                    <div class="valid-feedback">
+                                        Tudo certo!
+                                    </div>
+                  </div>
+                </div>
+                <!-- /.box-body -->
+                <div style="text-align: center;" class="box-footer">
+                  <button type="submit" class="btn btn-success">Cadastrar</button>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
       </section>
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer">
-      <!-- To the right -->
-      <div class="pull-right hidden-xs">
-        <a target="_blank" href="https://www.ifsertao-pe.edu.br/index.php/campus/salgueiro">IF-Sertão Pernambucano / Campus Salgueiro</a>
-      </div>
-      <!-- Default to the left -->
-      Projeto desenvolvido no curso de Sistemas para Internet.
-    </footer>
+  </div>
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      <a target="_blank" href="https://www.ifsertao-pe.edu.br/index.php/campus/salgueiro">IF-Sertão Pernambucano / Campus Salgueiro</a>
+    </div>
+    <!-- Default to the left -->
+    Projeto desenvolvido no curso de Sistemas para Internet.
+  </footer>
 
   </div>
 
@@ -376,9 +534,9 @@ if (!isset($_SESSION['nome'])) {
 
     });
   </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 </body>
 
 </html>

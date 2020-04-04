@@ -11,11 +11,11 @@
  */
 html,
 body {
-  height: 100%;
+  height: auto;
 }
 .layout-boxed html,
 .layout-boxed body {
-  height: 100%;
+  height: auto;
 }
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
