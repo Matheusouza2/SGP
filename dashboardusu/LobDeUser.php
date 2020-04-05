@@ -49,6 +49,24 @@ if (!isset($_SESSION['nome'])) {
     }
   </script>
 
+<script>
+      (function validar() {
+        'use strict';
+        window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
 </head>
 
 <body style="overflow: hidden" class="hold-transition skin-green-light sidebar-mini">
@@ -187,12 +205,12 @@ if (!isset($_SESSION['nome'])) {
               <!-- /.box-header -->
               <div class="box-body no-padding">
                 <table class="table table-striped">
-                  <thead style="text-align: center">
-                    <tr>
+                  <thead>
+                    <tr style="text-align:center">
                       <th style="width: 10px">Foto</th>
                       <th>Nome</th>
-                      <th>Whastapp</th>
-                      <th>Disciplinas</th>
+                      <th>Disciplina</th>
+                      <th>Horario</th>
                       <th>Criado em</th>
                       <th>Ações</th>
                     </tr>
@@ -337,9 +355,10 @@ if (!isset($_SESSION['nome'])) {
                     <tr>
                       <th style="width: 5px">Foto</th>
                       <th>Nome</th>
+                      <th>Curso</th>
                       <th>Disciplinas</th>
                       <th>Turnos</th>
-                      <th>Hoarios</th>
+                      <th>Horários</th>
                       <th>Ações</th>
                     </tr>
                   </thead>
@@ -348,12 +367,13 @@ if (!isset($_SESSION['nome'])) {
                     <tr>
                       <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
                       <td></td>
+                      <td>Sistemas para Internet</td>
                       <td></td>
                       <td></td>
                       <td></td>
                       <td style="text-align: center">
-                        <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
-                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                        <button type="button" class="btn btn-primary btn-sm btn-flat">Editar</button>
+                        <button type="button" class="btn btn-danger btn-sm btn-flat">Excluir</button>
                       </td>
                     </tr>
 
@@ -393,8 +413,8 @@ if (!isset($_SESSION['nome'])) {
               </div>
               <!-- /.box-header -->
               <!-- form start -->
-              <form role="form" id="form-user-create" action="../control/permuta/criaPermuta.php" method="post">
-                <div class="box-body">
+              <form role="form" id="form-user-create" action="../control/permuta/criaPermuta.php" method="post" class="needs-validation" novalidate>
+                <div class="box-body" >
                   <div class="form-group">
                     <label for="validationCustom01">Nome</label>
                     <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
@@ -504,7 +524,7 @@ if (!isset($_SESSION['nome'])) {
                 </div>
                 <!-- /.box-body -->
                 <div style="text-align: center;" class="box-footer">
-                  <button type="submit" class="btn btn-success">Cadastrar</button>
+                  <button type="submit" class="btn btn-success" onclick="validar()">Cadastrar</button>
                 </div>
               </form>
 
