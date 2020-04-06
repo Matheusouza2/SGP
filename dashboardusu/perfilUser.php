@@ -120,7 +120,7 @@ exit();
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
                    
-                    <form class="form" action="../control/atualizar.php" method="post" id="registrationForm">
+                    <form class="form" action="../control/atualizarDados.php" method="post" id="registrationForm">
                         <div class="form-group">
 
                             <div class="col-xs-6">
@@ -198,7 +198,7 @@ exit();
                     <h2></h2>
 
                   
-                    <form class="form" action="../control/atualizar.php" method="post" id="registrationForm">
+                    <form class="form" action="../control/atualizarEnd.php" method="post" id="registrationForm">
                         <div class="form-group">
 
                             <div class="col-xs-6">
