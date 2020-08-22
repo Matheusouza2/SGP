@@ -25,6 +25,15 @@
 
     <form action="../control/cadUser.php" method="POST" class="needs-validation" novalidate>
 
+    <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="telaLogin.php">
+    <img src='../assets/img/logocadastro.svg' width="20" height="30" class="d-inline-block align-top" alt="">
+    Voltar
+  </a>
+</nav>
+
+<hr>
+
       <div class="form-group">
         <label for="validationCustom01">Nome</label>
         <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
