@@ -10,8 +10,8 @@ if (isset($_SESSION['nome']))
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<link id="favicon" rel="shortcut icon" type="image/png"
-	href="imgs/Programar Software - 2019.png">
+
+<link id="favicon" rel="shortcut icon" type="image/png" href="../assets/img/Programar Software - 2019.png">
 
 <title>SGP - Sistema de Gerenciamento de Permutas</title>
 
