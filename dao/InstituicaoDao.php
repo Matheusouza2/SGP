@@ -14,7 +14,6 @@ class InstituicaoDao {
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
-                echo "<script>console.log('cadInstituicao: " . $stmt->rowCount() . "' );</script>";
                 return false;
             } else {
                 $sql = "INSERT INTO instituicao (cnpj, razao_social, nome_fantasia, cep, endereco, bairro, cidade, estado, contato, usuCad) values ('$cnpj','$nome','$fantasia','$cep','$logradouro','$bairro','$cidade','$estado','$contato','$usuCad')";

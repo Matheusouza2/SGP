@@ -16,6 +16,10 @@ $bairro = addslashes($_POST['bairro']);
 $cidade = addslashes($_POST['cidade']);
 $estado = addslashes($_POST['uf']);
 $contato = addslashes($_POST['contato']);
+$contato = str_replace("(", "", $contato);
+$contato = str_replace(")", "", $contato);
+$contato = str_replace("-", "", $contato);
+$contato = str_replace(" ", "", $contato);
 $usuCad = $_POST['usuCad'];
 
 echo "<script>console.log('cadInstituicao: " . $cnpj . "' );</script>";
@@ -29,13 +33,13 @@ if ($verifica){
 	
 	$_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Sua instituição já consta na nossa base de dados ;)', 'success')</script>";
 
-    header('location: /sgp/dashboardusu/src/html/instituicao.php');	
+    header('location: /sgp/control/listarInstituicoes.php');	
 
 }else  {
 
     $_SESSION['msg']['usuCadSuccess'] = "<script> Swal.fire({icon: 'error', title: 'ERRO...', text: 'CNPJ já cadastrado !'}); </script>";
 	
-	header('location: /sgp/dashboardusu/src/html/instituicao.php');	
+	header('location: /sgp/control/listarInstituicoes.php');	
    
 }
 

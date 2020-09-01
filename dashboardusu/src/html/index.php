@@ -1,7 +1,6 @@
 <?php session_start();
-if (!isset($_SESSION['nome'])) {
-
-  include_once 'sgp/control/logout.php';
+if (!isset($_SESSION['usuarioLogado'])) {
+    header('location: /sgp/index.php ');
 }
 ?>
 <!DOCTYPE html>
@@ -286,7 +285,7 @@ if (!isset($_SESSION['nome'])) {
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Menu:</span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="instituicao.php"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="/sgp/control/listarInstituicoes.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Instituição
                                 </span></a>

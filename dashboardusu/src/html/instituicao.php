@@ -1,9 +1,8 @@
 <?php session_start();
-if (!isset($_SESSION['nome'])) {
-
-  include_once 'sgp/control/logout.php';
-  include_once 'sgp/control/listarInstituicoes.php';
+if (!isset($_SESSION['usuarioLogado'])) {
+    header('location: /sgp/index.php ');
 }
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
@@ -243,7 +242,7 @@ if (!isset($_SESSION['nome'])) {
                                 <img src="../assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Olá,</span> <span
-                                        class="text-dark">Usuário</span> <i data-feather="chevron-down"
+                                        class="text-dark"><?=$_SESSION['usuarioLogado']['nome']?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -365,7 +364,7 @@ if (!isset($_SESSION['nome'])) {
                             </div>
 
                             <form action="/sgp/control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
-                                <input name="usuCad" type="hidden" value="<?=$_SESSION['cpf']?>">
+                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
                                 <div class="form-group">
                                     <label for="cnpj">CNPJ</label>
                                     <input class="form-control" type="text" id="cnpj" name="cnpj" required="true"
@@ -459,7 +458,6 @@ if (!isset($_SESSION['nome'])) {
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    
                                         foreach($_SESSION['inst'] as $res){
                                     ?>
 
@@ -533,11 +531,10 @@ if (!isset($_SESSION['nome'])) {
     <!-- Seta as mascaras dos campos -->
     <script>
         $(document).ready(function(){
-             $('#cnpj').mask('00.000.000/0000-00');
-             $('#cep').mask('00000-000');
-
             $.get("/sgp/control/listarInstituicoes.php");
-
+            $('#cnpj').mask('00.000.000/0000-00');
+            $('#cep').mask('00000-000');
+            $('#estado').mask('AA');
         });
     </script>
 

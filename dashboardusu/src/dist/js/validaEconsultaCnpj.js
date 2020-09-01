@@ -2,11 +2,14 @@ $(document).ready(function () {
     $('#cnpj').blur(function () {
         cnpj = $(this).val().replace(/\D/g, '');
 
-        if (cnpj == '')
-            alert('Cnpj Invalido');
-
-        if (cnpj.length != 14)
-            alert('Cnpj Invalido');
+        if (cnpj == ''){
+            Swal.fire({icon: 'error', title: 'ERRO...', text: 'CNPJ em branco, por favor preencha o campo CNPJ !'});
+            return;
+        }
+        if (cnpj.length != 14){
+            Swal.fire({icon: 'error', title: 'ERRO...', text: 'CNPJ invalido verifique se todos os numeros foram digitados !'});
+            return;
+        }
 
         // Elimina CNPJs invalidos conhecidos
         if (cnpj == "00000000000000" ||
@@ -18,8 +21,11 @@ $(document).ready(function () {
             cnpj == "66666666666666" ||
             cnpj == "77777777777777" ||
             cnpj == "88888888888888" ||
-            cnpj == "99999999999999")
-            alert('Cnpj Invalido');
+            cnpj == "99999999999999"){
+            Swal.fire({icon: 'error', title: 'ERRO...', text: 'CNPJ invalido!'});
+            return;
+        }
+           
 
         // Valida DVs
         tamanho = cnpj.length - 2
@@ -33,9 +39,11 @@ $(document).ready(function () {
                 pos = 9;
         }
         resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-        if (resultado != digitos.charAt(0))
-            alert('Cnpj Invalido');
-
+        if (resultado != digitos.charAt(0)){
+            Swal.fire({icon: 'error', title: 'ERRO...', text: 'CNPJ invalido!'});
+            return;
+        }
+           
         tamanho = tamanho + 1;
         numeros = cnpj.substring(0, tamanho);
         soma = 0;
@@ -46,8 +54,11 @@ $(document).ready(function () {
                 pos = 9;
         }
         resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-        if (resultado != digitos.charAt(1))
-            alert('Cnpj Invalido');
+        if (resultado != digitos.charAt(1)){
+            Swal.fire({icon: 'error', title: 'ERRO...', text: 'CNPJ invalido!'});
+            return;
+        }
+           
 
         $("#nome").val("Aguarde...");
         $("#cep").val("Aguarde...");

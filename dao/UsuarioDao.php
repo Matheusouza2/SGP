@@ -14,7 +14,7 @@ class UsuarioDao {
         $stmt = $con->prepare($sql);
 
         $stmt->execute();
-
+		
         if ($stmt->rowCount() == 1) {
             return $stmt->fetch(PDO::FETCH_ASSOC);
         } else {
