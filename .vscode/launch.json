@@ -1,0 +1,23 @@
+{
+    // Use o IntelliSense para aprender sobre possÃ­veis atributos.
+    // Passe o mouse para ver as descriÃ§Ãµes dos atributos existentes.
+    // Para obter mais informaÃ§Ãµes, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch index.php",
+            "type": "php",
+            "request": "launch",
+            "port": 9100,
+            "cwd": "${workspaceFolder}/",
+            "program": "${workspaceFolder}\\index.php"
+        }
+    ]
+}

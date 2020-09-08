@@ -11,27 +11,32 @@ body {
   overflow-y: scroll;
 }
 
-body {
-  background-image: url('../img/backusu.png');
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size:50%;
-  background-color: green;
-  font-family: Roboto, Arial, sans-serif;
-  overflow: auto;
-  image-orientation: fixed;
-}
-
-
-
 
 section {
-  display: flex;
+  display: inline;
   flex-direction: column;
   justify-content: center;
   align-items: left;
   overflow: auto;
 }
+
+
+
+
+body {
+  background-image: url('../img/backusu.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: green;
+  background-size:43%;
+  font-family: Roboto, Arial, sans-serif;
+  background-position-y: 30%;
+  background-position-x: 90%;
+  
+  
+}
+
+
 
 section .imgcentro {
   

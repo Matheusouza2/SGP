@@ -1,6 +1,6 @@
 <?php
 
-include_once '../dao/UsuarioDao.php"';
+include_once '../dao/UsuarioDao.php';
 session_start();
 
 $nome = addslashes($_POST['nome']);
