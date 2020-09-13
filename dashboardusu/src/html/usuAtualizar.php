@@ -2,6 +2,7 @@
 if (!isset($_SESSION['usuarioLogado'])) {
     header('location: /sgp/index.php ');
 }
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
@@ -22,12 +23,25 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../dist/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/cadusu.css" />
+
+    <script src="https://use.fontawesome.com/0147a96ddf.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <!--CDN import JQueryMask -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 </head>
 
 <body>
@@ -234,20 +248,30 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 <img src="../assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Olá,</span> <span
-                                        class="text-dark">Usuário</span> <i data-feather="chevron-down"
+                                        class="text-dark"><?=$_SESSION['usuarioLogado']['nome']?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a href="usuAtualizar.php" class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
                                         class="svg-icon mr-2 ml-1"></i>
-                                    Minha Conta</a>
-                                    
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/sgp/control/logout.php"><i data-feather="power"
+                                    My Profile</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="credit-card"
                                         class="svg-icon mr-2 ml-1"></i>
-                                    Sair</a>
+                                    My Balance</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="mail"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    Inbox</a>
                                 <div class="dropdown-divider"></div>
-
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    Account Setting</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="pl-4 p-3"><a href="javascript:void(0)" class="btn btn-sm btn-info">View
+                                        Profile</a></div>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -275,7 +299,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Menu:</span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="/sgp/control/listarInstituicoes.php"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="instituicao.html"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Instituição
                                 </span></a>
@@ -288,7 +312,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                     class="hide-menu">Calendarário</span></a></li>
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/sgp/control/logout.php"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                     class="hide-menu">Logout</span></a></li>
                     </ul>
@@ -310,85 +334,21 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Bem vindo! Usuário</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Conta:</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><a href="index.html">Início</a>
+                                    <li class="breadcrumb-item"><a>Configuração Conta</a>
+
                                     </li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
-                    <div class="col-5 align-self-center">
-                        <div class="customize-input float-right">
-                            <span><a>Cadastrar Permuta</a></span>
-                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal"
-                                data-target="#login-modal"> <i class="fas fa-plus-circle"></i>
-
-                            </button>
-                            </select>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div>
 
-            <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="text-center mt-2 mb-4">
-                                <a href="index.html" class="text-success">
-                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
-                                </a>
-                            </div>
-
-                            <form action="/sgp/control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
-                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
-                                <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
-                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                      <option selected>Turma...</option>
-                                      <option value="1">1</option>
-                                      <option value="2">2</option>
-                                      <option value="3">3</option>
-                                  </select>
-                                </div>
-
-                                <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Matéria</label>
-                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                      <option selected>Matéria...</option>
-                                      <option value="1">One</option>
-                                      <option value="2">Two</option>
-                                      <option value="3">Three</option>
-                                  </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nome">Horário de Início:</label>
-                                    <input type="datetime-local" class="form-control" value="2020-09-10T19:00">
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nome">Horário de Termino:</label>
-                                    <input type="datetime-local" class="form-control" value="2020-09-10T20:00">
-
-                                </div>
-
-
-                                <div class="form-group text-center">
-                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
-                                        </button>
-                                </div>
-
-                            </form>
-
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -396,183 +356,184 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                <!-- *************************************************************** -->
-                <!-- Start First Cards -->
-                <!-- *************************************************************** -->
-                <div class="card-group">
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: green !important;">1</span>
-                                    </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Criadas</h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
-                                </div>
-                            </div>
-                        </div>
+
+              <section class="form-section">
+
+                <form action="" method="" class="needs-validation" novalidate>
+
+                  <div class="form-group">
+                    <label for="validationCustom01">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" value="Nome" required>
+
+                    <div class="invalid-feedback">
+                      Insira o nome!
                     </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: rgb(255, 208, 0) !important;">1</span>
-                                    </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
-                                </div>
-                            </div>
+                  </div>
+
+
+                  <div class="form-group">
+
+                    <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                        <label for="validationCustom02">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" name="endereco" value="Endereço" required>
+                        <div class="invalid-feedback">
+                          Por favor, informe um Endereço.
                         </div>
-                    </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">1</span>
-                                    </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
-                                </div>
-                            </div>
+                      </div>
+                      <div class="col-md-6 mb-6">
+                        <label for="validationCustom03">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro" value="Bairro" required>
+                        <div class="invalid-feedback">
+                          Por favor, informe um bairro válido.
                         </div>
+                      </div>
                     </div>
-                    <div class="card border-right">
-                        <div class="card-body">
-                            <div class="d-flex d-lg-flex d-md-block align-items-center">
-                                <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">1</span>
-                                    </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h6>
-                                </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
-                                </div>
-                            </div>
+
+                    <div class="form-row">
+
+                      <div class="col-md-3 mb-3">
+                        <label for="validationCustom04">Número</label>
+                        <input type="number" class="form-control" id="numero" name="numero" value="10" required>
+                        <div class="invalid-feedback">
+                          Por favor, informe um numero válido.
                         </div>
-                    </div>
-                </div>
-                <!-- *************************************************************** -->
-                <!-- End First Cards -->
-                <!-- *************************************************************** -->
+                      </div>
 
-                <!-- *************************************************************** -->
-                <!-- Start Top Leader Table -->
-                <!-- *************************************************************** -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">Permutas</h4>
-                                    <div class="ml-auto">
-                                        <div class="dropdown sub-dropdown">
-                                            <button class="btn btn-link text-muted dropdown-toggle" type="button"
-                                                id="dd1" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                <i data-feather="more-vertical"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                <a class="dropdown-item" href="#">Insert</a>
-                                                <a class="dropdown-item" href="#">Update</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table no-wrap v-middle mb-0">
-                                        <thead>
-                                            <tr class="border-0">
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Professor
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Disciplina
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Matéria</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Status
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                Hr. Início
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Hr. Termino</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="border-top-0 px-2 py-4">
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-3"><img
-                                                                src="../assets/images/users/widget-table-pic1.jpg"
-                                                                alt="user" class="rounded-circle" width="45"
-                                                                height="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Professor Random</h5>
-                                                            <span class="text-muted font-14">handom@gmail.com</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">Sis. para Internet</td>
-                                                <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">IHC</a>
-
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">CE</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-center px-2 py-4"><i
-                                                        class="fa fa-circle text-success font-12" data-toggle="tooltip"
-                                                        data-placement="top" title="In Testing"></i></td>
-                                                <td
-                                                    class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
-                                                    19:00hrs
-                                                </td>
-                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">20:30hrs
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="validationCustom05">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" name="cidade" value="Cidade" required>
+                        <div class="invalid-feedback">
+                          Por favor, informe uma cidade.
                         </div>
+                      </div>
+
+
+                      <div class="col-md-3 mb-3">
+                        <label for="validationCustom05">Estado</label>
+                        <input type="text" class="form-control" id="estado" name="estado" value="Estado" required>
+                        <div class="invalid-feedback">
+                          Por favor, informe um estado válido.
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="validationCustom06">CEP</label>
+                        <input type="text" class="form-control" id="cep" name="cep" value="56000000" required>
+                        <div class="invalid-feedback">
+                          Por favor, informe um CEP válido.
+                        </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
+
+                  <div class="form-group">
+
+                    <div class="form-row">
+                      <div class="col-md-4 mb-4">
+                        <label for="validationCustom07">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" name="telefone" value="Telefone" required>
+                        <div class="valid-feedback">
+                          Tudo certo!
+                        </div>
+
+                        <div class="invalid-feedback">
+                          Por favor, informe um Telefone válido.
+                        </div>
+                      </div>
+                      <div class="col-md-8 mb-6">
+                        <label for="validationCustom08">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="Email" required>
+                        <div class="valid-feedback">
+                          Tudo certo!
+                        </div>
+
+                        <div class="invalid-feedback">
+                          Por favor, informe um email válido.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="col-md-4 mb-4">
+                        <label for="validationCustom09">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" value="CPF" required>
+                        <div class="valid-feedback">
+                          Tudo certo!
+                        </div>
+
+                        <div class="invalid-feedback">
+                          Por favor, informe um CPF válido.
+                        </div>
+                      </div>
+                      <div class="col-md-8 mb-6">
+                        <label for="validationCustom10">RG</label>
+                        <input type="text" class="form-control" id="rg" name="rg" value="RG" required>
+                        <div class="valid-feedback">
+                          Tudo certo!
+                        </div>
+
+                        <div class="invalid-feedback">
+                          Por favor, informe um RG válido.
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
 
 
 
-                <!-- *************************************************************** -->
-                <!-- Start Sales Charts Section -->
-                <!-- *************************************************************** -->
+                  <div class="form-group">
 
-                <!-- *************************************************************** -->
-                <!-- End Location and Earnings Charts Section -->
-                <!-- *************************************************************** -->
+                    <label for="validationCustom11">Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha" value="Senha" required>
 
-                <!-- *************************************************************** -->
-                <!-- End Top Leader Table -->
-                <!-- *************************************************************** -->
+                    <div class="invalid-feedback">
+                      Por favor, informe a Senha.
+                    </div>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="validationCustom11">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="confirmarsenha" name="confirmarsenha" value="Senha" required>
+
+                    <div class="invalid-feedback">
+                      Por favor, informe a Senha.
+                    </div>
+
+                  </div>
+
+
+                  <div style="text-align: center;">
+                    <button type="submit" onclick="validar()" class="btn btn-success">Atualizar</button>
+                  </div>
+                </form>
+              </section>
+
+              <script>
+                (function validar() {
+                  'use strict';
+                  window.addEventListener('load', function() {
+                    var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                      form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                      }, false);
+                    });
+                  }, false);
+                })();
+              </script>
+
+
+
+
+
+
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -581,7 +542,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                <a href="https://www.ifsertao-pe.edu.br">IF-Sertão Pernambucano</a>.
+                All Rights Reserved by Adminmart. Designed and Developed by <a
+                    href="https://wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -598,7 +560,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
@@ -617,6 +579,33 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+    <script src="../dist/js/validaEconsultaCnpj.js"></script>
+    <script src="../dist/js/buscarcep.js"></script>
+
+
+    <!-- Seta as mascaras dos campos -->
+    <script>
+        $(document).ready(function(){
+            $.get("/sgp/control/listarInstituicoes.php");
+            $('#cnpj').mask('00.000.000/0000-00');
+            $('#cep').mask('00000-000');
+            $('#estado').mask('AA');
+        });
+    </script>
+
+
+
+<?php
+    if(isset($_SESSION['msg']['erroLogin'])){
+        echo $_SESSION['msg']['erroLogin'];
+        unset($_SESSION['msg']['erroLogin']);
+
+    }else if(isset($_SESSION['msg']['usuCadSuccess'])){
+        echo $_SESSION['msg']['usuCadSuccess'];
+        unset($_SESSION['msg']['usuCadSuccess']);
+}
+?>
+
 </body>
 
 </html>
