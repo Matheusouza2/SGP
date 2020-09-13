@@ -63,7 +63,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            
+
                                 <!-- Light Logo icon -->
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
                             </b>
@@ -72,15 +72,15 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             <span class="logo-text">
                                 <!-- dark Logo text -->
                                 <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                                
+
                                 <!-- Light Logo text -->
                                 <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                                
+
                             </span>
 
 
-                            
-                            
+
+
                         </a>
                     </div>
                     <!-- ============================================================== -->
@@ -297,7 +297,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
                                     class="hide-menu">Calendarário</span></a></li>
 
-                        
+
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/sgp/control/logout.php"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                     class="hide-menu">Logout</span></a></li>
@@ -332,15 +332,73 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     </div>
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
-                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                                <option selected>Agosto</option>
-                                <option value="1">Setembro</option>
-                                <option value="2">Outubro</option>
+                            <span><a>Cadastrar Permuta</a></span>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal"
+                                data-target="#login-modal"> <i class="fas fa-plus-circle"></i>
+
+                            </button>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mt-2 mb-4">
+                                <a href="index.html" class="text-success">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
+                                </a>
+                            </div>
+
+                            <form action="/sgp/control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
+                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
+                                <div class="form-group">
+                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
+                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                      <option selected>Turma...</option>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                  </select>
+                                </div>
+
+                                <div class="form-group">
+                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Matéria</label>
+                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                      <option selected>Matéria...</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                  </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome">Horário de Início:</label>
+                                    <input type="datetime-local" class="form-control" value="2020-09-10T19:00">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome">Horário de Termino:</label>
+                                    <input type="datetime-local" class="form-control" value="2020-09-10T20:00">
+
+                                </div>
+
+                              
+                                <div class="form-group text-center">
+                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
+                                        </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -486,7 +544,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                     <div class="popover-icon">
                                                         <a class="btn btn-primary rounded-circle btn-circle font-12"
                                                             href="javascript:void(0)">IHC</a>
-                                                        
+
                                                         <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item"
                                                             href="javascript:void(0)">CE</a>
                                                         <a class="btn btn-success text-white rounded-circle btn-circle font-20"
@@ -503,7 +561,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                 <td class="font-weight-medium text-dark border-top-0 px-2 py-4">20:30hrs
                                                 </td>
                                             </tr>
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -517,11 +575,11 @@ if (!isset($_SESSION['usuarioLogado'])) {
                 <!-- *************************************************************** -->
                 <!-- Start Sales Charts Section -->
                 <!-- *************************************************************** -->
-                
+
                 <!-- *************************************************************** -->
                 <!-- End Location and Earnings Charts Section -->
                 <!-- *************************************************************** -->
-                
+
                 <!-- *************************************************************** -->
                 <!-- End Top Leader Table -->
                 <!-- *************************************************************** -->
