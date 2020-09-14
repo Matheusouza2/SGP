@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['usuarioLogado'])) {
-    header('location: /sgp/index.php ');
+    header('location: /sgp/Teste.php ');
 }
 ?>
 <!DOCTYPE html>
@@ -33,15 +33,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
 </head>
 
 <body>
+
+
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -49,7 +46,15 @@ if (!isset($_SESSION['usuarioLogado'])) {
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
         <div id="Menus"></div><br />
-
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
 
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
