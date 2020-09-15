@@ -23,8 +23,8 @@
 
   <section class="form-section">
 
-    <form action="../control/cadUser.php" method="POST" class="needs-validation" novalidate>
-
+    <form action="../control/controlUser.php" method="POST" class="needs-validation" novalidate>
+    <input type="hidden" value="put" name="command" >
     <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="telaLogin.php">
     <img src='../assets/img/logocadastro.svg' width="20" height="30" class="d-inline-block align-top" alt="">

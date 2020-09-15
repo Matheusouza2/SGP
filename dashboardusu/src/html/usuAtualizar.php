@@ -21,7 +21,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <title>SGP - Sistema de Gerenciamento de Permutas</title>
     <!-- Custom CSS -->
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../dist/css/style.css" rel="stylesheet">
@@ -99,15 +98,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-
               <section class="form-section">
 
-                <form action="" method="" class="needs-validation" novalidate>
-
+                <form action="/sgp/control/controlUser.php" method="POST" class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
+                  <input type="hidden" value="update" name="command">
+                  <input type="hidden" value="<?=$_SESSION['usuarioLogado']['id']?>" name="updateIt">
                   <div class="form-group">
                     <label for="validationCustom01">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" value="Nome" required>
-
+                    <input type="text" class="form-control" id="nome" name="nome" value="<?=$_SESSION['usuarioLogado']['nome']?>" required>
                     <div class="invalid-feedback">
                       Insira o nome!
                     </div>
@@ -119,14 +117,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="form-row">
                       <div class="col-md-6 mb-3">
                         <label for="validationCustom02">Endereço</label>
-                        <input type="text" class="form-control" id="endereco" name="endereco" value="Endereço" required>
+                        <input type="text" class="form-control" id="endereco" name="endereco" value="<?=$_SESSION['usuarioLogado']['logradouro']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um Endereço.
                         </div>
                       </div>
                       <div class="col-md-6 mb-6">
                         <label for="validationCustom03">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" value="Bairro" required>
+                        <input type="text" class="form-control" id="bairro" name="bairro" value="<?=$_SESSION['usuarioLogado']['bairro']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um bairro válido.
                         </div>
@@ -137,7 +135,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                       <div class="col-md-3 mb-3">
                         <label for="validationCustom04">Número</label>
-                        <input type="number" class="form-control" id="numero" name="numero" value="10" required>
+                        <input type="number" class="form-control" id="numero" name="numero" value="<?=$_SESSION['usuarioLogado']['numero']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um numero válido.
                         </div>
@@ -145,7 +143,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                       <div class="col-md-3 mb-3">
                         <label for="validationCustom05">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" value="Cidade" required>
+                        <input type="text" class="form-control" id="cidade" name="cidade" value="<?=$_SESSION['usuarioLogado']['cidade']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe uma cidade.
                         </div>
@@ -154,14 +152,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                       <div class="col-md-3 mb-3">
                         <label for="validationCustom05">Estado</label>
-                        <input type="text" class="form-control" id="estado" name="estado" value="Estado" required>
+                        <input type="text" class="form-control" id="estado" name="estado" value="<?=$_SESSION['usuarioLogado']['uf']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um estado válido.
                         </div>
                       </div>
                       <div class="col-md-3 mb-3">
                         <label for="validationCustom06">CEP</label>
-                        <input type="text" class="form-control" id="cep" name="cep" value="56000000" required>
+                        <input type="text" class="form-control" id="cep" name="cep" value="<?=$_SESSION['usuarioLogado']['cep']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um CEP válido.
                         </div>
@@ -174,7 +172,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="form-row">
                       <div class="col-md-4 mb-4">
                         <label for="validationCustom07">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone" value="Telefone" required>
+                        <input type="text" class="form-control" id="telefone" name="telefone" value="<?=$_SESSION['usuarioLogado']['contato']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -185,7 +183,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                       </div>
                       <div class="col-md-8 mb-6">
                         <label for="validationCustom08">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="Email" required>
+                        <input type="email" class="form-control" id="email" name="email" value="<?=$_SESSION['usuarioLogado']['email']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -199,7 +197,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="form-row">
                       <div class="col-md-4 mb-4">
                         <label for="validationCustom09">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" value="CPF" required>
+                        <input type="text" class="form-control" id="cpf" name="cpf" readonly value="<?=$_SESSION['usuarioLogado']['cpf']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -210,7 +208,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                       </div>
                       <div class="col-md-8 mb-6">
                         <label for="validationCustom10">RG</label>
-                        <input type="text" class="form-control" id="rg" name="rg" value="RG" required>
+                        <input type="text" class="form-control" id="rg" name="rg" value="<?=$_SESSION['usuarioLogado']['rg']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -222,31 +220,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     </div>
 
                   </div>
-
-
-
-                  <div class="form-group">
-
-                    <label for="validationCustom11">Senha</label>
-                    <input type="password" class="form-control" id="senha" name="senha" value="Senha" required>
-
-                    <div class="invalid-feedback">
-                      Por favor, informe a Senha.
-                    </div>
-
-                  </div>
-
-                  <div class="form-group">
-
-                    <label for="validationCustom11">Confirmar Senha</label>
-                    <input type="password" class="form-control" id="confirmarsenha" name="confirmarsenha" value="Senha" required>
-
-                    <div class="invalid-feedback">
-                      Por favor, informe a Senha.
-                    </div>
-
-                  </div>
-
 
                   <div style="text-align: center;">
                     <button type="submit" onclick="validar()" class="btn btn-success">Atualizar</button>
@@ -306,49 +279,25 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script>
   $("#Menus").load("Menus.php");
 </script>
-    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
-    <script src="../dist/js/app-style-switcher.js"></script>
-    <script src="../dist/js/feather.min.js"></script>
-    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="../dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <script src="../assets/extra-libs/c3/d3.min.js"></script>
-    <script src="../assets/extra-libs/c3/c3.min.js"></script>
-    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
-    <script src="../dist/js/validaEconsultaCnpj.js"></script>
-    <script src="../dist/js/buscarcep.js"></script>
-
-
+    <?php include 'scripts.php'; ?>
     <!-- Seta as mascaras dos campos -->
+
     <script>
         $(document).ready(function(){
-            $.get("/sgp/control/listarInstituicoes.php");
-            $('#cnpj').mask('00.000.000/0000-00');
-            $('#cep').mask('00000-000');
-            $('#estado').mask('AA');
+          $('#cpf').mask('000.000.000-00');
+          $('#cep').mask('00000-000');
+          $('#estado').mask('AA');
+          $('#telefone').mask('(00)0 0000-0000');
         });
     </script>
 
 
 
 <?php
-    if(isset($_SESSION['msg']['erroLogin'])){
-        echo $_SESSION['msg']['erroLogin'];
-        unset($_SESSION['msg']['erroLogin']);
-
-    }else if(isset($_SESSION['msg']['usuCadSuccess'])){
-        echo $_SESSION['msg']['usuCadSuccess'];
-        unset($_SESSION['msg']['usuCadSuccess']);
-}
+    if(isset($_SESSION['msg']['msgUpdate'])){
+        echo $_SESSION['msg']['msgUpdate'];
+        unset($_SESSION['msg']['msgUpdate']);
+    }
 ?>
 
 </body>

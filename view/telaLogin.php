@@ -29,7 +29,7 @@ if (isset($_SESSION['nome']))
 
 
 		<form action="/sgp/control/login.php" method="POST"
-			class="needs-validation" novalidate>
+			class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
 			<div class="form">
 				<div class="col-lg-15 mb-10">
 					<label for="validationCustom01">Email</label> <input type="email"

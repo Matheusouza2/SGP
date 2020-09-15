@@ -9,7 +9,7 @@ class UsuarioDao {
     function login($email, $senha) {
         $con = Conexao::getInstance();
 
-        $sql = 'SELECT email, nome, cpf FROM usuario WHERE email = "' . $email . '" AND senha = "' . $senha . '"';
+        $sql = 'SELECT * FROM usuario WHERE email = "' . $email . '" AND senha = "' . $senha . '"';
 
         $stmt = $con->prepare($sql);
 
@@ -25,11 +25,9 @@ class UsuarioDao {
 
     function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha) {
 
-
-        // verifica se esta cadastrado
         try {
             $con = Conexao::getInstance();
-            $sql = "SELECT email FROM usuario WHERE email='$email'";
+            $sql = "SELECT * FROM usuario WHERE cpf='$cpf' OR email='$email'";
             $stmt = $con->prepare($sql);
             $stmt->execute();
 
@@ -37,7 +35,7 @@ class UsuarioDao {
                 return false;
             } else {
 
-                $sql = "INSERT INTO usuario (nome,endereco,bairro,numero,cidade,estado,cep,telefone,email,cpf,rg,idinstituicao,matricula,senha) values ('$nome','$endereco','$bairro','$numero','$cidade','$estado','$cep','$telefone','$email','$cpf','$rg','$idInstituicao','$matricula','$senha')";
+                $sql = "INSERT INTO usuario (nome,logradouro,bairro,numero,cidade,uf,cep,telefone,email,cpf,rg,idinstituicao,matricula,senha) values ('$nome','$endereco','$bairro','$numero','$cidade','$estado','$cep','$telefone','$email','$cpf','$rg','$idInstituicao','$matricula','$senha')";
 
                 $stmt = $con->prepare($sql);
                 $stmt->execute();
@@ -50,55 +48,36 @@ class UsuarioDao {
         }
     }
 
-    public function atualiazarD($nome, $telefone, $email, $rg, $senha) {
+    function atualizar($id, $nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg) {
 
         try {
             $con = Conexao::getInstance();
 
-            $sql = "UPDATE usuario set nome='$nome',telefone='$telefone',email='$email', rg='$rg', senha='$senha' where email='$email'";
+            $sql = "UPDATE usuario set nome=?, logradouro=?, bairro=?, numero=?, cidade=?, uf=?, cep=?, contato=?, email=?, rg=? where id=?";
 
             $stmt = $con->prepare($sql);
-            $stmt->execute();
-
-
-            
+            $stmt->execute([$nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg, $id]);
+            return true;
         } catch (PDOException $e) {
             echo "Ocorreu um erro! ---  " . $e;
+            return false;
         }
     }
 
-    public function atualiazarE($endereco, $bairro, $numero, $estado, $cep) {
-
-        try {
-            session_start();
-            $email = $_SESSION['email'];
-
-            $con = Conexao::getInstance();
-
-            $sql = "UPDATE usuario set endereco='$endereco',bairro='$bairro',numero='$numero' ,estado= '$estado', cep='$cep' where email='$email'";
-
-            $stmt = $con->prepare($sql);
-            $stmt->execute();
-            
-        } catch (PDOException $e) {
-            echo "Ocorreu um erro! ---  " . $e;
-        }
-    }
-
-    public function deletar($email) {
+    public function deletar($id) {
 
         $con = Conexao::getInstance();
-        $sql = "DELETE FROM usuario WHERE email=$email";
+        $sql = "DELETE FROM usuario WHERE id=$id";
         $stmt = $con->prepare($sql);
         $stmt->execute();
     }
 
-    public function buscar($email) {
+    public function buscar($id) {
 
         $con = Conexao::getInstance();
 
 
-        $sql = "SELECT * FROM usuario WHERE email='$email'";
+        $sql = "SELECT * FROM usuario WHERE id='$id'";
 
         $stmt = $con->prepare($sql);
 

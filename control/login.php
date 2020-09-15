@@ -4,7 +4,7 @@ include_once '..\dao\UsuarioDao.php';
 session_start();
 $email = addslashes($_POST['email']);
 $senha = addslashes($_POST['senha']);
-echo "console.log('Loucura')";
+
 $usuDao = new UsuarioDao();
 
 $usuLogado = $usuDao->login($email, $senha);
