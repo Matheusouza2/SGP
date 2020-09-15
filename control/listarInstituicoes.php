@@ -10,7 +10,7 @@ $instituicoes = $lista->listar($_SESSION['usuarioLogado']['cpf']);
 
 $_SESSION['inst'] = $instituicoes;
 
-header('location: /sgp/dashboardusu/src/html/instituicao.php');
+header('location: ../dashboardusu/src/html/instituicao.php');
 
 
 function Mask($mask,$str){

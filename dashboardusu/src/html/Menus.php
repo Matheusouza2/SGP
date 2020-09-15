@@ -209,7 +209,7 @@
                                     Minha Conta</a>
 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/sgp/control/logout.php"><i data-feather="power"
+                                <a class="dropdown-item" href="../../../control/logout.php"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Sair</a>
                                 <div class="dropdown-divider"></div>
@@ -235,18 +235,18 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.php"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Início</span></a></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Menu:</span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="/sgp/control/listarInstituicoes.php"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Instituição
                                 </span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-chat.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="#"
                                 aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span
                                     class="hide-menu">Chat</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-calendar.html"
@@ -254,7 +254,7 @@
                                     class="hide-menu">Calendarário</span></a></li>
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/sgp/control/logout.php"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../../../control/logout.php"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                     class="hide-menu">Logout</span></a></li>
                     </ul>
