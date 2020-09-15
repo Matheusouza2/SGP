@@ -1,6 +1,6 @@
 <?php
 error_log("Iniciando arquivo");
-include_once '..\dao\UsuarioDao.php';
+include_once '../dao/UsuarioDao.php';
 error_log("Inclusão do usuario DAO");
 
 
