@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['usuarioLogado'])) {
-    header('location: /sgp/index.php ');
+   header('location: ../../../index.php ');
 }
 
 ?>
@@ -111,7 +111,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </a>
                             </div>
 
-                            <form action="/sgp/control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
+                            <form action="../../../control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
                                 <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
                                 <div class="form-group">
                                     <label for="cnpj">CNPJ</label>
@@ -280,7 +280,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- Seta as mascaras dos campos -->
     <script>
         $(document).ready(function(){
-            $.get("/sgp/control/listarInstituicoes.php");
+            $.get("../../../control/listarInstituicoes.php");
             $('#cnpj').mask('00.000.000/0000-00');
             $('#cep').mask('00000-000');
             $('#estado').mask('AA');

@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['usuarioLogado'])) {
-    header('location: /sgp/index.php ');
+    header('location: ../../../index.php ');
 }
 
 ?>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <div class="container-fluid">
               <section class="form-section">
 
-                <form action="/sgp/control/controlUser.php" method="POST" class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
+                <form action="../../../control/controlUser.php" method="POST" class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
                   <input type="hidden" value="update" name="command">
                   <input type="hidden" value="<?=$_SESSION['usuarioLogado']['id']?>" name="updateIt">
                   <div class="form-group">

@@ -65,12 +65,12 @@ if(isset($_POST['command'])){
         if ($verifica){       
             $_SESSION['msg']['msgUpdate'] = "<script>Swal.fire({icon: 'success', title: 'Sucesso', text: 'Atualização realizada com sucesso !'})</script>";
             $_SESSION['usuarioLogado'] = $usuarioDao->buscar($id);
-            header('location: /sgp/dashboardusu/src/html/usuAtualizar.php');	
+            header('location: ../dashboardusu/src/html/usuAtualizar.php');	
 
         }else  {
             $_SESSION['msg']['msgUpdate'] = "<script> Swal.fire({icon: 'error', title: 'ERRO...', text: 'Ouve um erro ao tentar fazer sua atualização, entre em contato com o suporte !'}); </script>";
 
-            header('location: /sgp/dashboardusu/src/html/usuAtualizar.php');	
+            header('location: ../dashboardusu/src/html/usuAtualizar.php');	
         }
     }
 
