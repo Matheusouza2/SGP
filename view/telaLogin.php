@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['nome'])) 
-    header("location: /sgp/dashboardusu/LobDeuser.php");
+    header("location: ./dashboardusu/LobDeuser.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -19,16 +19,16 @@ if (isset($_SESSION['nome']))
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/sgp/assets/css/index.css" />
+<link rel="stylesheet" href="./assets/css/index.css" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	
 </head>
 <body>
 	<section class="form-section">
-		<img src="/sgp/assets/img/logosvgbranco.svg" width="160">
+		<img src="./assets/img/logosvgbranco.svg" width="160">
 
 
-		<form action="/sgp/control/login.php" method="POST"
+		<form action="./control/login.php" method="POST"
 			class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
 			<div class="form">
 				<div class="col-lg-15 mb-10">
@@ -66,7 +66,7 @@ if (isset($_SESSION['nome']))
 		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-	<script src="/sgp/assets/telefone.js"></script>
+	<script src="./assets/telefone.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
@@ -78,7 +78,7 @@ if (isset($_SESSION['nome']))
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
-	<script src="/sgp/assets/js/script.js"></script>
+	<script src="./assets/js/script.js"></script>
 	
 	
 	<script>
