@@ -1,23 +1,23 @@
 <?php
-echo "<script> console.log ('Inicio do arquivo'); </script>";
+error_log("Iniciando arquivo");
 include_once '..\dao\UsuarioDao.php';
-echo "<script> console.log ('Inclusão do usuarioDAO'); </script>";
+error_log("Inclusão do usuario DAO");
 
 
 session_start();
-echo "<script> console.log ('Sessao Iniciada'); </script>";
+error_log("Sessao Iniciada");
 $email = addslashes($_POST['email']);
 $senha = addslashes($_POST['senha']);
 
-echo "<script> console.log ('Infos capturadas-->'".$email."); </script>";
+error_log("Info Capturadas --> ".$email);
 
 $usuDao = new UsuarioDao();
 
-echo "<script> console.log ('Classe usuDao instanciada'); </script>";
+error_log("Classe UsuarioDAO Instanciada");
 
 $usuLogado = $usuDao->login($email, $senha);
 
-echo "<script> console.log ('Tentativa de login e retorno'".$usuLogado."); </script>";
+error_log("Usuario ja logado".$usuLogado['nome']);
 if (! empty($usuLogado)) {
 	
    // $usuDao->buscar($emal); ver depois nao apagar
