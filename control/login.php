@@ -19,5 +19,5 @@ if (! empty($usuLogado)) {
 
 } else {
     $_SESSION['msg']['erroLogin'] = "<script> Swal.fire({icon: 'error', title: 'Oops...', text: 'Email ou senha não cadastrados !'}); </script>";
-    header('location: ./view/telaLogin.php');
+    header('location: ../view/telaLogin.php');
 }
