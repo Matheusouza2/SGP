@@ -38,7 +38,9 @@ if (isset($_SESSION['nome']))
 					<div class="valid-feedback">Tudo certo!</div>
 					<div class="invalid-feedback">Email Invalido!</div>
 				</div>
+			</div>
 
+			<div class="form">
 				<div class="col-lg-15 mb-10">
 					<label for="validationCustom02">Senha</label> <input
 						type="password" class="form-control" id="validationCustom02"
