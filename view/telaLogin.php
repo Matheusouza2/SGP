@@ -54,7 +54,7 @@ if (isset($_SESSION['nome']))
 
 			<div style="text-align: center;">
 				<a>Ainda não tem conta? <a href="cadastroUsuario.php"
-					style="color: green;">sdasdasd</a></a>
+					style="color: green;">Cadastre-se</a></a>
 			</div>
 		</form>
 	</section>
