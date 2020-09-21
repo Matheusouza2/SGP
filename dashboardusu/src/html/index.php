@@ -17,7 +17,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>SGP - Sistema de Gerenciamento de Permutas</title>
     <!-- Custom CSS -->
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -79,9 +79,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             <span><a>Cadastrar Permuta</a></span>
                             <button type="button" class="btn btn-success btn-circle" data-toggle="modal"
                                 data-target="#login-modal"> <i class="fas fa-plus-circle"></i>
-
                             </button>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -93,15 +91,16 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="modal-body">
                             <div class="text-center mt-2 mb-4">
                                 <a href="index.html" class="text-success">
-                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55"></span>
                                 </a>
                             </div>
 
-                            <form action="/sgp/control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
-                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
+                            <form action="../../../control/controlPermuta.php" method="POST" class="pl-3 pr-3">
+                            	<input type="hidden" name="command" value="put">
+                                <input name="professorSedente" type="hidden" value="<?=$_SESSION['usuarioLogado']['id']?>">
                                 <div class="form-group">
                                   <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
-                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="turma">
                                       <option selected>Turma...</option>
                                       <option value="1">1</option>
                                       <option value="2">2</option>
@@ -110,9 +109,9 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </div>
 
                                 <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Matéria</label>
-                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                      <option selected>Matéria...</option>
+                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Disciplina</label>
+                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="disciplina">
+                                      <option selected>Disciplina</option>
                                       <option value="1">One</option>
                                       <option value="2">Two</option>
                                       <option value="3">Three</option>
@@ -120,14 +119,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nome">Horário de Início:</label>
-                                    <input type="datetime-local" class="form-control" value="2020-09-10T19:00">
+                                    <label for="nome">Data de criação:</label>
+                                    <input type="text" class="form-control" id="data-criacao" name="dataCriacao" readonly value="2020-09-10T19:00">
 
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nome">Horário de Termino:</label>
-                                    <input type="datetime-local" class="form-control" value="2020-09-10T20:00">
+                                    <label for="nome">Horário disponivel:</label>
+                                    <input type="datetime-local" class="form-control" min="<?php echo "<script>new Intl.DateTimeFormat([], options);</script>";?>" id="dataDisponivel" name="data-disponivel"  value="2020-09-10T20:00">
 
                                 </div>
 
@@ -372,6 +371,21 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+    
+    <script>
+        const options = {
+        		timeZone: 'America/Sao_Paulo',
+        		day: 'numeric',
+        		month: 'numeric',
+        		year: 'numeric',
+        		hour: 'numeric',
+        		minute: 'numeric'
+        	};
+        	const date = new Intl.DateTimeFormat([], options);
+        	$('#data-criacao').val(date.format(new Date()));
+        	$('#data-dissponivel').datepicker({ minDate: 0});
+
+    </script>
 </body>
 
 </html>

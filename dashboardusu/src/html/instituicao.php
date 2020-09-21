@@ -17,9 +17,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>SGP - Sistema de Gerenciamento de Permutas</title>
-    <!-- Custom CSS -->
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-
+   
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />

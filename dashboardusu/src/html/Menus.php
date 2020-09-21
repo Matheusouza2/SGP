@@ -233,13 +233,13 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.php"
+                        <li class="sidebar-item" id="inicio"> <a class="sidebar-link sidebar-link" href="index.php"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Início</span></a></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Menu:</span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"
+                        <li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Instituição
                                 </span></a>
@@ -261,6 +261,25 @@
             </div>
             <!-- End Sidebar scroll-->
         </aside>
+
+        <script>
+            $(document).ready(function(){
+                var url  = window.location.href; 
+                var absoluto = url.split("/")[url.split("/").length -1];
+                var lista = null;
+                switch (absoluto){
+                    case 'index.php':
+                        lista = document.querySelector('#inicio');
+                        lista.classList.add('selected');
+                        break;
+                    case 'instituicao.php':
+                        lista = document.querySelector('#instituicao');
+                        console.log('instituicao');
+                        lista.classList.add('selected');
+                        break;
+                }
+            });
+        </script>
 
 
     <!-- ============================================================== -->
