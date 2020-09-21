@@ -47,7 +47,7 @@ if (isset($_SESSION['nome']))
 					<div class="invalid-feedback">Inserir Senha!</div>
 				</div>
 			</div>
-			<div style="text-align: center; padding-top: 8%;">
+			<div style="text-align: center; padding-top: 2%;">
 				<button class="btn btn-success" onclick="validar()"
 					type="submit">Login</button>
 			</div>
