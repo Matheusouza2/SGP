@@ -31,7 +31,7 @@ if (isset($_SESSION['nome']))
 		<form action="../control/login.php" method="POST"
 			class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
 			<div class="form">
-				<div style="margin: 10px;" class="col-lg-15 mb-10">
+				<div style="margin: 7px;" class="col-lg-15 mb-10">
 					<label for="validationCustom01">Email</label> <input type="email"
 						class="form-control" id="email" placeholder="Email" required
 						name="email">
@@ -39,7 +39,7 @@ if (isset($_SESSION['nome']))
 					<div class="invalid-feedback">Email Invalido!</div>
 				</div>
 
-				<div style="margin: 10px;" class="col-lg-15 mb-10">
+				<div style="margin: 7px;" class="col-lg-15 mb-10">
 					<label for="validationCustom02">Senha</label> <input
 						type="password" class="form-control" id="validationCustom02"
 						placeholder="Senha" required name="senha">
