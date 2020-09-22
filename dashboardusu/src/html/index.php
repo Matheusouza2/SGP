@@ -239,12 +239,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                 <i data-feather="more-vertical"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                <a class="dropdown-item" onclick="">Atualizar</a>
-                                                <a class="dropdown-item" onclick="">Deletar</a>
+                                                <a class="dropdown-item" href="" onclick="">Atualizar</a>
+                                                <a class="dropdown-item" href="" onclick="">Deletar</a>
                                             </div>
                                         </div>
                                     </div>
-
+                                    
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
