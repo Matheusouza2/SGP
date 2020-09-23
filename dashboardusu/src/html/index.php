@@ -2,6 +2,7 @@
 if (!isset($_SESSION['usuarioLogado'])) {
     header('location: ../../../index.php ');
 }
+date_default_timezone_set('America/Sao_Paulo');
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
@@ -24,6 +25,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../dist/css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -98,36 +100,41 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             <form action="../../../control/controlPermuta.php" method="POST" class="pl-3 pr-3">
                             	<input type="hidden" name="command" value="put">
                                 <input name="professorSedente" type="hidden" value="<?=$_SESSION['usuarioLogado']['id']?>">
+                                
+                                <div class="form-group">
+                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Curso:</label>
+                                  <select class="custom-select mr-sm-2" id="selectCurso" name="curso">
+                                  </select>
+                                </div>
+                                
                                 <div class="form-group">
                                   <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
-                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="turma">
-                                      <option selected>Turma...</option>
-                                      <option value="1">1</option>
-                                      <option value="2">2</option>
-                                      <option value="3">3</option>
+                                  <select class="custom-select mr-sm-2" id="selectTurma" name="turma">
+                                  	<option>Turma</option>
                                   </select>
                                 </div>
 
                                 <div class="form-group">
                                   <label class="mr-sm-2" for="inlineFormCustomSelect">Disciplina</label>
-                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="disciplina">
-                                      <option selected>Disciplina</option>
-                                      <option value="1">One</option>
-                                      <option value="2">Two</option>
-                                      <option value="3">Three</option>
+                                  <select class="custom-select mr-sm-2" id="selectDisciplina" name="disciplina">
+                                  	<option> Disciplina </option>
                                   </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
+                                  <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="nome">Data de criação:</label>
-                                    <input type="text" class="form-control" id="data-criacao" name="dataCriacao" readonly value="2020-09-10T19:00">
+                                    <input type="text" class="form-control" id="data-criacao" name="dataCriacao" readonly>
 
                                 </div>
 
                                 <div class="form-group">
                                     <label for="nome">Horário disponivel:</label>
-                                    <input type="datetime-local" class="form-control" min="<?php echo "<script>new Intl.DateTimeFormat([], options);</script>";?>" id="dataDisponivel" name="data-disponivel"  value="2020-09-10T20:00">
-
+                                    <input type="datetime-local" min="<?=date('Y-m-d\TH:i');?>" class="form-control" id="data-disponivel" name="dataDisponivel">
                                 </div>
 
 
@@ -352,7 +359,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- All Jquery -->
     <!-- ============================================================== -->
 
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
@@ -372,20 +378,16 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     
-    <script>
-        const options = {
-        		timeZone: 'America/Sao_Paulo',
-        		day: 'numeric',
-        		month: 'numeric',
-        		year: 'numeric',
-        		hour: 'numeric',
-        		minute: 'numeric'
-        	};
-        	const date = new Intl.DateTimeFormat([], options);
-        	$('#data-criacao').val(date.format(new Date()));
-        	$('#data-dissponivel').datepicker({ minDate: 0});
-
-    </script>
+    <script src="../dist/js/consultasIndex.js"></script>
+    
+    
+    <?php
+		if(isset($_SESSION['msg']['permutaCadSuccess'])){
+			echo $_SESSION['msg']['permutaCadSuccess'];
+			unset($_SESSION['msg']['permutaCadSuccess']);
+		}
+    ?>
+    
 </body>
 
 </html>

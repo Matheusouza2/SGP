@@ -27,7 +27,7 @@ if(isset($_POST['command'])){
 
         $usuarioDao = new UsuarioDao();
 
-        $verifica=$usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha);
+        $verifica = $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha);
 
         if ($verifica){
             

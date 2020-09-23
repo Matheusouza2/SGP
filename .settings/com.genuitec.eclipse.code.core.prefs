@@ -1,0 +1,5 @@
+customPatterns=true
+customValidation=true
+disabledBuilders=org.eclipse.dltk.internal.core.builder.ScriptBuilder,
+eclipse.preferences.version=1
+patternsAdded=*.php,*.php4,*.php5,*.phtml,

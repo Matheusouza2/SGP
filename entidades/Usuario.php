@@ -17,6 +17,7 @@ class Usuario{
         
     }
     
+    
     /**
      * @return mixed
      */
