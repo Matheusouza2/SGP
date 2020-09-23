@@ -9,7 +9,8 @@
 
   <!-- Bootstrap CSS -->
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+
   <link rel="stylesheet" href="../seletorCursos\css\bootstrap4\tail.select-default.css">
 
   <link rel="stylesheet" href="../assets/css/cadusu.css" />
@@ -21,6 +22,7 @@
 
 <body>
 
+<div class="container-fluid">
   <section class="form-section">
 
     <form action="../control/controlUser.php" method="POST" class="needs-validation" novalidate>
@@ -28,7 +30,7 @@
     <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="telaLogin.php">
     <img src='../assets/img/logocadastro.svg' width="20" height="30" class="d-inline-block align-top" alt="">
-    Voltar
+   <label>Voltar</label>
   </a>
 </nav>
 
@@ -230,7 +232,10 @@
         <div class="invalid-feedback">
           Por favor, informe a Senha.
         </div>
+      </div>
 
+
+      <div class="form-group">
         <label for="validationCustom11">Confirmar Senha</label>
         <input type="password" class="form-control" id="confirmarsenha" name="confirmarsenha" placeholder="Senha" required>
 
@@ -242,8 +247,10 @@
       <div style="text-align: center;">
         <button type="submit" onclick="validar()" class="btn btn-success">Cadastrar</button>
       </div>
+      </div>
     </form>
   </section>
+  </div>
 
   <script>
     (function validar() {

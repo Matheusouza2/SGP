@@ -18,7 +18,7 @@ date_default_timezone_set('America/Sao_Paulo');
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>SGP - Sistema de Gerenciamento de Permutas</title>
     <!-- Custom CSS -->
-     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -47,8 +47,7 @@ date_default_timezone_set('America/Sao_Paulo');
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
         <?php include 'Menus.php'; ?>
 
@@ -79,8 +78,7 @@ date_default_timezone_set('America/Sao_Paulo');
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
                             <span><a>Cadastrar Permuta</a></span>
-                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal"
-                                data-target="#login-modal"> <i class="fas fa-plus-circle"></i>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"> <i class="fas fa-plus-circle"></i>
                             </button>
                         </div>
                     </div>
@@ -140,7 +138,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
                                 <div class="form-group text-center">
                                     <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
-                                        </button>
+                                    </button>
                                 </div>
 
                             </form>
@@ -166,8 +164,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: green !important;">1</span>
+                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: green !important;">1</span>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Criadas</h6>
                                 </div>
@@ -183,8 +180,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: rgb(255, 208, 0) !important;">1</span>
+                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(255, 208, 0) !important;">1</span>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h6>
                                 </div>
@@ -200,8 +196,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">1</span>
+                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">1</span>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h6>
                                 </div>
@@ -217,8 +212,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">1</span>
+                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">1</span>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h6>
                                 </div>
@@ -242,22 +236,22 @@ date_default_timezone_set('America/Sao_Paulo');
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
                                     <h4 class="card-title">Permutas</h4>
-                                    <div class="ml-auto">
+
+                                </div>
+                                <div class="table-responsive">
+
+                                    <div style="float: right;" class="ml-auto">
                                         <div class="dropdown sub-dropdown">
-                                            <button class="btn btn-link text-muted dropdown-toggle" type="button"
-                                                id="dd1" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
+                                            <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i data-feather="more-vertical"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                <a class="dropdown-item" href="#">Insert</a>
-                                                <a class="dropdown-item" href="#">Update</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
+                                                <a class="dropdown-item" href="" onclick="">Atualizar</a>
+                                                <a class="dropdown-item" href="" onclick="">Deletar</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="table-responsive">
+                                    
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
@@ -270,7 +264,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                                     Status
                                                 </th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                Hr. Início
+                                                    Hr. Início
                                                 </th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Hr. Termino</th>
                                             </tr>
@@ -279,10 +273,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                             <tr>
                                                 <td class="border-top-0 px-2 py-4">
                                                     <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-3"><img
-                                                                src="../assets/images/users/widget-table-pic1.jpg"
-                                                                alt="user" class="rounded-circle" width="45"
-                                                                height="45" /></div>
+                                                        <div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>
                                                         <div class="">
                                                             <h5 class="text-dark mb-0 font-16 font-weight-medium">Professor Random</h5>
                                                             <span class="text-muted font-14">handom@gmail.com</span>
@@ -292,20 +283,14 @@ date_default_timezone_set('America/Sao_Paulo');
                                                 <td class="border-top-0 text-muted px-2 py-4 font-14">Sis. para Internet</td>
                                                 <td class="border-top-0 px-2 py-4">
                                                     <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">IHC</a>
+                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">IHC</a>
 
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">CE</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
+                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">CE</a>
+                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20" href="javascript:void(0)">+</a>
                                                     </div>
                                                 </td>
-                                                <td class="border-top-0 text-center px-2 py-4"><i
-                                                        class="fa fa-circle text-success font-12" data-toggle="tooltip"
-                                                        data-placement="top" title="In Testing"></i></td>
-                                                <td
-                                                    class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
+                                                <td class="border-top-0 text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="In Testing"></i></td>
+                                                <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
                                                     19:00hrs
                                                 </td>
                                                 <td class="font-weight-medium text-dark border-top-0 px-2 py-4">20:30hrs
@@ -376,8 +361,7 @@ date_default_timezone_set('America/Sao_Paulo');
     <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
-    
+    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>  
     <script src="../dist/js/consultasIndex.js"></script>
     
     
@@ -387,7 +371,7 @@ date_default_timezone_set('America/Sao_Paulo');
 			unset($_SESSION['msg']['permutaCadSuccess']);
 		}
     ?>
-    
+ 
 </body>
 
 </html>
