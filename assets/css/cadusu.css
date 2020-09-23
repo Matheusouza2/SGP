@@ -30,8 +30,7 @@ body {
   background-color: green;
   background-size:43%;
   font-family: Roboto, Arial, sans-serif;
-  background-position-y: 30%;
-  background-position-x: 90%;
+ 
   
   
 }
@@ -54,7 +53,6 @@ form {
   padding: 30px 25px;
   border-radius: 5px;
   margin-left: 7%;
-  overflow: auto;
  
 }
 

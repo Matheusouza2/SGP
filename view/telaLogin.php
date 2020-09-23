@@ -23,6 +23,8 @@ if (isset($_SESSION['nome']))
 </head>
 
 <body>
+
+<div class="container-fluid">
 	<section class="form-section">
 		<img src="../assets/img/logosvgbranco.svg" width="160">
 
@@ -50,6 +52,7 @@ if (isset($_SESSION['nome']))
 			</div>
 		</form>
 	</section>
+	</div>
 
 
 

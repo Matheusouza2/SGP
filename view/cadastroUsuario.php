@@ -22,6 +22,7 @@
 
 <body>
 
+<div class="container-fluid">
   <section class="form-section">
 
     <form action="../control/controlUser.php" method="POST" class="needs-validation" novalidate>
@@ -249,6 +250,7 @@
       </div>
     </form>
   </section>
+  </div>
 
   <script>
     (function validar() {
