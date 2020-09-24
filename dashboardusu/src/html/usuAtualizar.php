@@ -61,7 +61,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
-        <div id="Menus"></div><br />
+        <?php include 'Menus.php'; ?>
 
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
@@ -276,9 +276,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script>
-  $("#Menus").load("Menus.php");
-</script>
+  
     <?php include 'scripts.php'; ?>
     <!-- Seta as mascaras dos campos -->
 
