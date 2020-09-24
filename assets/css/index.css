@@ -39,7 +39,7 @@ img {
 form {
   margin: 20px 0;
   background-color: white;
-  padding: 30px 25px;
+  padding: 20px 15px;
   border-radius: 5px;
  
 }
@@ -57,7 +57,7 @@ a:hover{
 
 
 form .input-block {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
 
@@ -84,7 +84,7 @@ form .btn-login {
   border: none;
   background-color: green;
   color: white;
-  border-radius: 25px;
+  border-radius: 5px;
   margin: auto;
   padding: 7px;
 }
@@ -95,17 +95,17 @@ form {
   animation: fade 0.2s;
 }
 
-form .input-block:nth-child(1) {
+form .texto{
   animation: move 500ms;
 }
 
-form .input-block:nth-child(2) {
+form .texto2 {
   animation: move 400ms;
   animation-delay: 100ms;
   animation-fill-mode: backwards;
 }
 
-form .btn-login {
+form .movebutton {
   animation: move 400ms;
   animation-delay: 250ms;
   animation-fill-mode: backwards;
@@ -134,10 +134,7 @@ form .btn-login {
 }
 
 /* Quando clicar no botão, sumir com o form */
-.form-hide {
-  animation: down 1.2s forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
+
 
 @keyframes down {
   from {
