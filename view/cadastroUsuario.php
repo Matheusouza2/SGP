@@ -247,10 +247,12 @@
       <div style="text-align: center;">
         <button type="submit" onclick="validar()" class="btn btn-success">Cadastrar</button>
       </div>
-      </div>
+     
     </form>
   </section>
   </div>
+
+  
 
   <script>
     (function validar() {

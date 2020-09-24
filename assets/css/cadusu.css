@@ -13,8 +13,7 @@ body {
 
 
 section {
-  display: inline;
-  flex-direction: column;
+
   justify-content: center;
   align-items: left;
   overflow: auto;
@@ -24,12 +23,16 @@ section {
 
 
 body {
+
+  display: flex;
+  flex-direction: column;
   background-image: url('../img/backusu.svg');
   background-position: right;
   background-repeat: no-repeat;
   background-color: green;
   background-size:43%;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: 'Maven Pro', sans-serif;
+
  
   
   
@@ -47,7 +50,8 @@ section .imgcentro {
 
 
 form {
-  width: 75vh;
+  min-width: 1vh;
+  max-width: 75vh;
   margin: 20px 0;
   background-color: white;
   padding: 30px 25px;
