@@ -96,17 +96,17 @@ form {
 }
 
 form .texto{
-  animation: move 500ms;
+  animation: move 1000ms;
 }
 
 form .texto2 {
-  animation: move 400ms;
+  animation: move 800ms;
   animation-delay: 100ms;
   animation-fill-mode: backwards;
 }
 
 form .movebutton {
-  animation: move 400ms;
+  animation: move 900ms;
   animation-delay: 250ms;
   animation-fill-mode: backwards;
 }
