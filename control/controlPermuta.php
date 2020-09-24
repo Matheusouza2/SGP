@@ -1,5 +1,5 @@
 <?php
-//Controle de usuario com put/update/delete | todos os comandos são compartilhados pela variavel COMMAND
+//Controle de permuta com put/update/delete | todos os comandos são compartilhados pela variavel COMMAND
 
 session_start();
 include_once '../dao/PermutaDao.php';
@@ -7,7 +7,8 @@ include_once '../entidades/Permuta.php';
 
 
 if(isset($_POST['command'])){
-    if($_POST['command'] == 'put'){
+  
+	if($_POST['command'] == 'put'){
 		$dataDisponivel = date("d/m/Y H:i", strtotime($_POST['dataDisponivel']));
 		$permuta = new Permuta();
 		$permuta->setDescricao(addslashes($_POST['descricao']));
@@ -28,6 +29,16 @@ if(isset($_POST['command'])){
 		
 		header('location: ../dashboardusu/src/html/index.php');
 										
+	}
+}else if(isset($_GET['command'])){
+	if($_GET['command'] == 'listPp'){
+		//Esle de listar permuta por professor
+		
+		$permutaDao = new PermutaDao();
+
+		$retorno = $permutaDao->listarPermutaProfessor($_SESSION['usuarioLogado']['id']);
+
+		echo json_encode($retorno);
 	}
 }
 ?>
