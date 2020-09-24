@@ -257,7 +257,7 @@
 
         <div class="col-xl">
 
-          <img src='../assets/img/backusu.svg' width="600" height="820" alt="">
+          <img src='../assets/img/backusu.svg'alt="">
         </div>
 
       </div>

@@ -13,10 +13,10 @@ body {
 
 
 section {
-  display: inline;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
  
 }
 
@@ -39,23 +39,26 @@ section .imgcentro {
   
 }
 
+img{
+
+max-width: 600;
+max-height: 820;
+min-width: 200;
+min-height: 300;
+  
+}
+
 
 
 form {
-  width: 70vh;
-  min-width: 1vh;
-  max-width: 150vh;
-
-  height: 100vh;
-  min-height: auto;
-  max-height: 110vh;
+  max-width: 75vh;
+  min-width: auto;
   margin: 20px 0;
   background-color: white;
   padding: 30px 25px;
   border-radius: 5px;
-  margin-left: 7%;
   line-height: 0.9;
-   overflow-y: scroll;
+  overflow-y: scroll;
 
   
  
