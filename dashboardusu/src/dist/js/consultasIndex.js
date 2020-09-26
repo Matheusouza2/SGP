@@ -64,7 +64,7 @@ const options = {
 						var tabela = '';
 						$.each(dados, function(i, obj){tabela += 
 							'<tr>'+
-                                '<td class="border-top-0 px-2 py-4">'+
+                                '<td class="border-top px-2 py-4">'+
                                 '<div class="d-flex no-block align-items-center">'+
                                 	'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
                                 		'<div class="">'+
@@ -73,15 +73,15 @@ const options = {
                                 		'</div>'+
                                 '</div>'+
                                 '</td>'+
-                                '<td class="border-top-0 text-muted px-2 py-4 font-14">'+obj.curso_nome+'</td>'+
-                                '<td class="border-top-0 px-2 py-4">'+
+                                '<td class="border-top text-muted px-2 py-4 font-14">'+obj.curso_nome+'</td>'+
+                                '<td class="border-top px-2 py-4">'+
                                 '<div class="popover-icon">'+
                                 '<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="'+obj.disciplina_nome+'">'+obj.sigla+'</a>'+
                                 '</div>'+
                                 '</td>'+
-                                '<td class="border-top-0 text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="'+obj.status+'"></i></td>'+
-                                '<td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
-                                '<td class="font-weight-medium text-dark border-top-0 px-2 py-4">'+obj.dataDisponivel+'</td>'+
+                                '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="'+obj.status+'"></i></td>'+
+                                '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
+                                '<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
                                 '</tr>'
 						});
 						$('#tablePermutas').html(tabela).show();
