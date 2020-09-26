@@ -361,7 +361,7 @@ $(function() {
       $("#dynamic")
       .css("width", current_progress + "%")
       .attr("aria-valuenow", current_progress)
-      .text(current_progress + "% Permutas Carregadas");
+      .text("Permutas Carregadas");
       if (current_progress >= 100)
           clearInterval(interval);
   }, 20);
