@@ -364,7 +364,7 @@ $(function() {
       .text(current_progress + "% Permutas Carregadas");
       if (current_progress >= 100)
           clearInterval(interval);
-  }, 50);
+  }, 20);
 });
     </script>
 
