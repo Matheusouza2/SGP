@@ -58,6 +58,7 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: 'Maven Pro', sans-serif;
+ }
 
 *,
 *::before,
