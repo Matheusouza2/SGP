@@ -96,32 +96,32 @@ date_default_timezone_set('America/Sao_Paulo');
                             </div>
 
                             <form action="../../../control/controlPermuta.php" method="POST" class="pl-3 pr-3">
-                            	<input type="hidden" name="command" value="put">
-                                <input name="professorSedente" type="hidden" value="<?=$_SESSION['usuarioLogado']['id']?>">
-                                
+                                <input type="hidden" name="command" value="put">
+                                <input name="professorSedente" type="hidden" value="<?= $_SESSION['usuarioLogado']['id'] ?>">
+
                                 <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Curso:</label>
-                                  <select class="custom-select mr-sm-2" id="selectCurso" name="curso">
-                                  </select>
-                                </div>
-                                
-                                <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
-                                  <select class="custom-select mr-sm-2" id="selectTurma" name="turma">
-                                  	<option>Turma</option>
-                                  </select>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Curso:</label>
+                                    <select class="custom-select mr-sm-2" id="selectCurso" name="curso">
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Disciplina</label>
-                                  <select class="custom-select mr-sm-2" id="selectDisciplina" name="disciplina">
-                                  	<option> Disciplina </option>
-                                  </select>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
+                                    <select class="custom-select mr-sm-2" id="selectTurma" name="turma">
+                                        <option>Turma</option>
+                                    </select>
                                 </div>
-                                
+
                                 <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
-                                  <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Disciplina</label>
+                                    <select class="custom-select mr-sm-2" id="selectDisciplina" name="disciplina">
+                                        <option> Disciplina </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
+                                    <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
                                 </div>
 
                                 <div class="form-group">
@@ -132,7 +132,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
                                 <div class="form-group">
                                     <label for="nome">Horário disponivel:</label>
-                                    <input type="datetime-local" min="<?=date('Y-m-d\TH:i');?>" class="form-control" id="data-disponivel" name="dataDisponivel">
+                                    <input type="datetime-local" min="<?= date('Y-m-d\TH:i'); ?>" class="form-control" id="data-disponivel" name="dataDisponivel">
                                 </div>
 
 
@@ -230,11 +230,17 @@ date_default_timezone_set('America/Sao_Paulo');
                 <!-- *************************************************************** -->
                 <!-- Start Top Leader Table -->
                 <!-- *************************************************************** -->
+                <div style="margin: 0.5rem;" class="progress">
+                                        <div id="dynamic" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                            <span id="current-progress"></span>
+                                        </div>
+                                    </div>
+                
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="d-flex align-items-center mb-4">
+                                <div class="align-items-center mb-4">
                                     <h4 class="card-title">Permutas</h4>
 
                                 </div>
@@ -251,7 +257,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
@@ -263,14 +269,21 @@ date_default_timezone_set('America/Sao_Paulo');
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Data Disponivel</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tablePermutas">                                            
+                                        <tbody id="tablePermutas">
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <script>
+
+
+
+                </script>
 
 
 
@@ -328,17 +341,33 @@ date_default_timezone_set('America/Sao_Paulo');
     <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>  
+    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     <script src="../dist/js/consultasIndex.js"></script>
-    
-    
+
+
     <?php
-		if(isset($_SESSION['msg']['permutaCadSuccess'])){
-			echo $_SESSION['msg']['permutaCadSuccess'];
-			unset($_SESSION['msg']['permutaCadSuccess']);
-		}
+    if (isset($_SESSION['msg']['permutaCadSuccess'])) {
+        echo $_SESSION['msg']['permutaCadSuccess'];
+        unset($_SESSION['msg']['permutaCadSuccess']);
+    }
     ?>
- 
+
+    <script>
+
+$(function() {
+  var current_progress = 0;
+  var interval = setInterval(function() {
+      current_progress += 10;
+      $("#dynamic")
+      .css("width", current_progress + "%")
+      .attr("aria-valuenow", current_progress)
+      .text(current_progress + "% Permutas Carregadas");
+      if (current_progress >= 100)
+          clearInterval(interval);
+  }, 99);
+});
+    </script>
+
 </body>
 
 </html>
