@@ -87,7 +87,123 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         </div>
                     </div>
 
+                    <div class="col-5 align-self-center">
+                        <div class="customize-input float-right">
+                            <span><a>Cadastrar</a></span>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal"
+                                data-target="#login-modal"> <i class="fas fa-plus-circle"></i>
+
+                            </button>
+                            </select>
+                        </div>
+                    </div>
+
                 </div>
+            </div>
+
+            <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mt-2 mb-4">
+                                <a href="index.html" class="text-success">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
+                                </a>
+                            </div>
+
+                            <form action="" method="POST" class="pl-3 pr-3">
+                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
+                               
+                                <div class="form-group">
+                                    <label for="instituicao">Instituição</label>
+                                    
+                                    <div class="input-group">
+                                                
+                                                <select class="custom-select" id="inputGroupSelect01">
+                                                    <option selected>Escolher...</option>
+                                                    <option value="1">One</option>
+                                                </select>
+                                            </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="professor">Professor(a)</label>
+                                    
+                                    <div class="input-group">
+                                                
+                                                <select class="custom-select" id="inputGroupSelect01">
+                                                    <option selected>Escolher...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="curso">Curso</label>
+
+                                    <div class="input-group">
+                                
+                                                <select class="custom-select" id="inputGroupSelect01">
+                                                    <option selected>Escolher...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                </div>
+
+                                <div class="form-group">
+                                    
+                                    <label for="disciplina">Disciplinas</label>
+                                    
+                                    <div class="input-group">
+                
+
+                                                <select class="selectpicker" multiple title="Escolher..." data-style="btn-lucas" data-width="450px" data-live-search="true" data-selected-text-format="values">
+                                              
+                                                    <optgroup label="Sistemas para internet" data-max-options="">
+                                                        <option data-tokens="1">Comércio Eletrônico</option>
+                                                        <option  data-tokens="2">Sistemas Distribuidos</option>
+                                                        <option  data-tokens="3">Gerência de Projetos</option>
+                                                    </optgroup>
+                                                    <optgroup label="informática" data-max-options="">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                    </optgroup>
+                                                </select>
+                                               
+                                            </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="turma">Turmas</label>
+
+                                    <div class="input-group">
+                                
+                                                <select class="custom-select" id="inputGroupSelect01">
+                                                    <option selected>Escolher...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                </div>
+
+                            
+
+                                <div class="form-group text-center">
+                                    <button class="btn btn-rounded btn-primary" id="btnCadastrarProfessor" type="submit">Cadastrar
+                                        </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
             </div>
 
 
@@ -127,80 +243,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             <div class="tab-content">
                                 <div class="tab-pane show active" id="sistemaparainternet">
 
-                                    <div style="padding-top: 10px;" class="row">
-
-
-                                        <div class="col-md">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="inputGroupSelect01">Instituição</label>
-                                                </div>
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Escolher...</option>
-                                                    <option value="1">One</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="inputGroupSelect01">Professor(a)</label>
-                                                </div>
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Escolher...</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div style="padding-top: 15px;" class="row">
-
-                                        <div class="col-md">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="inputGroupSelect01">Disciplinas</label>
-                                                </div>
-
-                                                <select class="selectpicker" multiple color="#b8c3d5" title="Escolher..." data-style="btn-lucas" data-width="349px" data-live-search="true" data-selected-text-format="values">
-                                              
-                                                    <optgroup label="Sistemas para internet" data-max-options="">
-                                                        <option data-tokens="1">Comércio Eletrônico</option>
-                                                        <option  data-tokens="2">Sistemas Distribuidos</option>
-                                                        <option  data-tokens="3">Gerência de Projetos</option>
-                                                    </optgroup>
-                                                    <optgroup label="informática" data-max-options="">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </optgroup>
-                                                </select>
-                                               
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-md">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="inputGroupSelect01">Turma</label>
-                                                </div>
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Escolher...</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div style="margin-top: 5%;" class="table-responsive">
+                                    <div style="margin-top: 3%;" class="table-responsive">
                                         <table class="table no-wrap v-middle mb-0">
                                             <thead>
                                                 <tr class="border-0">
