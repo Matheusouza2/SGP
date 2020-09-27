@@ -111,13 +111,13 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" data-toggle="tab" aria-expanded="false" class="nav-link ">
+                                    <a href="#curso2" data-toggle="tab" aria-expanded="false" class="nav-link ">
                                         <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
                                         <span class="d-none d-lg-block">Curso 2</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                    <a href="#curso3" data-toggle="tab" aria-expanded="false" class="nav-link">
                                         <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
                                         <span class="d-none d-lg-block">Curso 3</span>
                                     </a>
@@ -255,10 +255,10 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                     </div>
 
                                 </div>
-                                <div class="tab-pane" id="">
+                                <div class="tab-pane" id="curso2">
 
                                 </div>
-                                <div class="tab-pane" id="">
+                                <div class="tab-pane" id="curso3">
 
                                 </div>
                             </div>
