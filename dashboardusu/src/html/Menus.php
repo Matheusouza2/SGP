@@ -240,10 +240,17 @@
                         <li class="nav-small-cap"><span class="hide-menu">Menu:</span></li>
 
                         <li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"
-                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
+                                aria-expanded="false"><i class="fas fa-building"></i><span
                                     class="hide-menu">Instituição
                                 </span></a>
                         </li>
+
+                        <li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="cadProfessores.php"
+                                aria-expanded="false"><i class="fas fa-address-book"></i><span
+                                    class="hide-menu">Cad. de Professores
+                                </span></a>
+                        </li>
+
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="#"
                                 aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span
                                     class="hide-menu">Chat</span></a></li>

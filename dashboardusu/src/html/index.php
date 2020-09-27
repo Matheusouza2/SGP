@@ -17,6 +17,8 @@ date_default_timezone_set('America/Sao_Paulo');
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>SGP - Sistema de Gerenciamento de Permutas</title>
+
+    <script src="https://unpkg.com/feather-icons"></script>
     <!-- Custom CSS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -169,7 +171,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Criadas</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +187,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="clipboard"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -201,7 +203,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="thumbs-up"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +219,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="thumbs-down"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -366,6 +368,10 @@ $(function() {
           clearInterval(interval);
   }, 20);
 });
+    </script>
+
+<script>
+      feather.replace()
     </script>
 
 </body>
