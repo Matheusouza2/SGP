@@ -149,6 +149,70 @@ date_default_timezone_set('America/Sao_Paulo');
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
+
+
+            <div id="permuta-feita" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mt-2 mb-4">
+                                <a href="index.html" class="text-success">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55"></span>
+                                </a>
+                            </div>
+
+                            <form action="" method="" class="pl-3 pr-3">
+                                <input type="hidden" name="command" value="put">
+                                <input name="professorSedente" type="hidden" value="<?= $_SESSION['usuarioLogado']['id'] ?>">
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Curso:</label>
+                                    <select class="custom-select mr-sm-2" id="selectCurso" name="curso">
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
+                                    <select class="custom-select mr-sm-2" id="selectTurma" name="turma">
+                                        <option>Turma</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Disciplina</label>
+                                    <select class="custom-select mr-sm-2" id="selectDisciplina" name="disciplina">
+                                        <option> Disciplina </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
+                                    <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome">Data de criação:</label>
+                                    <input type="text" class="form-control" id="data-criacao" name="dataCriacao" readonly>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome">Horário disponivel:</label>
+                                    <input type="datetime-local" min="<?= date('Y-m-d\TH:i'); ?>" class="form-control" id="data-disponivel" name="dataDisponivel">
+                                </div>
+
+
+                                <div class="form-group text-center">
+                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -173,6 +237,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -269,6 +334,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">Turma</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Data Disponivel</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Operação</th>
                                             </tr>
                                         </thead>
                                         <tbody id="tablePermutas">
