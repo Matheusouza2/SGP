@@ -313,18 +313,6 @@ date_default_timezone_set('America/Sao_Paulo');
                                 </div>
                                 <div class="table-responsive">
 
-                                    <div style="float: right;" class="ml-auto">
-                                        <div class="dropdown sub-dropdown">
-                                            <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i data-feather="more-vertical"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                <a class="dropdown-item" href="" onclick="">Atualizar</a>
-                                                <a class="dropdown-item" href="" onclick="">Deletar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
