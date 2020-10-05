@@ -258,8 +258,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                All Rights Reserved by Adminmart. Designed and Developed by <a
-                    href="https://wrappixel.com">WrapPixel</a>.
+                <a href="https://www.ifsertao-pe.edu.br">IF-Sertão Pernambucano</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

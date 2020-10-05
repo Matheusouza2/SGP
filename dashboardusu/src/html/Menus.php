@@ -84,10 +84,8 @@
                                                 <div class="btn btn-danger rounded-circle btn-circle"><i
                                                         data-feather="airplay" class="text-white"></i></div>
                                                 <div class="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 class="message-title mb-0 mt-1">Luanch Admin</h6>
-                                                    <span class="font-12 text-nowrap d-block text-muted">Just see
-                                                        the my new
-                                                        admin!</span>
+                                                    <h6 class="message-title mb-0 mt-1">Usuário 1</h6>
+                                                    <span class="font-12 text-nowrap d-block text-muted">Permuta recusada</span>
                                                     <span class="font-12 text-nowrap d-block text-muted">9:30 AM</span>
                                                 </div>
                                             </a>
@@ -97,10 +95,10 @@
                                                 <span class="btn btn-success text-white rounded-circle btn-circle"><i
                                                         data-feather="calendar" class="text-white"></i></span>
                                                 <div class="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 class="message-title mb-0 mt-1">Event today</h6>
+                                                    <h6 class="message-title mb-0 mt-1">Usuário 2</h6>
                                                     <span
                                                         class="font-12 text-nowrap d-block text-muted text-truncate">Just
-                                                        a reminder that you have event</span>
+                                                        Permuta Aceita</span>
                                                     <span class="font-12 text-nowrap d-block text-muted">9:10 AM</span>
                                                 </div>
                                             </a>
@@ -110,31 +108,20 @@
                                                 <span class="btn btn-info rounded-circle btn-circle"><i
                                                         data-feather="settings" class="text-white"></i></span>
                                                 <div class="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 class="message-title mb-0 mt-1">Settings</h6>
+                                                    <h6 class="message-title mb-0 mt-1">Cadastro</h6>
                                                     <span
-                                                        class="font-12 text-nowrap d-block text-muted text-truncate">You
-                                                        can customize this template
-                                                        as you want</span>
+                                                        class="font-12 text-nowrap d-block text-muted text-truncate">
+                                                        Agora você pode inserir Foto</span>
                                                     <span class="font-12 text-nowrap d-block text-muted">9:08 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
-                                            <a href="javascript:void(0)"
-                                                class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-primary rounded-circle btn-circle"><i
-                                                        data-feather="box" class="text-white"></i></span>
-                                                <div class="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 class="message-title mb-0 mt-1">Pavan kumar</h6> <span
-                                                        class="font-12 text-nowrap d-block text-muted">Just
-                                                        see the my admin!</span>
-                                                    <span class="font-12 text-nowrap d-block text-muted">9:02 AM</span>
-                                                </div>
-                                            </a>
+
                                         </div>
                                     </li>
                                     <li>
                                         <a class="nav-link pt-3 text-center text-dark" href="javascript:void(0);">
-                                            <strong>Check all notifications</strong>
+                                            <strong>Ver todas as notificações</strong>
                                             <i class="fa fa-angle-right"></i>
                                         </a>
                                     </li>
@@ -151,10 +138,10 @@
                                 <i data-feather="settings" class="svg-icon"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Ação 1</a>
+                                <a class="dropdown-item" href="#">Ação 2</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">Ação 3</a>
                             </div>
                         </li>
                         <!-- <li class="nav-item d-none d-md-block">
