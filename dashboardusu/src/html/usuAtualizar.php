@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['usuarioLogado'])) {
-    header('location: /sgp/index.php ');
+    header('location: ../../../index.php ');
 }
 
 ?>
@@ -21,7 +21,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <title>SGP - Sistema de Gerenciamento de Permutas</title>
     <!-- Custom CSS -->
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../dist/css/style.css" rel="stylesheet">
@@ -62,7 +61,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
-        <div id="Menus"></div><br />
+        <?php include 'Menus.php'; ?>
 
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
@@ -99,15 +98,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-
               <section class="form-section">
 
-                <form action="" method="" class="needs-validation" novalidate>
-
+                <form action="../../../control/controlUser.php" method="POST" class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
+                  <input type="hidden" value="update" name="command">
+                  <input type="hidden" value="<?=$_SESSION['usuarioLogado']['id']?>" name="updateId">
                   <div class="form-group">
                     <label for="validationCustom01">Nome</label>
                     <input type="text" class="form-control" id="nome" name="nome" value="<?=$_SESSION['usuarioLogado']['nome']?>" required>
-
                     <div class="invalid-feedback">
                       Insira o nome!
                     </div>
@@ -199,7 +197,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="form-row">
                       <div class="col-md-4 mb-4">
                         <label for="validationCustom09">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" value="<?=$_SESSION['usuarioLogado']['cpf']?>" required>
+
+                        <input type="text" class="form-control" id="cpf" name="cpf" readonly value="<?=$_SESSION['usuarioLogado']['cpf']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -210,7 +209,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                       </div>
                       <div class="col-md-8 mb-6">
                         <label for="validationCustom10">RG</label>
-                        <input type="text" class="form-control" id="rg" name="rg" value="RG" required>
+                        <input type="text" class="form-control" id="rg" name="rg" value="<?=$_SESSION['usuarioLogado']['rg']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -222,6 +221,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     </div>
 
                   </div>
+
                   <div style="text-align: center;">
                     <button type="submit" onclick="validar()" class="btn btn-success">Atualizar</button>
                   </div>
@@ -259,8 +259,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                All Rights Reserved by Adminmart. Designed and Developed by <a
-                    href="https://wrappixel.com">WrapPixel</a>.
+                <a href="https://www.ifsertao-pe.edu.br">IF-Sertão Pernambucano</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -277,53 +276,26 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script>
-  $("#Menus").load("Menus.php");
-</script>
-    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
-    <script src="../dist/js/app-style-switcher.js"></script>
-    <script src="../dist/js/feather.min.js"></script>
-    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="../dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <script src="../assets/extra-libs/c3/d3.min.js"></script>
-    <script src="../assets/extra-libs/c3/c3.min.js"></script>
-    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
-    <script src="../dist/js/validaEconsultaCnpj.js"></script>
-    <script src="../dist/js/buscarcep.js"></script>
-
-
+  
+    <?php include 'scripts.php'; ?>
     <!-- Seta as mascaras dos campos -->
+
     <script>
         $(document).ready(function(){
-            $.get("/sgp/control/listarInstituicoes.php");
-            $('#cpf').mask('000.000.000-00');
-            $('#cep').mask('00000-000');
-            $('#estado').mask('AA');
-            $('#telefone').mask('(00) 0 0000-0000');
+          $('#cpf').mask('000.000.000-00');
+          $('#cep').mask('00000-000');
+          $('#estado').mask('AA');
+          $('#telefone').mask('(00)0 0000-0000');
         });
     </script>
 
 
 
 <?php
-    if(isset($_SESSION['msg']['erroLogin'])){
-        echo $_SESSION['msg']['erroLogin'];
-        unset($_SESSION['msg']['erroLogin']);
-
-    }else if(isset($_SESSION['msg']['usuCadSuccess'])){
-        echo $_SESSION['msg']['usuCadSuccess'];
-        unset($_SESSION['msg']['usuCadSuccess']);
-}
+    if(isset($_SESSION['msg']['msgUpdate'])){
+        echo $_SESSION['msg']['msgUpdate'];
+        unset($_SESSION['msg']['msgUpdate']);
+    }
 ?>
 
 </body>

@@ -9,7 +9,8 @@
 
   <!-- Bootstrap CSS -->
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+
   <link rel="stylesheet" href="../seletorCursos\css\bootstrap4\tail.select-default.css">
 
   <link rel="stylesheet" href="../assets/css/cadusu.css" />
@@ -21,139 +22,143 @@
 
 <body>
 
-  <section class="form-section">
+  <div class="container-fluid">
 
-    <form action="../control/cadUser.php" method="POST" class="needs-validation" novalidate>
+    <div class="row">
+      <div class="col">
+        <section class="form-section">
 
-    <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="telaLogin.php">
-    <img src='../assets/img/logocadastro.svg' width="20" height="30" class="d-inline-block align-top" alt="">
-    Voltar
-  </a>
-</nav>
+          <form action="../control/controlUser.php" method="POST" class="needs-validation" novalidate>
+            <input type="hidden" value="put" name="command">
+            <nav class="navbar navbar-light bg-light">
+              <a class="navbar-brand" href="telaLogin.php">
+                <img src='../assets/img/logocadastro.svg' width="20" height="30" class="d-inline-block align-top" alt="">
+                <label>Voltar</label>
+              </a>
+            </nav>
 
-<hr>
+            <hr>
 
-      <div class="form-group">
-        <label for="validationCustom01">Nome</label>
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
+            <div class="form-group">
+              <label for="validationCustom01">Nome</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
 
-        <div class="invalid-feedback">
-          Insira o nome!
-        </div>
-      </div>
-
-
-      <div class="form-group">
-
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationCustom02">Endereço</label>
-            <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" required>
-            <div class="invalid-feedback">
-              Por favor, informe um Endereço.
-            </div>
-          </div>
-          <div class="col-md-6 mb-6">
-            <label for="validationCustom03">Bairro</label>
-            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
-            <div class="invalid-feedback">
-              Por favor, informe um bairro válido.
-            </div>
-          </div>
-        </div>
-
-        <div class="form-row">
-
-          <div class="col-md-3 mb-3">
-            <label for="validationCustom04">Número</label>
-            <input type="number" class="form-control" id="numero" name="numero" placeholder="Nº" required>
-            <div class="invalid-feedback">
-              Por favor, informe um numero válido.
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-3">
-            <label for="validationCustom05">Cidade</label>
-            <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required>
-            <div class="invalid-feedback">
-              Por favor, informe uma cidade.
-            </div>
-          </div>
-
-
-          <div class="col-md-3 mb-3">
-            <label for="validationCustom05">Estado</label>
-            <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" required>
-            <div class="invalid-feedback">
-              Por favor, informe um estado válido.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationCustom06">CEP</label>
-            <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" required>
-            <div class="invalid-feedback">
-              Por favor, informe um CEP válido.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-
-        <div class="form-row">
-          <div class="col-md-4 mb-4">
-            <label for="validationCustom07">Telefone</label>
-            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required>
-            <div class="valid-feedback">
-              Tudo certo!
+              <div class="invalid-feedback">
+                Insira o nome!
+              </div>
             </div>
 
-            <div class="invalid-feedback">
-              Por favor, informe um Telefone válido.
-            </div>
-          </div>
-          <div class="col-md-8 mb-6">
-            <label for="validationCustom08">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-            <div class="valid-feedback">
-              Tudo certo!
+
+            <div class="form-group">
+
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustom02">Endereço</label>
+                  <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" required>
+                  <div class="invalid-feedback">
+                    Por favor, informe um Endereço.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-6">
+                  <label for="validationCustom03">Bairro</label>
+                  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
+                  <div class="invalid-feedback">
+                    Por favor, informe um bairro válido.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom04">Número</label>
+                  <input type="number" class="form-control" id="numero" name="numero" placeholder="Nº" required>
+                  <div class="invalid-feedback">
+                    Por favor, informe um numero válido.
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom05">Cidade</label>
+                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required>
+                  <div class="invalid-feedback">
+                    Por favor, informe uma cidade.
+                  </div>
+                </div>
+
+
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom05">Estado</label>
+                  <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" required>
+                  <div class="invalid-feedback">
+                    Por favor, informe um estado válido.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom06">CEP</label>
+                  <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" required>
+                  <div class="invalid-feedback">
+                    Por favor, informe um CEP válido.
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="invalid-feedback">
-              Por favor, informe um email válido.
-            </div>
-          </div>
-        </div>
+            <div class="form-group">
 
-        <div class="form-row">
-          <div class="col-md-4 mb-4">
-            <label for="validationCustom09">CPF</label>
-            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required>
-            <div class="valid-feedback">
-              Tudo certo!
+              <div class="form-row">
+                <div class="col-md-4 mb-4">
+                  <label for="validationCustom07">Telefone</label>
+                  <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required>
+                  <div class="valid-feedback">
+                    Tudo certo!
+                  </div>
+
+                  <div class="invalid-feedback">
+                    Por favor, informe um Telefone válido.
+                  </div>
+                </div>
+                <div class="col-md-8 mb-6">
+                  <label for="validationCustom08">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                  <div class="valid-feedback">
+                    Tudo certo!
+                  </div>
+
+                  <div class="invalid-feedback">
+                    Por favor, informe um email válido.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-4 mb-4">
+                  <label for="validationCustom09">CPF</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required>
+                  <div class="valid-feedback">
+                    Tudo certo!
+                  </div>
+
+                  <div class="invalid-feedback">
+                    Por favor, informe um CPF válido.
+                  </div>
+                </div>
+                <div class="col-md-8 mb-6">
+                  <label for="validationCustom10">RG</label>
+                  <input type="text" class="form-control" id="rg" name="rg" placeholder="RG" required>
+                  <div class="valid-feedback">
+                    Tudo certo!
+                  </div>
+
+                  <div class="invalid-feedback">
+                    Por favor, informe um RG válido.
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            <div class="invalid-feedback">
-              Por favor, informe um CPF válido.
-            </div>
-          </div>
-          <div class="col-md-8 mb-6">
-            <label for="validationCustom10">RG</label>
-            <input type="text" class="form-control" id="rg" name="rg" placeholder="RG" required>
-            <div class="valid-feedback">
-              Tudo certo!
-            </div>
-
-            <div class="invalid-feedback">
-              Por favor, informe um RG válido.
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- <div class="form-group">
+            <!-- <div class="form-group">
 
       
         <label>Cursos Superiores:</label>
@@ -184,7 +189,7 @@
 
 
 
-      <!-- <div class="custom-control custom-checkbox">
+            <!-- <div class="custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input" id="customControlValidation1" name="cursoLeciona" value="sistemas para internet">
           <label class="custom-control-label" for="customControlValidation1" >Sistemas p/ Internet</label>
         </div>
@@ -222,28 +227,43 @@
 
 
 
-      <div class="form-group">
+            <div class="form-group">
 
-        <label for="validationCustom11">Senha</label>
-        <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
+              <label for="validationCustom11">Senha</label>
+              <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
 
-        <div class="invalid-feedback">
-          Por favor, informe a Senha.
-        </div>
+              <div class="invalid-feedback">
+                Por favor, informe a Senha.
+              </div>
+            </div>
 
-        <label for="validationCustom11">Confirmar Senha</label>
-        <input type="password" class="form-control" id="confirmarsenha" name="confirmarsenha" placeholder="Senha" required>
 
-        <div class="invalid-feedback">
-          Por favor, informe a Senha.
-        </div>
+            <div class="form-group">
+              <label for="validationCustom11">Confirmar Senha</label>
+              <input type="password" class="form-control" id="confirmarsenha" name="confirmarsenha" placeholder="Senha" required>
 
+              <div class="invalid-feedback">
+                Por favor, informe a Senha.
+              </div>
+
+            </div>
+            <div style="text-align: center;">
+              <button type="submit" onclick="validar()" class="btn btn-success">Cadastrar</button>
+            </div>
+
+          </form>
+        </section>
       </div>
-      <div style="text-align: center;">
-        <button type="submit" onclick="validar()" class="btn btn-success">Cadastrar</button>
+
+      <div class="col-xl">
+
+        <img class="img-fluid" src='../assets/img/backusu.svg' alt="">
       </div>
-    </form>
-  </section>
+
+    </div>
+
+
+  </div>
 
   <script>
     (function validar() {

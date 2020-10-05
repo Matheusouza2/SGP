@@ -1,7 +1,8 @@
 <?php session_start();
 if (!isset($_SESSION['usuarioLogado'])) {
-    header('location: /sgp/index.php ');
+    header('location: ../../../index.php ');
 }
+date_default_timezone_set('America/Sao_Paulo');
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="pt-BR">
@@ -16,14 +17,17 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>SGP - Sistema de Gerenciamento de Permutas</title>
+
+    <script src="https://unpkg.com/feather-icons"></script>
     <!-- Custom CSS -->
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../dist/css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -45,10 +49,9 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
 
-        <div id="Menus"></div><br />
+        <?php include 'Menus.php'; ?>
 
 
         <!-- ============================================================== -->
@@ -77,11 +80,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
                             <span><a>Cadastrar Permuta</a></span>
-                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal"
-                                data-target="#login-modal"> <i class="fas fa-plus-circle"></i>
-
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"> <i class="fas fa-plus-circle"></i>
                             </button>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -93,48 +93,54 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="modal-body">
                             <div class="text-center mt-2 mb-4">
                                 <a href="index.html" class="text-success">
-                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55"></span>
                                 </a>
                             </div>
 
-                            <form action="/sgp/control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
-                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
+                            <form action="../../../control/controlPermuta.php" method="POST" class="pl-3 pr-3">
+                                <input type="hidden" name="command" value="put">
+                                <input name="professorSedente" type="hidden" value="<?= $_SESSION['usuarioLogado']['id'] ?>">
+
                                 <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
-                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                      <option selected>Turma...</option>
-                                      <option value="1">1</option>
-                                      <option value="2">2</option>
-                                      <option value="3">3</option>
-                                  </select>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Curso:</label>
+                                    <select class="custom-select mr-sm-2" id="selectCurso" name="curso">
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
-                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Matéria</label>
-                                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                      <option selected>Matéria...</option>
-                                      <option value="1">One</option>
-                                      <option value="2">Two</option>
-                                      <option value="3">Three</option>
-                                  </select>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
+                                    <select class="custom-select mr-sm-2" id="selectTurma" name="turma">
+                                        <option>Turma</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nome">Horário de Início:</label>
-                                    <input type="datetime-local" class="form-control" value="2020-09-10T19:00">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Disciplina</label>
+                                    <select class="custom-select mr-sm-2" id="selectDisciplina" name="disciplina">
+                                        <option> Disciplina </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
+                                    <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome">Data de criação:</label>
+                                    <input type="text" class="form-control" id="data-criacao" name="dataCriacao" readonly>
 
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nome">Horário de Termino:</label>
-                                    <input type="datetime-local" class="form-control" value="2020-09-10T20:00">
-
+                                    <label for="nome">Horário disponivel:</label>
+                                    <input type="datetime-local" min="<?= date('Y-m-d\TH:i'); ?>" class="form-control" id="data-disponivel" name="dataDisponivel">
                                 </div>
 
 
                                 <div class="form-group text-center">
                                     <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
-                                        </button>
+                                    </button>
                                 </div>
 
                             </form>
@@ -143,6 +149,70 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
+
+
+            <div id="permuta-feita" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mt-2 mb-4">
+                                <a href="index.html" class="text-success">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55"></span>
+                                </a>
+                            </div>
+
+                            <form action="" method="" class="pl-3 pr-3">
+                                <input type="hidden" name="command" value="put">
+                                <input name="professorSedente" type="hidden" value="<?= $_SESSION['usuarioLogado']['id'] ?>">
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Curso:</label>
+                                    <select class="custom-select mr-sm-2" id="selectCurso" name="curso">
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
+                                    <select class="custom-select mr-sm-2" id="selectTurma" name="turma">
+                                        <option>Turma</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Disciplina</label>
+                                    <select class="custom-select mr-sm-2" id="selectDisciplina" name="disciplina">
+                                        <option> Disciplina </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
+                                    <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome">Data de criação:</label>
+                                    <input type="text" class="form-control" id="data-criacao" name="dataCriacao" readonly>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome">Horário disponivel:</label>
+                                    <input type="datetime-local" min="<?= date('Y-m-d\TH:i'); ?>" class="form-control" id="data-disponivel" name="dataDisponivel">
+                                </div>
+
+
+                                <div class="form-group text-center">
+                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -160,14 +230,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: green !important;">1</span>
+                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: green !important;">1</span>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Criadas</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -177,13 +247,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: rgb(255, 208, 0) !important;">1</span>
+                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(255, 208, 0) !important;">1</span>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="clipboard"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -194,13 +263,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">1</span>
+                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">1</span>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="thumbs-up"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -211,13 +279,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span
-                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">1</span>
+                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">1</span>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="thumbs-down"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -230,89 +297,49 @@ if (!isset($_SESSION['usuarioLogado'])) {
                 <!-- *************************************************************** -->
                 <!-- Start Top Leader Table -->
                 <!-- *************************************************************** -->
+                <div style="margin: 0.5rem;" class="progress">
+                                        <div id="dynamic" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                            <span id="current-progress"></span>
+                                        </div>
+                                    </div>
+                
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="d-flex align-items-center mb-4">
+                                <div class="align-items-center mb-4">
                                     <h4 class="card-title">Permutas</h4>
-                                    <div class="ml-auto">
-                                        <div class="dropdown sub-dropdown">
-                                            <button class="btn btn-link text-muted dropdown-toggle" type="button"
-                                                id="dd1" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                <i data-feather="more-vertical"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                <a class="dropdown-item" href="#">Insert</a>
-                                                <a class="dropdown-item" href="#">Update</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <div class="table-responsive">
+
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Professor
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Disciplina
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Matéria</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Status
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                Hr. Início
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Hr. Termino</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Professor</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Curso</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Disciplina</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">Turma</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Data Disponivel</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Operação</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="border-top-0 px-2 py-4">
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-3"><img
-                                                                src="../assets/images/users/widget-table-pic1.jpg"
-                                                                alt="user" class="rounded-circle" width="45"
-                                                                height="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Professor Random</h5>
-                                                            <span class="text-muted font-14">handom@gmail.com</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">Sis. para Internet</td>
-                                                <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">IHC</a>
-
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">CE</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-center px-2 py-4"><i
-                                                        class="fa fa-circle text-success font-12" data-toggle="tooltip"
-                                                        data-placement="top" title="In Testing"></i></td>
-                                                <td
-                                                    class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
-                                                    19:00hrs
-                                                </td>
-                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">20:30hrs
-                                                </td>
-                                            </tr>
-
+                                        <tbody id="tablePermutas">
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <script>
+
+
+
+                </script>
 
 
 
@@ -352,10 +379,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script>
-  $("#Menus").load("Menus.php");
-</script>
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
@@ -374,6 +398,36 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+    <script src="../dist/js/consultasIndex.js"></script>
+
+
+    <?php
+    if (isset($_SESSION['msg']['permutaCadSuccess'])) {
+        echo $_SESSION['msg']['permutaCadSuccess'];
+        unset($_SESSION['msg']['permutaCadSuccess']);
+    }
+    ?>
+
+    <script>
+
+$(function() {
+  var current_progress = 0;
+  var interval = setInterval(function() {
+      current_progress += 10;
+      $("#dynamic")
+      .css("width", current_progress + "%")
+      .attr("aria-valuenow", current_progress)
+      .text("Permutas Carregadas");
+      if (current_progress >= 100)
+          clearInterval(interval);
+  }, 20);
+});
+    </script>
+
+<script>
+      feather.replace()
+    </script>
+
 </body>
 
 </html>

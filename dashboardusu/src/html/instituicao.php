@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['usuarioLogado'])) {
-    header('location: /sgp/index.php ');
+   header('location: ../../../index.php');
 }
 
 ?>
@@ -17,9 +17,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>SGP - Sistema de Gerenciamento de Permutas</title>
-    <!-- Custom CSS -->
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-
+   
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
@@ -55,7 +53,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- ============================================================== -->
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-        <div id="Menus"></div><br />
+         <?php include 'Menus.php'; ?>
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
@@ -111,7 +109,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </a>
                             </div>
 
-                            <form action="/sgp/control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
+                            <form action="../../../control/cadInstituicao.php" method="POST" class="pl-3 pr-3">
                                 <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
                                 <div class="form-group">
                                     <label for="cnpj">CNPJ</label>
@@ -253,9 +251,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script>
-    $("#Menus").load("Menus.php");
-    </script>
+    
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
@@ -280,7 +276,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <!-- Seta as mascaras dos campos -->
     <script>
         $(document).ready(function(){
-            $.get("/sgp/control/listarInstituicoes.php");
+            $.get("../../../control/listarInstituicoes.php");
             $('#cnpj').mask('00.000.000/0000-00');
             $('#cep').mask('00000-000');
             $('#estado').mask('AA');

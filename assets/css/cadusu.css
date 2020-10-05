@@ -13,27 +13,21 @@ body {
 
 
 section {
-  display: inline;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  overflow: auto;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
 }
 
 
 
 
 body {
-  background-image: url('../img/backusu.svg');
-  background-position: right;
-  background-repeat: no-repeat;
+ 
   background-color: green;
-  background-size:43%;
-  font-family: Roboto, Arial, sans-serif;
-  background-position-y: 30%;
-  background-position-x: 90%;
-  
-  
+ 
+   
 }
 
 
@@ -47,14 +41,17 @@ section .imgcentro {
 
 
 
+
 form {
-  width: 75vh;
+  max-width: 75vh;
+  min-width: auto;
   margin: 20px 0;
   background-color: white;
   padding: 30px 25px;
   border-radius: 5px;
-  margin-left: 7%;
-  overflow: auto;
+  overflow-y: scroll;
+
+  
  
 }
 
@@ -156,7 +153,7 @@ form .btn-login {
 
 /* APARIÇÃO DO FORM */
 form {
-  overflow: hidden;
+  overflow: auto;
   animation: fade 0.2s;
 }
 

@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
+
 }
 
 html,
@@ -15,7 +19,7 @@ body {
   background-repeat: no-repeat;
   background-size:52%;
   background-color: green;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 
@@ -35,7 +39,7 @@ img {
 form {
   margin: 20px 0;
   background-color: white;
-  padding: 30px 25px;
+  padding: 20px 15px;
   border-radius: 5px;
  
 }
@@ -53,7 +57,7 @@ a:hover{
 
 
 form .input-block {
-  margin-bottom: 20px;
+  margin-bottom: 7px;
 }
 
 
@@ -80,7 +84,7 @@ form .btn-login {
   border: none;
   background-color: green;
   color: white;
-  border-radius: 25px;
+  border-radius: 5px;
   margin: auto;
   padding: 7px;
 }
@@ -91,18 +95,18 @@ form {
   animation: fade 0.2s;
 }
 
-form .input-block:nth-child(1) {
-  animation: move 500ms;
+form .texto{
+  animation: move 1000ms;
 }
 
-form .input-block:nth-child(2) {
-  animation: move 400ms;
+form .texto2 {
+  animation: move 800ms;
   animation-delay: 100ms;
   animation-fill-mode: backwards;
 }
 
-form .btn-login {
-  animation: move 400ms;
+form .movebutton {
+  animation: move 900ms;
   animation-delay: 250ms;
   animation-fill-mode: backwards;
 }
@@ -130,10 +134,7 @@ form .btn-login {
 }
 
 /* Quando clicar no botão, sumir com o form */
-.form-hide {
-  animation: down 1.2s forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
+
 
 @keyframes down {
   from {

@@ -1,14 +1,15 @@
 <?php
-include_once '..\dao\UsuarioDao.php';
+include_once '../dao/UsuarioDao.php';
 
 session_start();
+
 $email = addslashes($_POST['email']);
 $senha = addslashes($_POST['senha']);
-echo "console.log('Loucura')";
+
 $usuDao = new UsuarioDao();
 
-$usuLogado = $usuDao->login($email, $senha);
 
+$usuLogado = $usuDao->login($email, $senha);
 
 if (! empty($usuLogado)) {
 	
@@ -19,5 +20,5 @@ if (! empty($usuLogado)) {
 
 } else {
     $_SESSION['msg']['erroLogin'] = "<script> Swal.fire({icon: 'error', title: 'Oops...', text: 'Email ou senha não cadastrados !'}); </script>";
-    header('location: /sgp/view/telaLogin.php');
+    header('location: ../view/telaLogin.php');
 }

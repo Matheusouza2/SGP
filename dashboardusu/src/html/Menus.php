@@ -1,13 +1,4 @@
-<?php session_start();
-if (!isset($_SESSION['usuarioLogado'])) {
-    header('location: /sgp/index.php ');
-}
-
-?>
 <!DOCTYPE html>
-
-
-
 
 
     <!-- ============================================================== -->
@@ -32,7 +23,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="index.php">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
@@ -81,7 +72,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 id="bell" role="button" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <span><i data-feather="bell" class="svg-icon"></i></span>
-                                <span class="badge badge-primary notify-no rounded-circle">5</span>
+                                <span class="badge badge-primary notify-no rounded-circle">3</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
                                 <ul class="list-style-none">
@@ -93,10 +84,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                 <div class="btn btn-danger rounded-circle btn-circle"><i
                                                         data-feather="airplay" class="text-white"></i></div>
                                                 <div class="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 class="message-title mb-0 mt-1">Luanch Admin</h6>
-                                                    <span class="font-12 text-nowrap d-block text-muted">Just see
-                                                        the my new
-                                                        admin!</span>
+                                                    <h6 class="message-title mb-0 mt-1">Usuário 1</h6>
+                                                    <span class="font-12 text-nowrap d-block text-muted">Permuta recusada</span>
                                                     <span class="font-12 text-nowrap d-block text-muted">9:30 AM</span>
                                                 </div>
                                             </a>
@@ -106,10 +95,10 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                 <span class="btn btn-success text-white rounded-circle btn-circle"><i
                                                         data-feather="calendar" class="text-white"></i></span>
                                                 <div class="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 class="message-title mb-0 mt-1">Event today</h6>
+                                                    <h6 class="message-title mb-0 mt-1">Usuário 2</h6>
                                                     <span
                                                         class="font-12 text-nowrap d-block text-muted text-truncate">Just
-                                                        a reminder that you have event</span>
+                                                        Permuta Aceita</span>
                                                     <span class="font-12 text-nowrap d-block text-muted">9:10 AM</span>
                                                 </div>
                                             </a>
@@ -119,31 +108,20 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                 <span class="btn btn-info rounded-circle btn-circle"><i
                                                         data-feather="settings" class="text-white"></i></span>
                                                 <div class="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 class="message-title mb-0 mt-1">Settings</h6>
+                                                    <h6 class="message-title mb-0 mt-1">Cadastro</h6>
                                                     <span
-                                                        class="font-12 text-nowrap d-block text-muted text-truncate">You
-                                                        can customize this template
-                                                        as you want</span>
+                                                        class="font-12 text-nowrap d-block text-muted text-truncate">
+                                                        Agora você pode inserir Foto</span>
                                                     <span class="font-12 text-nowrap d-block text-muted">9:08 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
-                                            <a href="javascript:void(0)"
-                                                class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-primary rounded-circle btn-circle"><i
-                                                        data-feather="box" class="text-white"></i></span>
-                                                <div class="w-75 d-inline-block v-middle pl-2">
-                                                    <h6 class="message-title mb-0 mt-1">Pavan kumar</h6> <span
-                                                        class="font-12 text-nowrap d-block text-muted">Just
-                                                        see the my admin!</span>
-                                                    <span class="font-12 text-nowrap d-block text-muted">9:02 AM</span>
-                                                </div>
-                                            </a>
+
                                         </div>
                                     </li>
                                     <li>
                                         <a class="nav-link pt-3 text-center text-dark" href="javascript:void(0);">
-                                            <strong>Check all notifications</strong>
+                                            <strong>Ver todas as notificações</strong>
                                             <i class="fa fa-angle-right"></i>
                                         </a>
                                     </li>
@@ -160,13 +138,13 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 <i data-feather="settings" class="svg-icon"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Ação 1</a>
+                                <a class="dropdown-item" href="#">Ação 2</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">Ação 3</a>
                             </div>
                         </li>
-                        <li class="nav-item d-none d-md-block">
+                        <!-- <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="javascript:void(0)">
                                 <div class="customize-input">
                                     <select
@@ -178,7 +156,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                     </select>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -187,7 +165,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item d-none d-md-block">
+                        <!-- <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="javascript:void(0)">
                                 <form>
                                     <div class="customize-input">
@@ -197,7 +175,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                     </div>
                                 </form>
                             </a>
-                        </li>
+                        </li> -->
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -216,7 +194,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                     Minha Conta</a>
 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/sgp/control/logout.php"><i data-feather="power"
+                                <a class="dropdown-item" href="../../../control/logout.php"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Sair</a>
                                 <div class="dropdown-divider"></div>
@@ -242,18 +220,25 @@ if (!isset($_SESSION['usuarioLogado'])) {
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html"
+                        <li class="sidebar-item" id="inicio"> <a class="sidebar-link sidebar-link" href="index.php"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Início</span></a></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Menu:</span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="/sgp/control/listarInstituicoes.php"
-                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
+                        <li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"
+                                aria-expanded="false"><i class="fas fa-building"></i><span
                                     class="hide-menu">Instituição
                                 </span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-chat.html"
+
+                        <li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="cadProfessores.php"
+                                aria-expanded="false"><i class="fas fa-address-book"></i><span
+                                    class="hide-menu">Cad. de Professores
+                                </span></a>
+                        </li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="#"
                                 aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span
                                     class="hide-menu">Chat</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-calendar.html"
@@ -261,7 +246,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                     class="hide-menu">Calendarário</span></a></li>
 
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/sgp/control/logout.php"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../../../control/logout.php"
                                 aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                     class="hide-menu">Logout</span></a></li>
                     </ul>
@@ -270,6 +255,25 @@ if (!isset($_SESSION['usuarioLogado'])) {
             </div>
             <!-- End Sidebar scroll-->
         </aside>
+
+        <script>
+            $(document).ready(function(){
+                var url  = window.location.href; 
+                var absoluto = url.split("/")[url.split("/").length -1];
+                var lista = null;
+                switch (absoluto){
+                    case 'index.php':
+                        lista = document.querySelector('#inicio');
+                        lista.classList.add('selected');
+                        break;
+                    case 'instituicao.php':
+                        lista = document.querySelector('#instituicao');
+                        console.log('instituicao');
+                        lista.classList.add('selected');
+                        break;
+                }
+            });
+        </script>
 
 
     <!-- ============================================================== -->
