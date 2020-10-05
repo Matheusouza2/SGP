@@ -8,7 +8,7 @@ class UsuarioDao {
     function login($email, $senha) {
         $con = Conexao::getInstance();
 
-        $sql = 'SELECT email, nome, cpf FROM usuario WHERE email = "' . $email . '" AND senha = "' . $senha . '"';
+        $sql = 'SELECT * FROM usuario WHERE email = "' . $email . '" AND senha = "' . $senha . '"';
 
         $stmt = $con->prepare($sql);
 

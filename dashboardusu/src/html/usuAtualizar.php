@@ -106,7 +106,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                   <div class="form-group">
                     <label for="validationCustom01">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" value="Nome" required>
+                    <input type="text" class="form-control" id="nome" name="nome" value="<?=$_SESSION['usuarioLogado']['nome']?>" required>
 
                     <div class="invalid-feedback">
                       Insira o nome!
@@ -119,14 +119,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="form-row">
                       <div class="col-md-6 mb-3">
                         <label for="validationCustom02">Endereço</label>
-                        <input type="text" class="form-control" id="endereco" name="endereco" value="Endereço" required>
+                        <input type="text" class="form-control" id="endereco" name="endereco" value="<?=$_SESSION['usuarioLogado']['logradouro']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um Endereço.
                         </div>
                       </div>
                       <div class="col-md-6 mb-6">
                         <label for="validationCustom03">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" value="Bairro" required>
+                        <input type="text" class="form-control" id="bairro" name="bairro" value="<?=$_SESSION['usuarioLogado']['bairro']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um bairro válido.
                         </div>
@@ -137,7 +137,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                       <div class="col-md-3 mb-3">
                         <label for="validationCustom04">Número</label>
-                        <input type="number" class="form-control" id="numero" name="numero" value="10" required>
+                        <input type="number" class="form-control" id="numero" name="numero" value="<?=$_SESSION['usuarioLogado']['numero']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um numero válido.
                         </div>
@@ -145,7 +145,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                       <div class="col-md-3 mb-3">
                         <label for="validationCustom05">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" value="Cidade" required>
+                        <input type="text" class="form-control" id="cidade" name="cidade" value="<?=$_SESSION['usuarioLogado']['cidade']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe uma cidade.
                         </div>
@@ -154,14 +154,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                       <div class="col-md-3 mb-3">
                         <label for="validationCustom05">Estado</label>
-                        <input type="text" class="form-control" id="estado" name="estado" value="Estado" required>
+                        <input type="text" class="form-control" id="estado" name="estado" value="<?=$_SESSION['usuarioLogado']['uf']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um estado válido.
                         </div>
                       </div>
                       <div class="col-md-3 mb-3">
                         <label for="validationCustom06">CEP</label>
-                        <input type="text" class="form-control" id="cep" name="cep" value="56000000" required>
+                        <input type="text" class="form-control" id="cep" name="cep" value="<?=$_SESSION['usuarioLogado']['cep']?>" required>
                         <div class="invalid-feedback">
                           Por favor, informe um CEP válido.
                         </div>
@@ -174,7 +174,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="form-row">
                       <div class="col-md-4 mb-4">
                         <label for="validationCustom07">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone" value="Telefone" required>
+                        <input type="text" class="form-control" id="telefone" name="telefone" value="<?=$_SESSION['usuarioLogado']['contato']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -185,7 +185,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                       </div>
                       <div class="col-md-8 mb-6">
                         <label for="validationCustom08">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="Email" required>
+                        <input type="email" class="form-control" id="email" name="email" value="<?=$_SESSION['usuarioLogado']['email']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -199,7 +199,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="form-row">
                       <div class="col-md-4 mb-4">
                         <label for="validationCustom09">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" value="CPF" required>
+                        <input type="text" class="form-control" id="cpf" name="cpf" value="<?=$_SESSION['usuarioLogado']['cpf']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
                         </div>
@@ -222,32 +222,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     </div>
 
                   </div>
-
-
-
-                  <div class="form-group">
-
-                    <label for="validationCustom11">Senha</label>
-                    <input type="password" class="form-control" id="senha" name="senha" value="Senha" required>
-
-                    <div class="invalid-feedback">
-                      Por favor, informe a Senha.
-                    </div>
-
-                  </div>
-
-                  <div class="form-group">
-
-                    <label for="validationCustom11">Confirmar Senha</label>
-                    <input type="password" class="form-control" id="confirmarsenha" name="confirmarsenha" value="Senha" required>
-
-                    <div class="invalid-feedback">
-                      Por favor, informe a Senha.
-                    </div>
-
-                  </div>
-
-
                   <div style="text-align: center;">
                     <button type="submit" onclick="validar()" class="btn btn-success">Atualizar</button>
                   </div>
@@ -332,9 +306,10 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script>
         $(document).ready(function(){
             $.get("/sgp/control/listarInstituicoes.php");
-            $('#cnpj').mask('00.000.000/0000-00');
+            $('#cpf').mask('000.000.000-00');
             $('#cep').mask('00000-000');
             $('#estado').mask('AA');
+            $('#telefone').mask('(00) 0 0000-0000');
         });
     </script>
 

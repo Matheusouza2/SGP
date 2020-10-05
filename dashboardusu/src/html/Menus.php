@@ -1,4 +1,9 @@
+<?php session_start();
+if (!isset($_SESSION['usuarioLogado'])) {
+    header('location: /sgp/index.php ');
+}
 
+?>
 <!DOCTYPE html>
 
 
@@ -202,7 +207,7 @@
                                 <img src="../assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Olá,</span> <span
-                                        class="text-dark">Usuário</span> <i data-feather="chevron-down"
+                                        class="text-dark"><?=$_SESSION['usuarioLogado']['nome']?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
