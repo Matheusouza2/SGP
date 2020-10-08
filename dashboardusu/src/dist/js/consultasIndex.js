@@ -81,7 +81,20 @@ const options = {
                                 '</td>'+
                                 '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="'+obj.status+'"></i></td>'+
                                 '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
-                                '<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
+								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
+
+								
+								'<span> <td class="border-top px-2 py-4">'+
+                                '<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
+                                '<i class="far fa-edit"></i>'+
+								'</button> </span> '+
+								
+								 '<span> <button type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#excluir">'+
+                                '<i class="far fa-trash-alt"></i>'+
+                                '</button> </span>'+
+								'</td>'+
+								
+								
                                 '</tr>'
 						});
 						$('#tablePermutas').html(tabela).show();

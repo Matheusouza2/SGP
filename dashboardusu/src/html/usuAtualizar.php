@@ -102,7 +102,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                 <form action="../../../control/controlUser.php" method="POST" class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
                   <input type="hidden" value="update" name="command">
-                  <input type="hidden" value="<?=$_SESSION['usuarioLogado']['id']?>" name="updateIt">
+                  <input type="hidden" value="<?=$_SESSION['usuarioLogado']['id']?>" name="updateId">
                   <div class="form-group">
                     <label for="validationCustom01">Nome</label>
                     <input type="text" class="form-control" id="nome" name="nome" value="<?=$_SESSION['usuarioLogado']['nome']?>" required>
@@ -197,6 +197,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="form-row">
                       <div class="col-md-4 mb-4">
                         <label for="validationCustom09">CPF</label>
+
                         <input type="text" class="form-control" id="cpf" name="cpf" readonly value="<?=$_SESSION['usuarioLogado']['cpf']?>" required>
                         <div class="valid-feedback">
                           Tudo certo!
@@ -258,8 +259,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                All Rights Reserved by Adminmart. Designed and Developed by <a
-                    href="https://wrappixel.com">WrapPixel</a>.
+                <a href="https://www.ifsertao-pe.edu.br">IF-Sertão Pernambucano</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

@@ -1,5 +1,4 @@
 <?php
-
 include_once 'Conexao.php';
 
 class UsuarioDao {
@@ -23,7 +22,7 @@ class UsuarioDao {
         mysql_close($con);
     }
 
-    function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha) {
+    function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha) {
 
         try {
             $con = Conexao::getInstance();
@@ -35,7 +34,7 @@ class UsuarioDao {
                 return false;
             } else {
 
-                $sql = "INSERT INTO usuario (nome,logradouro,bairro,numero,cidade,uf,cep,telefone,email,cpf,rg,idinstituicao,matricula,senha) values ('$nome','$endereco','$bairro','$numero','$cidade','$estado','$cep','$telefone','$email','$cpf','$rg','$idInstituicao','$matricula','$senha')";
+                $sql = "INSERT INTO usuario (nome,logradouro,bairro,numero,cidade,uf,cep,contato,email,cpf,rg,senha) values ('$nome','$endereco','$bairro','$numero','$cidade','$estado','$cep','$telefone','$email','$cpf','$rg','$senha')";
 
                 $stmt = $con->prepare($sql);
                 $stmt->execute();
@@ -76,7 +75,6 @@ class UsuarioDao {
 
         $con = Conexao::getInstance();
 
-
         $sql = "SELECT * FROM usuario WHERE id='$id'";
 
         $stmt = $con->prepare($sql);
@@ -91,5 +89,4 @@ class UsuarioDao {
 
         mysql_close($con);
     }
-
 }

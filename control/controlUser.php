@@ -19,27 +19,24 @@ if(isset($_POST['command'])){
         $email = addslashes($_POST['email']);
         $cpf = addslashes($_POST['cpf']);
         $rg = addslashes($_POST['rg']);
-        $idInstituicao = addslashes($_POST['idInstituicao']);
-        $matricula = addslashes($_POST['matricula']);
-        $cursoLeciona = addslashes($_POST['cursoLeciona']);
-
         $senha = addslashes($_POST['senha']);
-
+        
+        
+        
         $usuarioDao = new UsuarioDao();
 
-        $verifica = $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $idInstituicao, $matricula, $cursoLeciona, $senha);
-
+        $verifica = $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha);
+        echo $verifica;
         if ($verifica){
             
             $_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Seja bem vindo ao SGP, você já pode entrar no sistema :)', 'success')</script>";
-
-            header('location: ../index.php');	
-
+            header('location: ../index.php');
+           
         }else  {
 
             $_SESSION['msg']['usuCadSuccess'] = "<script> Swal.fire({icon: 'error', title: 'ERRO...', text: 'Email Ja cadastrados ! tente outro email ou tente  fazer login!!'}); </script>";
-
             header('location: ../index.php');
+           
         }
     }elseif($_POST['command'] == 'update'){
         $nome = addslashes($_POST['nome']);
@@ -56,7 +53,7 @@ if(isset($_POST['command'])){
         $contato = str_replace(" ", "", $contato);
         $email = addslashes($_POST['email']);
         $rg = addslashes($_POST['rg']);
-        $id = addslashes($_POST['updateIt']);
+        $id = addslashes($_POST['updateId']);
 
         $usuarioDao = new UsuarioDao();
 
