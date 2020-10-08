@@ -4,6 +4,16 @@ include_once '../dao/InstituicaoDao.php';
 session_start();
 
 
+if(isset($_GET['list'])){
+    $lista = new InstituicaoDao();
+    $instituicoes = $lista->listar($_SESSION['usuarioLogado']['cpf']);
+
+    echo json_encode($instituicoes);
+
+    return;
+
+}
+
 $lista = new InstituicaoDao();
 $instituicoes = $lista->listar($_SESSION['usuarioLogado']['cpf']);
 

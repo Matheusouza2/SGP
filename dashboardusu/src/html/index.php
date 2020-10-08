@@ -232,11 +232,11 @@ date_default_timezone_set('America/Sao_Paulo');
                 <!-- *************************************************************** -->
                 <!-- Start Top Leader Table -->
                 <!-- *************************************************************** -->
-                <div style="margin: 0.5rem;" class="progress">
-                                        <div id="dynamic" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                            <span id="current-progress"></span>
-                                        </div>
-                                    </div>
+                <div style="margin: 0.5rem;" class="progress" id="progress">
+                	<div id="dynamic" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    	<span id="current-progress"></span>
+                    </div>
+				</div>
                 
                 <div class="row">
                     <div class="col-12">
@@ -247,19 +247,6 @@ date_default_timezone_set('America/Sao_Paulo');
 
                                 </div>
                                 <div class="table-responsive">
-
-                                    <div style="float: right;" class="ml-auto">
-                                        <div class="dropdown sub-dropdown">
-                                            <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i data-feather="more-vertical"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                <a class="dropdown-item" href="" onclick="">Atualizar</a>
-                                                <a class="dropdown-item" href="" onclick="">Deletar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
@@ -274,7 +261,6 @@ date_default_timezone_set('America/Sao_Paulo');
                                         <tbody id="tablePermutas">
                                         </tbody>
                                     </table>
-
                                 </div>
                             </div>
                         </div>
@@ -353,22 +339,6 @@ date_default_timezone_set('America/Sao_Paulo');
         unset($_SESSION['msg']['permutaCadSuccess']);
     }
     ?>
-
-    <script>
-
-$(function() {
-  var current_progress = 0;
-  var interval = setInterval(function() {
-      current_progress += 10;
-      $("#dynamic")
-      .css("width", current_progress + "%")
-      .attr("aria-valuenow", current_progress)
-      .text("Permutas Carregadas");
-      if (current_progress >= 100)
-          clearInterval(interval);
-  }, 20);
-});
-    </script>
 
 <script>
       feather.replace()

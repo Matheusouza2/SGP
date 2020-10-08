@@ -238,18 +238,25 @@
                                     class="hide-menu">Início</span></a></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Menu:</span></li>
+                        <?php 
+                        if(isset($_SESSION['usuarioLogado']['admin'])){
 
-                        <li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"
-                                aria-expanded="false"><i class="fas fa-building"></i><span
-                                    class="hide-menu">Instituição
-                                </span></a>
-                        </li>
+                            echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"'.
+                                    'aria-expanded="false"><i class="fas fa-building"></i><span'.
+                                        'class="hide-menu">Instituição'.
+                                    '</span></a>'.
+                            '</li>';
+                        }
+                        ?>
 
-                        <li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="cadProfessores.php"
-                                aria-expanded="false"><i class="fas fa-address-book"></i><span
-                                    class="hide-menu">Cad. de Professores
-                                </span></a>
-                        </li>
+                         <?php 
+                            if(isset($_SESSION['usuarioLogado']['coord']) || isset($_SESSION['usuarioLogado']['admin'])){
+                                echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="cadProfessores.php"'.
+                                        'aria-expanded="false"><i class="fas fa-address-book"></i><span'.
+                                            'class="hide-menu">Gerir Professores</span></a>'.
+                                    '</li>';
+                        }
+                        ?>
 
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="#"
                                 aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span

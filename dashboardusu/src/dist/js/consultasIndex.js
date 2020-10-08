@@ -26,7 +26,6 @@ const options = {
 			function consultaSelects(){
 
 				$.getJSON('../../../control/consultasExtras.php?opc=cursoSelect', function (dados){
-					console.log('oal1');
 					if(dados.length > 0){
 
 						var curso = '<option>Curso</option>';
@@ -59,6 +58,7 @@ const options = {
 
 			//Preenche a table do index cliente
 			function consultaTable(){
+				progress();
 				$.getJSON('../../../control/controlPermuta.php?command=listPp', function (dados){
 					if(dados.length > 0){
 						var tabela = '';
@@ -87,5 +87,24 @@ const options = {
 						$('#tablePermutas').html(tabela).show();
 
 					}
+				});
+			}
+
+			function progress(){
+				
+					var current_progress = 0;
+					var interval = setInterval(function() {
+						current_progress += 10;
+						$("#dynamic")
+						.css("width", current_progress + "%")
+						.attr("aria-valuenow", current_progress)
+						.text("Carregando suas Permutas...");
+						if (current_progress >= 100)
+							clearInterval(interval);
+					}, 20);
+	
+
+				$(document).ajaxStop(function(){
+					$("#progress").hide(); 
 				});
 			}

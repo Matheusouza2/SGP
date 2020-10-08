@@ -94,7 +94,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 data-target="#login-modal"><i class="fa fa-user-plus" aria-hidden="true"></i>
 
                             </button>
-                            </select>
                         </div>
                     </div>
 
@@ -107,7 +106,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="modal-body">
                             <div class="text-center mt-2 mb-4">
                                 <a href="index.html" class="text-success">
-                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55"></span>
                                 </a>
                             </div>
 
@@ -136,6 +135,17 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                     <option value="1">One</option>
                                                     <option value="2">Two</option>
                                                     <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="professor">Coordenador</label>    
+                                    <div class="input-group">          
+                                                <select class="custom-select" id="inputGroupSelect01">
+                                                    <option selected>Escolher...</option>
+                                                    <option value="1">Sim</option>
+                                                    <option value="0">Não</option>
                                                 </select>
                                             </div>
                                 </div>
@@ -190,9 +200,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                     <option value="3">Three</option>
                                                 </select>
                                             </div>
-                                </div>
-
-                            
+                                </div>                        
 
                                 <div class="form-group text-center">
                                     <button class="btn btn-rounded btn-primary" id="btnCadastrarProfessor" type="submit">Cadastrar
