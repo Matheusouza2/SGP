@@ -26,7 +26,7 @@ if(isset($_POST['command'])){
         $usuarioDao = new UsuarioDao();
 
         $verifica = $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha);
-        echo $verifica;
+        
         if ($verifica){
             
             $_SESSION['msg']['usuCadSuccess'] = "<script>Swal.fire('Tudo certo !!!!', 'Seja bem vindo ao SGP, você já pode entrar no sistema :)', 'success')</script>";
@@ -34,7 +34,7 @@ if(isset($_POST['command'])){
            
         }else  {
 
-            $_SESSION['msg']['usuCadSuccess'] = "<script> Swal.fire({icon: 'error', title: 'ERRO...', text: 'Email Ja cadastrados ! tente outro email ou tente  fazer login!!'}); </script>";
+            $_SESSION['msg']['usuCadSuccess'] = "<script> Swal.fire({icon: 'error', title: 'ERRO...', text: 'Email ou CPF já cadastrados ! Faça Login na sua conta!!'}); </script>";
             header('location: ../index.php');
            
         }
