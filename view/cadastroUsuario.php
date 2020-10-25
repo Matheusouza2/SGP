@@ -51,12 +51,16 @@
 
             <div class="form-group">
 
+              <label>Endereço:</label>
+              <hr>
+
               <div class="form-row">
+
                 <div class="col-md-6 mb-3">
-                  <label for="validationCustom02">Endereço</label>
-                  <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" required>
+                  <label for="validationCustom02">CEP</label>
+                  <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" required>
                   <div class="invalid-feedback">
-                    Por favor, informe um Endereço.
+                    Por favor, informe um CEP.
                   </div>
                 </div>
                 <div class="col-md-6 mb-6">
@@ -87,24 +91,33 @@
                 </div>
 
 
-                <div class="col-md-3 mb-3">
+                <div class="col-md-6 mb-6">
                   <label for="validationCustom05">Estado</label>
                   <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" required>
                   <div class="invalid-feedback">
                     Por favor, informe um estado válido.
                   </div>
                 </div>
-                <div class="col-md-3 mb-3">
-                  <label for="validationCustom06">CEP</label>
-                  <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" required>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-12 mb-6">
+                  <label for="validationCustom06">Rua</label>
+                  <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua" required>
                   <div class="invalid-feedback">
-                    Por favor, informe um CEP válido.
+                    Por favor, informe um Endereço.
                   </div>
                 </div>
               </div>
+
             </div>
 
+            
+
             <div class="form-group">
+
+            <label>Dados:</label>
+              <hr>
 
               <div class="form-row">
                 <div class="col-md-4 mb-4">
@@ -257,7 +270,7 @@
 
       <div class="col-xl">
 
-        <img class="img-fluid" src='../assets/img/backusu.svg' alt="">
+        <img style="width:100%; margin-top:25%;" class="img-fluid" src='../assets/img/backusu.svg' alt="">
       </div>
 
     </div>
