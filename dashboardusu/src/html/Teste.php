@@ -238,69 +238,13 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
                                     <h4 class="card-title">Permutas</h4>
+                                  
 
                                 </div>
                                 <div class="table-responsive">
 
-                                    <div style="float: right;" class="ml-auto">
-                                        <div class="dropdown sub-dropdown">
-                                            <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i data-feather="more-vertical"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                <a class="dropdown-item" href="" onclick="">Atualizar</a>
-                                                <a class="dropdown-item" href="" onclick="">Deletar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <table class="table no-wrap v-middle mb-0">
-                                        <thead>
-                                            <tr class="border-0">
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Professor
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Disciplina
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Matéria</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Status
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Hr. Início
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Hr. Termino</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="border-top-0 px-2 py-4">
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Professor Random</h5>
-                                                            <span class="text-muted font-14">handom@gmail.com</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">Sis. para Internet</td>
-                                                <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">IHC</a>
+                                 <img src="../assets/images/vazio.svg" width="400">
 
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item" href="javascript:void(0)">CE</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20" href="javascript:void(0)">+</a>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="In Testing"></i></td>
-                                                <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
-                                                    19:00hrs
-                                                </td>
-                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">20:30hrs
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
