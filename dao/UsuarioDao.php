@@ -1,11 +1,13 @@
 <?php
 include_once 'Conexao.php';
 
-class UsuarioDao {
+class UsuarioDao
+{
 
     private $con;
 
-    function login($email, $senha) {
+    function login($email, $senha)
+    {
         $con = Conexao::getInstance();
 
         $sql = 'SELECT * FROM usuario WHERE email = "' . $email . '" AND senha = "' . $senha . '"';
@@ -13,17 +15,16 @@ class UsuarioDao {
         $stmt = $con->prepare($sql);
 
         $stmt->execute();
-		
+
         if ($stmt->rowCount() == 1) {
             return $stmt->fetch(PDO::FETCH_ASSOC);
-        } else {
-            return null;
+        }else{
+            return false;
         }
-        mysql_close($con);
     }
 
-    function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha) {
-
+    function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha)
+    {
         try {
             $con = Conexao::getInstance();
             $sql = "SELECT * FROM usuario WHERE cpf='$cpf' OR email='$email'";
@@ -47,15 +48,28 @@ class UsuarioDao {
         }
     }
 
-    function atualizar($id, $nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg, $foto) {
-
+    function atualizar($id, $nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg, $foto)
+    {
         try {
             $con = Conexao::getInstance();
 
             $sql = "UPDATE usuario set nome=?, logradouro=?, bairro=?, numero=?, cidade=?, uf=?, cep=?, contato=?, email=?, rg=?, foto=? where id=?";
 
             $stmt = $con->prepare($sql);
-            $stmt->execute([$nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg, $foto, $id]);
+            $stmt->execute([
+                $nome,
+                $endereco,
+                $bairro,
+                $numero,
+                $cidade,
+                $estado,
+                $cep,
+                $telefone,
+                $email,
+                $rg,
+                $foto,
+                $id
+            ]);
             return true;
         } catch (PDOException $e) {
             echo "Ocorreu um erro! ---  " . $e;
@@ -63,16 +77,16 @@ class UsuarioDao {
         }
     }
 
-    public function deletar($id) {
-
+    public function deletar($id)
+    {
         $con = Conexao::getInstance();
         $sql = "DELETE FROM usuario WHERE id=$id";
         $stmt = $con->prepare($sql);
         $stmt->execute();
     }
 
-    public function buscar($id) {
-
+    public function buscar($id)
+    {
         $con = Conexao::getInstance();
 
         $sql = "SELECT * FROM usuario WHERE id='$id'";

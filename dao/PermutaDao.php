@@ -42,9 +42,16 @@ class PermutaDao {
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     }
-
-
+    
+    function deletar($id){
+        $con = Conexao::getInstance();
+        
+        $sql = "DELETE permuta WHERE id=".$id;
+        
+        $stmt = $con->prepare($sql);
+        
+        $stmt->execute();
+    }
 }
 ?>

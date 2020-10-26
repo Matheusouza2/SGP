@@ -32,13 +32,18 @@ if(isset($_POST['command'])){
 	}
 }else if(isset($_GET['command'])){
 	if($_GET['command'] == 'listPp'){
-		//Esle de listar permuta por professor
-		
+				
 		$permutaDao = new PermutaDao();
 
 		$retorno = $permutaDao->listarPermutaProfessor($_SESSION['usuarioLogado']['id']);
 
 		echo json_encode($retorno);
+	}else if($_GET['command'] == 'delete'){
+	    echo('<script>console.log('.$_GET['id'].')</script>');
+	    $permutaDao = new PermutaDao();
+	    $permutaDao->deletar($_GET['id']);
+	    
+	    json_encode(true);
 	}
 }
 ?>

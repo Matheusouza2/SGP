@@ -55,6 +55,12 @@ const options = {
 				});
 
 			}
+			
+			function del($id){
+				$.getJSON('../../../control/controlPermuta.php?command=delete&id='+$id, function (dados){
+					console.log('Retorno'+dados);
+				});
+			}
 
 			//Preenche a table do index cliente
 			function consultaTable(){
@@ -89,7 +95,7 @@ const options = {
                                 '<i class="far fa-edit"></i>'+
 								'</button> </span> '+
 								
-								 '<span> <button type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#excluir">'+
+								 '<span> <button type="button" onclick="del('+obj.permuta_id+')" class="btn btn-danger btn-circle">'+
                                 '<i class="far fa-trash-alt"></i>'+
                                 '</button> </span>'+
 								'</td>'+
@@ -102,6 +108,8 @@ const options = {
 					}
 				});
 			}
+			
+			
 
 			function progress(){
 				
