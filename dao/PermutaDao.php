@@ -46,11 +46,8 @@ class PermutaDao {
     
     function deletar($id){
         $con = Conexao::getInstance();
-        
-        $sql = "DELETE permuta WHERE id=".$id;
-        
+        $sql = "DELETE FROM permuta WHERE id=$id";
         $stmt = $con->prepare($sql);
-        
         $stmt->execute();
     }
 }

@@ -2,6 +2,8 @@
 //Controle de usuario com put/update/delete | todos os comandos são compartilhados pela variavel COMMAND
 
 include_once '../dao/UsuarioDao.php';
+include_once '../dao/InstituicaoDao.php';
+include_once '../dao/CursoDao.php';
 session_start();
 
 
@@ -64,6 +66,17 @@ if(isset($_POST['command'])){
         if ($verifica){       
             $_SESSION['msg']['msgUpdate'] = "<script>Swal.fire({icon: 'success', title: 'Sucesso', text: 'Atualização realizada com sucesso !'})</script>";
             $_SESSION['usuarioLogado'] = $usuarioDao->buscar($id);
+            $lista = new InstituicaoDao();
+            $instituicoes = $lista->listar($_SESSION['usuarioLogado']['cpf']);
+            if($instituicoes != null){
+                $_SESSION['usuarioLogado']['admin'] = true;
+            }
+            
+            $curso = new CursoDao();
+            $flag = $curso->cursoCoordenador($_SESSION['usuarioLogado']['id']);
+            if($flag != null){
+                $_SESSION['usuarioLogado']['coord'] = true;
+            }
             header('location: ../dashboardusu/src/html/usuAtualizar.php');	
 
         }else  {
@@ -95,5 +108,7 @@ function salvarFoto($id){
         @move_uploaded_file ( $arquivo_tmp, $destino );
         
         return $novoNome;
+    }else{
+        return $_SESSION['usuarioLogado']['foto'];
     }
 }

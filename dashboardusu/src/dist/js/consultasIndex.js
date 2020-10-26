@@ -57,9 +57,21 @@ const options = {
 			}
 			
 			function del($id){
-				$.getJSON('../../../control/controlPermuta.php?command=delete&id='+$id, function (dados){
-					console.log('Retorno'+dados);
-				});
+				Swal.fire({
+					title: 'Deseja realmente excluir a permuta ?',
+					showDenyButton: true,
+					showCancelButton: true,
+					confirmButtonText: `Sim`,
+					denyButtonText: `Não`,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						Swal.fire('Permuta deletada com sucesso!!', '', 'success')
+						$.getJSON('../../../control/controlPermuta.php?command=delete&id='+$id, function (dados){});
+					    consultaTable();
+					} else if (result.isDenied) {
+						Swal.fire('Deleção de permuta cancelada!!', '', 'info')
+					}
+				})
 			}
 
 			//Preenche a table do index cliente

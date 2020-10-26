@@ -39,11 +39,9 @@ if(isset($_POST['command'])){
 
 		echo json_encode($retorno);
 	}else if($_GET['command'] == 'delete'){
-	    echo('<script>console.log('.$_GET['id'].')</script>');
 	    $permutaDao = new PermutaDao();
 	    $permutaDao->deletar($_GET['id']);
 	    
-	    json_encode(true);
 	}
 }
 ?>
