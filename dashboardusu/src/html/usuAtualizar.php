@@ -99,7 +99,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
       <div class="container-fluid">
         <section class="form-section">
 
-          <form action="../../../control/controlUser.php" method="POST" class="needs-validation" enctype="application/x-www-form-urlencoded" novalidate>
+          <form action="../../../control/controlUser.php" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
             <input type="hidden" value="update" name="command">
             <input type="hidden" value="<?= $_SESSION['usuarioLogado']['id'] ?>" name="updateId">
             <div class="form-group">
@@ -226,8 +226,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
                   <span class="input-group-text">Carregar</span>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="inputGroupFile01">
-                  <label class="custom-file-label" for="inputGroupFile01">Escolhar sua foto</label>
+                  <input type="file" class="custom-file-input" name="userphoto" id="userphoto"  accept="image/png, image/jpeg, image/jpg">
+                  <label class="custom-file-label" for="userphoto">Escolhar sua foto</label>
                 </div>
               </div>
 

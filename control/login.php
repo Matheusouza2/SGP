@@ -13,7 +13,7 @@ $usuDao = new UsuarioDao();
 //Pega informações do usuario no banco 
 $usuLogado = $usuDao->login($email, $senha);
 
-if (! empty($usuLogado)) {
+if ($usuLogado) {
     //se login e senha estavam corretos seta informações do usuario na sessão
 	$_SESSION['usuarioLogado'] = $usuLogado;
     
