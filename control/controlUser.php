@@ -54,10 +54,12 @@ if(isset($_POST['command'])){
         $email = addslashes($_POST['email']);
         $rg = addslashes($_POST['rg']);
         $id = addslashes($_POST['updateId']);
+        
+        $foto = salvarFoto($id);
 
         $usuarioDao = new UsuarioDao();
 
-        $verifica = $usuarioDao->atualizar($id, $nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $contato, $email, $rg);
+        $verifica = $usuarioDao->atualizar($id, $nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $contato, $email, $rg, $foto);
         
         if ($verifica){       
             $_SESSION['msg']['msgUpdate'] = "<script>Swal.fire({icon: 'success', title: 'Sucesso', text: 'Atualização realizada com sucesso !'})</script>";
@@ -71,4 +73,27 @@ if(isset($_POST['command'])){
         }
     }
 
+}
+
+
+
+
+function salvarFoto($id){
+    if ( isset($_FILES['userphoto']['name']) && $_FILES['userphoto'][ 'error' ] == 0 ) {
+                
+        $arquivo_tmp =$_FILES['userphoto'][ 'tmp_name' ];
+        $nome = $_FILES['userphoto'][ 'name' ];
+        
+        $extensao = pathinfo ( $nome, PATHINFO_EXTENSION );
+        
+        $extensao = strtolower ( $extensao );
+            
+        $novoNome = $id.'.'.$extensao;
+            
+        $destino = '../assets/img/users/' . $novoNome;
+        
+        @move_uploaded_file ( $arquivo_tmp, $destino );
+        
+        return $novoNome;
+    }
 }

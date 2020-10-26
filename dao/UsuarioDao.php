@@ -47,15 +47,15 @@ class UsuarioDao {
         }
     }
 
-    function atualizar($id, $nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg) {
+    function atualizar($id, $nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg, $foto) {
 
         try {
             $con = Conexao::getInstance();
 
-            $sql = "UPDATE usuario set nome=?, logradouro=?, bairro=?, numero=?, cidade=?, uf=?, cep=?, contato=?, email=?, rg=? where id=?";
+            $sql = "UPDATE usuario set nome=?, logradouro=?, bairro=?, numero=?, cidade=?, uf=?, cep=?, contato=?, email=?, rg=?, foto=? where id=?";
 
             $stmt = $con->prepare($sql);
-            $stmt->execute([$nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg, $id]);
+            $stmt->execute([$nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $rg, $foto, $id]);
             return true;
         } catch (PDOException $e) {
             echo "Ocorreu um erro! ---  " . $e;
