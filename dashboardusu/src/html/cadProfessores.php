@@ -90,8 +90,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
                             <span><a>Cadastrar Professor(a)</a></span>
-                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal"
-                                data-target="#login-modal"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user-plus" aria-hidden="true"></i>
 
                             </button>
                         </div>
@@ -111,100 +110,100 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             </div>
 
                             <form action="" method="POST" class="pl-3 pr-3">
-                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
-                               
+                                <input name="usuCad" type="hidden" value="<?= $_SESSION['usuarioLogado']['cpf'] ?>">
+
                                 <div class="form-group">
                                     <label for="instituicao">Instituição</label>
-                                    
+
                                     <div class="input-group">
-                                                
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Escolher...</option>
-                                                    <option value="1">One</option>
-                                                </select>
-                                            </div>
+
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">One</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="professor">Professor(a)</label>
-                                    
+
                                     <div class="input-group">
-                                                
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Escolher...</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
+
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="professor">Coordenador</label>    
-                                    <div class="input-group">          
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Escolher...</option>
-                                                    <option value="1">Sim</option>
-                                                    <option value="0">Não</option>
-                                                </select>
-                                            </div>
+                                    <label for="professor">Coordenador</label>
+                                    <div class="input-group">
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">Sim</option>
+                                            <option value="0">Não</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="curso">Curso</label>
 
                                     <div class="input-group">
-                                
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Escolher...</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
+
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    
-                                    <label for="disciplina">Disciplinas</label>
-                                    
-                                    <div class="input-group">
-                
 
-                                                <select class="selectpicker" multiple title="Escolher..." data-style="btn-lucas" data-width="450px" data-live-search="true" data-selected-text-format="values">
-                                              
-                                                    <optgroup label="Sistemas para internet" data-max-options="">
-                                                        <option data-tokens="1">Comércio Eletrônico</option>
-                                                        <option  data-tokens="2">Sistemas Distribuidos</option>
-                                                        <option  data-tokens="3">Gerência de Projetos</option>
-                                                    </optgroup>
-                                                    <optgroup label="informática" data-max-options="">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </optgroup>
-                                                </select>
-                                               
-                                            </div>
+                                    <label for="disciplina">Disciplinas</label>
+
+                                    <div class="input-group">
+
+
+                                        <select class="selectpicker" multiple title="Escolher..." data-style="btn-lucas" data-width="450px" data-live-search="true" data-selected-text-format="values">
+
+                                            <optgroup label="Sistemas para internet" data-max-options="">
+                                                <option data-tokens="1">Comércio Eletrônico</option>
+                                                <option data-tokens="2">Sistemas Distribuidos</option>
+                                                <option data-tokens="3">Gerência de Projetos</option>
+                                            </optgroup>
+                                            <optgroup label="informática" data-max-options="">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </optgroup>
+                                        </select>
+
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="turma">Turmas</label>
 
                                     <div class="input-group">
-                                
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Escolher...</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                </div>                        
+
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="form-group text-center">
                                     <button class="btn btn-rounded btn-primary" id="btnCadastrarProfessor" type="submit">Cadastrar
-                                        </button>
+                                    </button>
                                 </div>
 
                             </form>
@@ -227,119 +226,115 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="card">
                         <div class="card-body">
 
-                            <ul class="nav nav-tabs mb-3">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a href="#sistemaparainternet" data-toggle="tab" aria-expanded="true" class="nav-link active">
-                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-                                        <span class="d-none d-lg-block">Sistema para Internet</span>
-                                    </a>
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sistemas para Internet</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#curso2" data-toggle="tab" aria-expanded="false" class="nav-link ">
-                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
-                                        <span class="d-none d-lg-block">Curso 2</span>
-                                    </a>
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Curso 2</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#curso3" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
-                                        <span class="d-none d-lg-block">Curso 3</span>
-                                    </a>
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Curso 3</a>
                                 </li>
                             </ul>
 
-                            <div class="tab-content">
-                                <div class="tab-pane show active" id="sistemaparainternet">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                                    <div style="margin-top: 3%;" class="table-responsive">
-                                        <table class="table no-wrap v-middle mb-0">
-                                            <thead>
-                                                <tr class="border-0">
-                                                    <th class="border-0 font-14 font-weight-medium text-muted">Professor(a)
-                                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Curso
-                                                    </th>
-                                                    <th class="border-0 font-14 font-weight-medium text-muted">Disciplinas</th>
+                                <div style="margin-top: 3%;" class="table-responsive">
+                <table class="table no-wrap v-middle mb-0">
+                    <thead>
+                        <tr class="border-0">
+                            <th class="border-0 font-14 font-weight-medium text-muted">Professor(a)
+                            <th class="border-0 font-14 font-weight-medium text-muted px-2">Curso
+                            </th>
+                            <th class="border-0 font-14 font-weight-medium text-muted">Disciplinas</th>
 
-                                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                        Turma
-                                                    </th>
+                            <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                Turma
+                            </th>
 
-                                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                        Operação:
-                                                    </th>
+                            <th class="border-0 font-14 font-weight-medium text-muted text-center">
+                                Operação:
+                            </th>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="border-top px-2 py-4">
-                                                        <div class="d-flex no-block align-items-center">
-                                                            <div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>
-                                                            <div class="">
-                                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
-                                                                    Gover</h5>
-                                                                <span class="text-muted font-14">hgover@gmail.com</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="border-top text-muted px-2 py-4 font-14">Sistemas para Internet</td>
-                                                    <td class="border-top px-2 py-4">
-                                                        <div class="popover-icon">
-                                                            <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">CE</a>
-
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
-                                                        5º Período Noturno
-                                                    </td>
-
-                                                    <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
-                                                        <button type="button" class="btn btn-danger btn-circle"><i class="ti-trash"></i>
-                                                        </button>
-                                                    </td>
-
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border-top px-2 py-4">
+                                <div class="d-flex no-block align-items-center">
+                                    <div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>
+                                    <div class="">
+                                        <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
+                                            Gover</h5>
+                                        <span class="text-muted font-14">hgover@gmail.com</span>
                                     </div>
+                                </div>
+                            </td>
+                            <td class="border-top text-muted px-2 py-4 font-14">Sistemas para Internet</td>
+                            <td class="border-top px-2 py-4">
+                                <div class="popover-icon">
+                                    <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">CE</a>
 
                                 </div>
-                                <div class="tab-pane" id="curso2">
+                            </td>
+
+                            <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
+                                5º Período Noturno
+                            </td>
+
+                            <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
+                                <button type="button" class="btn btn-danger btn-circle"><i class="ti-trash"></i>
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
 
                                 </div>
-                                <div class="tab-pane" id="curso3">
-
-                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
                             </div>
 
-                        </div> <!-- end card-body-->
-                    </div> <!-- end card-->
-                </div>
 
 
 
+                        </div>
 
-
-
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center text-muted">
-                <a href="https://www.ifsertao-pe.edu.br">IF-Sertão Pernambucano</a>.
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+
+
+
+            
+
+
+
+
+
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Container fluid  -->
         <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center text-muted">
+            <a href="https://www.ifsertao-pe.edu.br">IF-Sertão Pernambucano</a>.
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->

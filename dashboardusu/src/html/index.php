@@ -224,48 +224,61 @@ date_default_timezone_set('America/Sao_Paulo');
                 <!-- Start First Cards -->
                 <!-- *************************************************************** -->
                 <div class="card-group">
-                    <div class="card border-right">
+                    
+                <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: green !important;">1</span>
+                                        <a href="" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: green !important;">Visualizar</a>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Criadas</h6>
+                                    <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Todas as Permutas</h5>
                                 </div>
-                                <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
+
+                                <div  class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="clipboard"></i></span>
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
+
+
+                    <hr style="border:none; border-left:none;width: 1%;">
+
+
+                    
                     <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(255, 208, 0) !important;">1</span>
+                                        <a href="" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(255, 208, 0) !important;">Visualizar</a>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h6>
+                                    <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h5>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="clipboard"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <hr style="border:none; border-left:none;width: 1%;">
+
+
+
                     <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">1</span>
+                                        <a href=""class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">Visualizar</a>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h6>
+                                    <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h5>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <span class="opacity-7 text-muted"><i data-feather="thumbs-up"></i></span>
@@ -273,15 +286,18 @@ date_default_timezone_set('America/Sao_Paulo');
                             </div>
                         </div>
                     </div>
+                    
+                    <hr style="border:none; border-left:none;width: 1%;">
+
                     <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <span class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">1</span>
+                                        <a href=""class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">Visualizar</a>
                                     </div>
-                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h6>
+                                    <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h5>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <span class="opacity-7 text-muted"><i data-feather="thumbs-down"></i></span>
@@ -308,7 +324,7 @@ date_default_timezone_set('America/Sao_Paulo');
                         <div class="card">
                             <div class="card-body">
                                 <div class="align-items-center mb-4">
-                                    <h4 class="card-title">Permutas</h4>
+                                    <h4 class="card-title">Permutas Disponíveis</h4>
 
                                 </div>
                                 <div class="table-responsive">
