@@ -42,6 +42,9 @@ if(isset($_POST['command'])){
 	    $permutaDao = new PermutaDao();
 	    $permutaDao->deletar($_GET['id']);
 	    
+	}else if($_GET['command'] == 'pegar'){
+		$permutaDao = new PermutaDao();
+	    $permutaDao->pegarPermuta($_GET['id'],$_SESSION['usuarioLogado']['id']);
 	}
 }
 ?>

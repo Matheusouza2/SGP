@@ -73,6 +73,23 @@ const options = {
 					}
 				})
 			}
+			function pegar($id){
+				Swal.fire({
+					title: 'Deseja realmente pegar a permuta ?',
+					showDenyButton: true,
+					showCancelButton: true,
+					confirmButtonText: `Sim`,
+					denyButtonText: `Não`,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						Swal.fire('Permuta pega com sucesso!!', '', 'success')
+						$.getJSON('../../../control/controlPermuta.php?command=pegar&id='+$id, function (dados){});
+					    consultaTable();
+					} else if (result.isDenied) {
+						Swal.fire('Pegar permuta cancelado!!', '', 'info')
+					}
+				})
+			}
 
 			//Preenche a table do index cliente
 			function consultaTable(){
