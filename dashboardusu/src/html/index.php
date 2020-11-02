@@ -255,7 +255,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <a href="" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(255, 208, 0) !important;">Visualizar</a>
+                                        <a href="permutas.php" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(255, 208, 0) !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h5>
                                 </div>
@@ -276,7 +276,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <a href=""class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">Visualizar</a>
+                                        <a href="permutas.php"class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h5>
                                 </div>
@@ -295,7 +295,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <a href=""class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">Visualizar</a>
+                                        <a href="permutas.php"class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h5>
                                 </div>

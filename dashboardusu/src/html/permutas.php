@@ -164,40 +164,9 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                             </tr>
                                         </thead>
 
-                                        <tbody>
+                                        <tbody id="tablePermutas">
 
-                                        <tr>
-                                <td class="border-top px-2 py-4">
-                                <div class="d-flex no-block align-items-center">
-                                	<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>
-                                		<div class="">
-                                			<h5 class="text-dark mb-0 font-16 font-weight-medium">User</h5>
-                                			<span class="text-muted font-14"><i data-feather="message-circle"></i> <a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)">Enviar Mensagem</a></span>
-                                		</div>
-                                </div>
-                                </td>
-
-                                <td class="border-top text-muted px-2 py-4 font-14">Sistemas para Internet</td>
-                                <td class="border-top px-2 py-4">
-                                <div class="popover-icon">
-                                <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="">CE</a>
-                                </div>
-                                </td>
-                                <td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="Disponivel"></i></td>
-                                <td class="border-top text-center font-weight-medium text-muted px-2 py-4">5º Período</td>
-								<td class="font-weight-medium text-dark border-top px-2 py-4">30/11/2020</td>
-
-								
-								
-                                <td class="border-top px-2 py-4">
-								<span>
-                                    <button type="button" onclick="del('+obj.permuta_id+')" class="btn btn-success btn-circle">
-                                <i data-feather="plus-square"></i>
-                                </button> <span><a>Pegar Permuta</a></span> </span>
-								</td>
-								
-								
-                                </tr>
+                                       
 
 
                                     
@@ -293,6 +262,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     <script src="../dist/js/validaEconsultaCnpj.js"></script>
     <script src="../dist/js/buscarcep.js"></script>
+    <script src="../dist/js/consultasIndex.js"></script>
 
     <!-- Seta as mascaras dos campos -->
     <script>
