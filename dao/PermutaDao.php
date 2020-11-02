@@ -50,5 +50,13 @@ class PermutaDao {
         $stmt = $con->prepare($sql);
         $stmt->execute();
     }
+
+
+    function pegarPermuta($idPermuta,$idProfpresente){
+        $con = Conexao::getInstance();
+        $sql = "UPDATE permuta SET professorPresente=$idProfpresente,status='Indisponivel' WHERE id=$idPermuta";
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+    }
 }
 ?>
