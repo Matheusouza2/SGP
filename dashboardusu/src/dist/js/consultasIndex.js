@@ -1,4 +1,3 @@
-<script src="https://unpkg.com/feather-icons"></script>
 
 
 const options = {
