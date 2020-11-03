@@ -38,13 +38,26 @@ if(isset($_POST['command'])){
 		$retorno = $permutaDao->listarPermutaProfessor($_SESSION['usuarioLogado']['id']);
 
 		echo json_encode($retorno);
-	}else if($_GET['command'] == 'delete'){
+	}else if($_GET['command'] == 'listPd'){
+				
+		$permutaDao = new PermutaDao();
+
+		$retorno = $permutaDao->listarPermutaProfessor($_SESSION['usuarioLogado']['id']);
+
+		echo json_encode($retorno);
+	}
+	
+	else if($_GET['command'] == 'delete'){
 	    $permutaDao = new PermutaDao();
 	    $permutaDao->deletar($_GET['id']);
 	    
 	}else if($_GET['command'] == 'pegar'){
 		$permutaDao = new PermutaDao();
-	    $permutaDao->pegarPermuta($_GET['id'],$_SESSION['usuarioLogado']['id']);
+		$permutaDao->pegarPermuta($_GET['id'],$_SESSION['usuarioLogado']['id']);
+		
 	}
+
+	
+	
 }
 ?>

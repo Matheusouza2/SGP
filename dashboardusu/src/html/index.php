@@ -341,6 +341,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                             </tr>
                                         </thead>
                                         <tbody id="tablePermutasDp">
+                                        
                                         </tbody>
                                     </table>
                                 </div>
@@ -413,7 +414,6 @@ date_default_timezone_set('America/Sao_Paulo');
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     <script src="../dist/js/consultasIndex.js"></script>
-
 
     <?php
     if (isset($_SESSION['msg']['permutaCadSuccess'])) {
