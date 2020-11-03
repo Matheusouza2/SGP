@@ -1,3 +1,6 @@
+<script src="https://unpkg.com/feather-icons"></script>
+
+
 const options = {
         		timeZone: 'America/Sao_Paulo',
         		day: 'numeric',
