@@ -16,6 +16,7 @@ const options = {
 				consultaSelects();
 
 				consultaTable();
+				consultaTableDiponivel();
 			
 			
 			});		
@@ -91,7 +92,7 @@ const options = {
 				})
 			}
 
-			//Preenche a table do index cliente
+			//Preenche a table do index cliente permutas dele, ta passando o commad listaPp so pra teste.
 			function consultaTable(){
 				progress();
 				$.getJSON('../../../control/controlPermuta.php?command=listPp', function (dados){
@@ -137,6 +138,53 @@ const options = {
 					}
 				});
 			}
+
+			//consulta permuta disponiveis para pegar
+
+			function consultaTableDiponivel(){
+				progress();
+				$.getJSON('../../../control/controlPermuta.php?command=listPp', function (dados){
+					if(dados.length > 0){
+						var tabela = '';
+						$.each(dados, function(i, obj){tabela += 
+
+							
+							'<tr>'+
+                                '<td class="border-top px-2 py-4">'+
+                                '<div class="d-flex no-block align-items-center">'+
+                                	'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+                                		'<div class="">'+
+                                			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
+                                			'<span class="text-muted font-14">'+'<i data-feather="message-circle"></i>'+'<a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)">'+'Enviar Mensagem</a></span>'+
+                                		'</div>'+
+                                '</div>'+
+                                '</td>'+
+                                '<td class="border-top text-muted px-2 py-4 font-14">'+obj.curso_nome+'</td>'+
+                                '<td class="border-top px-2 py-4">'+
+                                '<div class="popover-icon">'+
+                                '<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="'+obj.disciplina_nome+'">'+obj.sigla+'</a>'+
+                                '</div>'+
+                                '</td>'+
+                                '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="'+obj.status+'"></i></td>'+
+                                '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
+								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
+
+													
+								'<td class="border-top px-2 py-4">'+
+								'<span> <button type="button" onclick="pegar('+obj.permuta_id+')" class="btn btn-success btn-circle">'+
+                                '<i data-feather="plus-square"></i>'+
+                               '</button> <span><a>Pegar Permuta</a></span> </span>'+
+								'</td>'+
+
+								'</tr>'
+																
+						});
+						$('#tablePermutasDp').html(tabela).show();
+
+					}
+				});
+			}
+
 			
 			
 

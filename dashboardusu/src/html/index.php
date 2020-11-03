@@ -340,7 +340,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Operação</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tablePermutas">
+                                        <tbody id="tablePermutasDp">
                                         </tbody>
                                     </table>
                                 </div>
