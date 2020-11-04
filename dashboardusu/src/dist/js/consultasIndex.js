@@ -127,7 +127,7 @@ const options = {
                                 '<i class="far fa-edit"></i>'+
 								'</button> </span> '+
 								
-								 '<span> <button type="button" onclick="del('+obj.permuta_id+')" class="btn btn-danger btn-circle">'+
+								'<span> <button type="button" onclick="del('+obj.permuta_id+')" class="btn btn-danger btn-circle">'+
                                 '<i class="far fa-trash-alt"></i>'+
                                 '</button> </span>'+
 								'</td>'+
@@ -151,13 +151,14 @@ const options = {
 						$.each(dados, function(i, obj){tabela += 
 
 							
+
 							'<tr>'+
                                 '<td class="border-top px-2 py-4">'+
                                 '<div class="d-flex no-block align-items-center">'+
                                 	'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
                                 		'<div class="">'+
                                 			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
-                                			'<span class="text-muted font-14"><i data-feather="message-circle"></i><a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)">Enviar Mensagem</a></span>'+
+                                			'<span class="text-muted font-14">'+'<i class="fa fa-whatsapp" aria-hidden="true"></i>'+'<a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)">Enviar Mensagem</a></span>'+
                                 		'</div>'+
                                 '</div>'+
                                 '</td>'+
@@ -174,11 +175,16 @@ const options = {
 													
 								'<td class="border-top px-2 py-4">'+
 								'<span> <button type="button" onclick="pegar('+obj.permuta_id+')" class="btn btn-success btn-circle">'+
-                                '<i data-feather="plus-square"></i>'+
-                               '</button> <span><a>Pegar Permuta</a></span> </span>'+
+                                '<i class="fa fa-share-square-o"></i>'+
+                                '</button>'+'<span><a>Pegar Permuta</a></span> </span>'+
 								'</td>'+
 
 								'</tr>'
+
+								// '<span> <button type="button" onclick="del('+obj.permuta_id+')" class="btn btn-danger btn-circle">'+
+                                // '<i class="far fa-trash-alt"></i>'+
+                                // '</button> </span>'+
+								// '</td>'+
 																
 						});
 						$('#tablePermutasDp').html(tabela).show();
