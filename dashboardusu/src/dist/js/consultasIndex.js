@@ -148,10 +148,19 @@ const options = {
 				$.getJSON('../../../control/controlPermuta.php?command=listPp', function (dados){
 					if(dados.length > 0){
 						var tabela = '';
-						$.each(dados, function(i, obj){tabela += 
-
-							
-
+						var status = '';
+						var icone = '';
+						$.each(dados, function(i, obj){
+						
+							if(obj.status == "disponivel"){
+								status = obj.status;
+								icone = "success"; 
+							}else{
+								status = obj.status;
+								icone = "warning"; 
+							}
+						
+							tabela +=
 							'<tr>'+
                                 '<td class="border-top px-2 py-4">'+
                                 '<div class="d-flex no-block align-items-center">'+
@@ -168,7 +177,7 @@ const options = {
                                 '<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="'+obj.disciplina_nome+'">'+obj.sigla+'</a>'+
                                 '</div>'+
                                 '</td>'+
-                                '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="'+obj.status+'"></i></td>'+
+                                '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-'+icone+' font-12" data-toggle="tooltip" data-placement="top" title="'+status+'"></i></td>'+
                                 '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
 								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
 
