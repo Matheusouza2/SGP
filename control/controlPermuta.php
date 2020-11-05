@@ -45,7 +45,7 @@ if(isset($_POST['command'])){
 				
 		$permutaDao = new PermutaDao();
 
-		$retorno = $permutaDao->listarPermutaProfessor($_SESSION['usuarioLogado']['id']);
+		$retorno = $permutaDao->listarPermutaDisponivel($_SESSION['usuarioLogado']['id']);
 
 		echo json_encode($retorno);
 	}

@@ -47,7 +47,16 @@ class PermutaDao {
     function listarPermutaDisponivel($idProfessor){
         $con = Conexao::getInstance();
             /**-------------Cadastra a permuta------------------ */
-        $sql = 'SELECT DISTINCT permuta.id as permuta_id, usuario.nome as professor_nome, usuario.email, curso.nome as curso_nome, disciplina.nome as disciplina_nome, disciplina.sigla, permuta.status, permuta.dataDisponivel, turma.nome as turma_nome  FROM permutaRelacoes pr INNER JOIN permuta ON permuta.id = pr.id_permuta INNER JOIN curso ON curso.id = pr.id_curso INNER JOIN disciplina ON disciplina.id = pr.id_disciplina INNER JOIN usuario ON usuario.id = permuta.professorSedente INNER JOIN turma ON turma.id = pr.id_turma WHERE usuario.id = '.$idProfessor;
+        $sql = 'SELECT DISTINCT permuta.id as permuta_id, usuario.nome as professor_nome, usuario.email, 
+        curso.nome as curso_nome, disciplina.nome as disciplina_nome, disciplina.sigla, permuta.status, permuta.dataDisponivel,
+         turma.nome as turma_nome  FROM permutaRelacoes pr 
+         INNER JOIN permuta ON permuta.id = pr.id_permuta
+         INNER JOIN curso ON curso.id = pr.id_curso 
+         INNER JOIN disciplina ON disciplina.id = pr.id_disciplina INNER JOIN usuario ON usuario.id = permuta.professorSedente 
+         INNER JOIN turma ON turma.id = pr.id_turma WHERE pr.id_turma = ANY (SELECT DISTINCT  T.id
+        FROM turma AS T
+        INNER JOIN disciplina AS D ON T.id = D.id_turma 
+        WHERE D.id_professor ='.$idProfessor.')';
 
         $stmt = $con->prepare($sql);
 

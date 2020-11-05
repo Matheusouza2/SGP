@@ -145,7 +145,7 @@ const options = {
 
 			function consultaTableDiponivel(){
 				progress();
-				$.getJSON('../../../control/controlPermuta.php?command=listPp', function (dados){
+				$.getJSON('../../../control/controlPermuta.php?command=listPd', function (dados){
 					if(dados.length > 0){
 						var tabela = '';
 						var status = '';
