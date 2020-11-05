@@ -87,7 +87,7 @@ const options = {
 					if (result.isConfirmed) {
 						Swal.fire('Permuta pega com sucesso!!', '', 'success')
 						$.getJSON('../../../control/controlPermuta.php?command=pegar&id='+$id, function (dados){});
-					    consultaTable();
+					    consultaTableDiponivel();
 					} else if (result.isDenied) {
 						Swal.fire('Pegar permuta cancelado!!', '', 'info')
 					}
