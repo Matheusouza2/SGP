@@ -11,10 +11,10 @@ class PermutaDao {
         try {
             $con = Conexao::getInstance();
             /**-------------Cadastra a permuta------------------ */
-            $sql = 'INSERT INTO permuta(descricao, dataCriacao, dataDisponivel, professorSedente, status) VALUES (?,?,?,?,?);';
+            $sql = 'INSERT INTO permuta(descricao, dataCriacao, dataDisponivel, professorSedente, status,idTurma) VALUES (?,?,?,?,?,?);';
 
             $stmt = $con->prepare($sql);
-			$stmt->execute([$permuta->getDescricao(),$permuta->getDataCriacao(),$permuta->getDataDisponivel(),$permuta->getProfessorSedente(),$permuta->getStatus()]);
+			$stmt->execute([$permuta->getDescricao(),$permuta->getDataCriacao(),$permuta->getDataDisponivel(),$permuta->getProfessorSedente(),$permuta->getStatus(),$permuta->getIdTurma()]);
 			/**---------------Pega o ID da permuta que acabou de ser cadastrada---------------- */			
 			$sql = "SELECT max(id) as id FROM permuta;";
             $stmt = $con->prepare($sql);

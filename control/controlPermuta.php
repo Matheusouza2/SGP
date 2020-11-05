@@ -16,8 +16,11 @@ if(isset($_POST['command'])){
 		$permuta->setDataCriacao(addslashes($_POST['dataCriacao']));
 		$permuta->setDataDisponivel(addslashes($dataDisponivel));
 		$permuta->setStatus("Disponivel");
-		
+
 		$turma = $_POST['turma'];
+		$permuta->setIdTurma($turma);
+		
+		
 		$disciplina = $_POST['disciplina'];
 		$curso = $_POST['curso'];
 		
