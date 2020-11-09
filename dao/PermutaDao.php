@@ -43,6 +43,28 @@ class PermutaDao {
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    function listarPermutaAberta($idProfessor){
+        $con = Conexao::getInstance();
+            /**-------------pemutas abertas------------------ */
+        $sql = "SELECT DISTINCT permuta.id as permuta_id, usuario.nome as professor_nome, usuario.email, curso.nome as curso_nome, disciplina.nome as disciplina_nome, disciplina.sigla, permuta.status, permuta.dataDisponivel, turma.nome as turma_nome  FROM permutaRelacoes pr INNER JOIN permuta ON permuta.id = pr.id_permuta INNER JOIN curso ON curso.id = pr.id_curso INNER JOIN disciplina ON disciplina.id = pr.id_disciplina INNER JOIN usuario ON usuario.id = permuta.professorSedente INNER JOIN turma ON turma.id = pr.id_turma WHERE permuta.status = 'Disponivel' AND usuario.id=".$idProfessor;
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    function listarPermutaPega($idProfessor){
+        $con = Conexao::getInstance();
+            /**-------------pemutas abertas------------------ */
+        $sql = "SELECT DISTINCT permuta.id as permuta_id, usuario.nome as professor_nome, usuario.email, curso.nome as curso_nome, disciplina.nome as disciplina_nome, disciplina.sigla, permuta.status, permuta.dataDisponivel, turma.nome as turma_nome  FROM permutaRelacoes pr INNER JOIN permuta ON permuta.id = pr.id_permuta INNER JOIN curso ON curso.id = pr.id_curso INNER JOIN disciplina ON disciplina.id = pr.id_disciplina INNER JOIN usuario ON usuario.id = permuta.professorSedente INNER JOIN turma ON turma.id = pr.id_turma WHERE permuta.professorPresente=".$idProfessor;
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     function listarPermutaDisponivel($idProfessor){
         $con = Conexao::getInstance();
@@ -80,5 +102,9 @@ class PermutaDao {
         $stmt = $con->prepare($sql);
         $stmt->execute();
     }
+    
+
+
+    
 }
 ?>

@@ -16,8 +16,8 @@ const options = {
         	$(document).ready(function(){
 
 				consultaSelects();
-
 				consultaTable();
+			
 				consultaTableDiponivel();
 			
 			
@@ -94,10 +94,55 @@ const options = {
 				})
 			}
 
-			//Preenche a table do index cliente permutas dele, ta passando o commad listaPp so pra teste.
+			//Preenche a table do index cliente permutas dele, ta passando .
 			function consultaTable(){
 				progress();
 				$.getJSON('../../../control/controlPermuta.php?command=listPp', function (dados){
+					if(dados.length > 0){
+						var tabela = '';
+						$.each(dados, function(i, obj){tabela += 
+							'<tr>'+
+                                '<td class="border-top px-2 py-4">'+
+                                '<div class="d-flex no-block align-items-center">'+
+                                	'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+                                		'<div class="">'+
+                                			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
+                                			'<span class="text-muted font-14">'+obj.email+'</span>'+
+                                		'</div>'+
+                                '</div>'+
+                                '</td>'+
+                                '<td class="border-top text-muted px-2 py-4 font-14">'+obj.curso_nome+'</td>'+
+                                '<td class="border-top px-2 py-4">'+
+                                '<div class="popover-icon">'+
+                                '<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="'+obj.disciplina_nome+'">'+obj.sigla+'</a>'+
+                                '</div>'+
+                                '</td>'+
+                                '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="'+obj.status+'"></i></td>'+
+                                '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
+								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
+
+								
+								'<span> <td class="border-top px-2 py-4">'+
+                                '<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
+                                '<i class="far fa-edit"></i>'+
+								'</button> </span> '+
+								
+								
+								
+                                '</tr>'
+						});
+						$('#tablePermutas').html(tabela).show();
+
+					}else {
+						var tabelavazia = 'Você não criou permutas ainda!';
+						$('#tablePermutas').html(tabelavazia).show();
+					}
+				});
+			}
+//permuta aberta
+			function consultaTableAberta(){
+				
+				$.getJSON('../../../control/controlPermuta.php?command=listPA', function (dados){
 					if(dados.length > 0){
 						var tabela = '';
 						$.each(dados, function(i, obj){tabela += 
@@ -137,9 +182,61 @@ const options = {
 						});
 						$('#tablePermutas').html(tabela).show();
 
+					}else {
+						var tabelavazia = 'Não há permutas abertas';
+						$('#tablePermutas').html(tabelavazia).show();
 					}
 				});
 			}
+
+//permuta pega
+function consultaTablePega(){
+				
+	$.getJSON('../../../control/controlPermuta.php?command=listPG', function (dados){
+		if(dados.length > 0){
+			var tabela = '';
+			$.each(dados, function(i, obj){tabela += 
+				'<tr>'+
+					'<td class="border-top px-2 py-4">'+
+					'<div class="d-flex no-block align-items-center">'+
+						'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+							'<div class="">'+
+								'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
+								'<span class="text-muted font-14">'+obj.email+'</span>'+
+							'</div>'+
+					'</div>'+
+					'</td>'+
+					'<td class="border-top text-muted px-2 py-4 font-14">'+obj.curso_nome+'</td>'+
+					'<td class="border-top px-2 py-4">'+
+					'<div class="popover-icon">'+
+					'<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="'+obj.disciplina_nome+'">'+obj.sigla+'</a>'+
+					'</div>'+
+					'</td>'+
+					'<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="'+obj.status+'"></i></td>'+
+					'<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
+					'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
+
+					
+					'<span> <td class="border-top px-2 py-4">'+
+					'<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
+					'<i class="far fa-edit"></i>'+
+					'</button> </span> '+
+					
+					
+					
+					'</tr>'
+			});
+			$('#tablePermutas').html(tabela).show();
+
+		} else {
+			var tabelavazia = 'Você não pegou nenhuma permuta ainda!';
+			$('#tablePermutas').html(tabelavazia).show();
+		}
+	});
+}
+
+
+
 
 			//consulta permuta disponiveis para pegar
 
@@ -198,6 +295,9 @@ const options = {
 						});
 						$('#tablePermutasDp').html(tabela).show();
 
+					}else {
+						var tabelavazia = 'Não há permuta disponivel!';
+						$('#tablePermutasDp').html(tabelavazia).show();
 					}
 				});
 			}
@@ -223,3 +323,6 @@ const options = {
 					$("#progress").hide(); 
 				});
 			}
+
+
+		

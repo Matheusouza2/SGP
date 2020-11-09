@@ -58,7 +58,21 @@ if(isset($_POST['command'])){
 		$permutaDao = new PermutaDao();
 		$permutaDao->pegarPermuta($_GET['id'],$_SESSION['usuarioLogado']['id']);
 		
+	}else if($_GET['command'] == 'listPA'){
+	    $permutaDao = new PermutaDao();
+
+		$retorno = $permutaDao->listarPermutaAberta($_SESSION['usuarioLogado']['id']);
+
+		echo json_encode($retorno);
+
+	}else if($_GET['command'] == 'listPG'){
+	    $permutaDao = new PermutaDao();
+
+		$retorno = $permutaDao->listarPermutaPega($_SESSION['usuarioLogado']['id']);
+
+		echo json_encode($retorno);
 	}
+
 
 	
 	

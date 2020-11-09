@@ -222,14 +222,13 @@
                 }
                 ?>
 
-                <?php
-                if (isset($_SESSION['usuarioLogado']['coord']) || isset($_SESSION['usuarioLogado']['admin'])) {
-                    echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="permutas.php"' .
-                        'aria-expanded="false"><i data-feather="book" class="feather-icon"></i><span' .
-                        'class="hide-menu">Permutas</span></a>' .
-                        '</li>';
-                }
-                ?>
+          
+                    <li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="permutas.php"
+                        aria-expanded="false"><i data-feather="book" class="feather-icon"></i><span
+                        class="hide-menu">Permutas</span></a>
+                        </li>
+                
+                
 
 
 
