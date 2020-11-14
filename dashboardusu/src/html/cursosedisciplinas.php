@@ -74,12 +74,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Cadastro de Professores:</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Cursos e Disciplinas:</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><a href="index.php">Início</a>
-                                    <li class="breadcrumb-item"><a href="cadProfessores.php">Cadastro de Professores</a>
+                                    <li class="breadcrumb-item"><a href="cursosedisciplinas.php">Cursos e Disciplinas</a>
 
                                     </li>
                                 </ol>
@@ -89,8 +89,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
-                            <span><a>Cadastrar Professor(a)</a></span>
-                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                            <span><a>Cadastrar Disciplinas</a></span>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"><i class="fa fa-book" aria-hidden="true"></i>
 
                             </button>
                         </div>
@@ -227,78 +227,71 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="card-body">
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sistemas para Internet</a>
+                                    <a class="nav-link active" id="pills-mediointegrado-tab" data-toggle="pill" href="#pills-mediointegrado" role="tab" aria-controls="pills-mediointegrado" aria-selected="true">Médio Integrado</a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Curso 2</a>
+                                    <a class="nav-link" id="pills-Subsequente-tab" data-toggle="pill" href="#pills-Subsequente" role="tab" aria-controls="pills-Subsequente" aria-selected="false">Subsequente</a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Curso 3</a>
+                                    <a class="nav-link" id="pills-Proeja-tab" data-toggle="pill" href="#pills-Proeja" role="tab" aria-controls="pills-Proeja" aria-selected="false">Proeja</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-Superior-tab" data-toggle="pill" href="#pills-Superior" role="tab" aria-controls="pills-Superior" aria-selected="false">Superior</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-PosGraduacao-tab" data-toggle="pill" href="#pills-PosGraduacao" role="tab" aria-controls="pills-PosGraduacao" aria-selected="false">Pós-Graduação</a>
+                                </li>
+                                
                             </ul>
 
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                                <div style="margin-top: 3%;" class="table-responsive">
-                <table class="table no-wrap v-middle mb-0">
-                    <thead>
-                        <tr class="border-0">
-                            <th class="border-0 font-14 font-weight-medium text-muted">Professor(a)
-                            <th class="border-0 font-14 font-weight-medium text-muted px-2">Curso
-                            </th>
-                            <th class="border-0 font-14 font-weight-medium text-muted">Disciplinas</th>
+                            
+                                <div class="tab-pane fade show active" id="pills-mediointegrado" role="tabpanel" aria-labelledby="pills-mediointegrado-tab">
 
-                            <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                Turma
-                            </th>
+                                <div class="table-responsive">
 
-                            <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                Operação:
-                            </th>
+                                                <table class="table">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th scope="col">CNPJ</th>
+                                                            <th scope="col">Nome</th>
+                                                            <th scope="col">Endereço</th>
+                                                            <th scope="col">Contato</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border-top px-2 py-4">
-                                <div class="d-flex no-block align-items-center">
-                                    <div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>
-                                    <div class="">
-                                        <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
-                                            Gover</h5>
-                                        <span class="text-muted font-14">hgover@gmail.com</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="border-top text-muted px-2 py-4 font-14">Sistemas para Internet</td>
-                            <td class="border-top px-2 py-4">
-                                <div class="popover-icon">
-                                    <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">CE</a>
 
-                                </div>
-                            </td>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
 
-                            <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
-                                5º Período Noturno
-                            </td>
+                                                        </tr>
 
-                            <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
-                                <button type="button" class="btn btn-danger btn-circle"><i class="ti-trash"></i>
-                                </button>
-                            </td>
+                                                    </tbody>
+                                                </table>
 
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
+                            </div>
 
 
                                 </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
-                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
+
+
+
+
+                                <div class="tab-pane fade" id="pills-Subsequente" role="tabpanel" aria-labelledby="pills-Subsequente-tab"></div>
+                                <div class="tab-pane fade" id="pills-Proeja" role="tabpanel" aria-labelledby="pills-Proeja-tab"></div>
+                                <div class="tab-pane fade" id="pills-Superior" role="tabpanel" aria-labelledby="pills-Superior-tab"></div>
+                                <div class="tab-pane fade" id="pills-PosGraduacao" role="tabpanel" aria-labelledby="pills-PosGraduacao"></div>
                             </div>
 
 

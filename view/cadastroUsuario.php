@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
   <title>SGP - Sistema de Gerenciamento de Permutas</title>
   <!-- Required meta tags -->
@@ -14,6 +15,10 @@
   <link rel="stylesheet" href="../seletorCursos\css\bootstrap4\tail.select-default.css">
 
   <link rel="stylesheet" href="../assets/css/cadusu.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css">
+  <link rel="stylesheet" href="css/bootstrap-image-checkbox.css">
+
 
   <script src="https://use.fontawesome.com/0147a96ddf.js"></script>
   <link id="favicon" rel="shortcut icon" type="image/png" href="../assets/img/Programar Software - 2019.png">
@@ -40,7 +45,7 @@
             <hr>
 
             <div class="form-group">
-              <label for="validationCustom01">Nome</label>
+              <label for="validationCustom01">Nome:</label>
               <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
 
               <div class="invalid-feedback">
@@ -112,11 +117,11 @@
 
             </div>
 
-            
+
 
             <div class="form-group">
 
-            <label>Dados:</label>
+              <label>Dados:</label>
               <hr>
 
               <div class="form-row">
@@ -260,9 +265,41 @@
               </div>
 
             </div>
+
+            
+
+            <div class="form-group">
+
+            <label style="margin: 5px">Avatares:</label>
+            
+              
+              <div class="row">
+              <div class="col-md-3">
+                  <div class="custom-control custom-radio image-checkbox">
+                    <input type="radio" class="custom-control-input" id="avatarF" name="avatares">
+                    <label class="custom-control-label" for="avatarF">
+                      <img src="../assets/img/users/avatarF.svg" alt="#" width="80" class="img-fluid">
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="custom-control custom-radio image-checkbox">
+                    <input type="radio" class="custom-control-input" id="avatarM" name="avatares">
+                    <label class="custom-control-label" for="avatarM">
+                      <img src="../assets/img/users/avatarM.svg" alt="#" width="80" class="img-fluid">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+
             <div style="text-align: center;">
               <button type="submit" onclick="validar()" class="btn btn-success">Cadastrar</button>
             </div>
+
 
           </form>
         </section>
@@ -297,13 +334,15 @@
   </script>
 
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js" data-manual></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="../seletorCursos\js\tail.select-full.js"></script>
+  <script src="../assets/js/source.js"></script>
+
   <script>
     tail.select("#select2", {
 
