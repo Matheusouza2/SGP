@@ -274,13 +274,13 @@ function consultaTablePega(){
                                 '<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="'+obj.disciplina_nome+'">'+obj.sigla+'</a>'+
                                 '</div>'+
                                 '</td>'+
-                                '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-'+icone+' font-12" data-toggle="tooltip" data-placement="top" title="'+status+'"></i></td>'+
+                                '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-'+icone+' font-18" data-toggle="tooltip" data-placement="top" title="'+status+'"></i></td>'+
                                 '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
 								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
 
 													
 								'<td class="border-top px-2 py-4">'+
-								'<a onclick="pegar('+obj.permuta_id+')" class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="Pegar">'+ '<i class="fas fa-share-square"></i></a>'+
+								'<a onclick="pegar('+obj.permuta_id+')" class="btn btn-primary rounded-circle btn-circle font-18" href="javascript:void(0)" title="Pegar">'+ '<i class="fas fa-share-square"></i></a>'+
 
 								'<span> <a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)" class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="Conversar">'+ '<i class="fab fa-whatsapp"></i></a></span>'+
 
