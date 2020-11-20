@@ -22,7 +22,33 @@ class CursoDao {
         }
         mysql_close($con);
 	
-	}
+    }
+
+    function cadastrarCurso($curso)
+    {
+        $nome=$curso->getNome();
+        try {
+            $con = Conexao::getInstance();
+            $sql = "SELECT * FROM curso WHERE nome='$nome'";
+            $stmt = $con->prepare($sql);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return false;
+            } else {
+
+                $sql = "INSERT INTO curso (nome) values ('$nome')";
+
+                $stmt = $con->prepare($sql);
+                $stmt->execute();
+
+                return true;
+            }
+            mysql_close($con);
+        } catch (PDOException $e) {
+            echo "Ocorreu um erro! ---  " . $e;
+        }
+    }
 }
 	
 ?>

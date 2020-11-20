@@ -117,7 +117,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </a>
                             </div>
 
-                            <form action="../../../control/cursosedisciplinas.php" method="POST" class="pl-3 pr-3">
+                            <form action="../../../control/controlCurso.php" method="POST" class="pl-3 pr-3">
                                 <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
 
                                 <div class="form-group">
@@ -180,7 +180,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </a>
                             </div>
 
-                            <form action="../../../control/cursosedisciplinas.php" method="POST" class="pl-3 pr-3">
+                            <form action="../../../control/controlDisciplina.php" method="POST" class="pl-3 pr-3">
                                 <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
 
                                 <div class="form-group">
@@ -191,8 +191,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                 <div class="form-group">
                                     <label for="coordenador">Professor</label>
-                                    <input class="form-control" type="text" required="true" name="coordenador" id="nome"
-                                        placeholder="Coordenador">
+                                    <input class="form-control" type="text" required="true" name="professor" id="professor"
+                                        placeholder="nome professor">
                                 </div>
 
                                 <div class="form-group">
@@ -200,7 +200,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01">
+                                        <select class="custom-select" id="inputGroupSelect01" name="curso">
                                             <option selected>Escolher...</option>
                                             <option value="1">curso</option>
                                            
@@ -226,7 +226,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01">
+                                        <select class="custom-select" id="inputGroupSelect01" name="turma">
                                             <option selected>Escolher...</option>
                                             <option value="1">turma</option>
                                            
