@@ -196,6 +196,47 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="curso">Curso</label>
+
+                                    <div class="input-group">
+
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">curso</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="coordenador2">Coordenador</label>
+
+                                    <div class="input-group">
+
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">Coordenador</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="turma">Turma</label>
+
+                                    <div class="input-group">
+
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">turma</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+
+                                
+
+                                <div class="form-group">
                                     <label for="sigla">Sigla</label>
                                     <input  class="form-control" type="text" required="true" name="sigla" id="sigla" maxlength="2" onkeydown="upperCaseF(this)"
                                         placeholder="Sigla">
@@ -266,12 +307,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                             <th scope="col">Disciplina/Nome</th>
                                                             <th scope="col">Professor</th>
                                                             <th scope="col">Sigla</th>
+                                                            <th scope="col">Turma</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
 
 
                                                         <tr>
+                                                            <td></td>
                                                             <td></td>
                                                             <td></td>
                                                             <td></td>
