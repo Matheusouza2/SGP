@@ -288,7 +288,7 @@ function consultaTablePega(){
 
 								// '<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="Pegar">'+ '<i class="fas fa-share-square"></i></a>'+
 								
-								'</button>'+
+								// '</button>'+
 
 								'<span> <button type="button" class="btn btn-success btn-circle" <a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)"></a>'+
                                 '<i class="fab fa-whatsapp" aria-hidden="true" ></i> '+
