@@ -280,8 +280,13 @@ function consultaTablePega(){
 
 													
 								'<td class="border-top px-2 py-4">'+
-								'<span> <button type="button" onclick="pegar('+obj.permuta_id+')" class="btn btn-success btn-circle">'+
-								'<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="Pegar">'+ '<i class="fas fa-share-square"></i></a>'+
+								'<a onclick="pegar('+obj.permuta_id+')" class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="Pegar">'+ '<i class="fas fa-share-square"></i></a>'+
+
+								// '<span> <button type="button" onclick="pegar('+obj.permuta_id+')" class="btn btn-success btn-circle">'+
+								
+
+
+								// '<a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)" title="Pegar">'+ '<i class="fas fa-share-square"></i></a>'+
 								
 								'</button>'+
 
