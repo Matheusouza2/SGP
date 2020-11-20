@@ -32,6 +32,12 @@ if(isset($_POST['command'])){
 		
 		header('location: ../dashboardusu/src/html/index.php');
 										
+	}else if($_POST['command'] == 'cons'){
+	    //Consulta numero de permutas para o contador
+	    $permutaDao = new PermutaDao();
+	    echo json_encode($permutaDao->consultarQuant($_SESSION['usuarioLogado']['id']));
+	    
+	    
 	}
 }else if(isset($_GET['command'])){
 	if($_GET['command'] == 'listPp'){
@@ -58,9 +64,6 @@ if(isset($_POST['command'])){
 		$permutaDao = new PermutaDao();
 		$permutaDao->pegarPermuta($_GET['id'],$_SESSION['usuarioLogado']['id']);
 		
-	}
-
-	
-	
+	}	
 }
 ?>

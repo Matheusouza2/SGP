@@ -19,8 +19,8 @@ const options = {
 
 				consultaTable();
 				consultaTableDiponivel();
-			
-			
+				
+				contador();
 			});		
 
 
@@ -201,10 +201,7 @@ const options = {
 					}
 				});
 			}
-
 			
-			
-
 			function progress(){
 				
 					var current_progress = 0;
@@ -221,5 +218,19 @@ const options = {
 
 				$(document).ajaxStop(function(){
 					$("#progress").hide(); 
+				});
+			}
+			
+			function contador(){
+				var request = $.ajax({
+				    url: "../../../control/controlPermuta.php",
+				    type: "POST",
+				    data: "command=cons",
+				    dataType: "html"
+				}).done(function(resposta) {
+					var response = $.parseJSON(data); 
+					console.log(response.abertas);
+				    $('#pegas').append(resposta['presente']);
+				    $('#abertas').append(resposta['abertas']);
 				});
 			}

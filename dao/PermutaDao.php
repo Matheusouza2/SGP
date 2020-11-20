@@ -80,5 +80,18 @@ class PermutaDao {
         $stmt = $con->prepare($sql);
         $stmt->execute();
     }
+    
+    function consultarQuant($id){
+        $con = Conexao::getInstance();
+        $sql = "SELECT (SELECT count(id) FROM permuta WHERE professorPresente = ".$id.") as presente,
+                (SELECT count(id) FROM permuta WHERE professorSedente = ".$id." AND status='disponivel') as abertas
+                 FROM permuta WHERE professorPresente = ".$id;
+        
+        $stmt = $con->prepare($sql);
+        
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
