@@ -281,11 +281,11 @@ function consultaTablePega(){
 													
 								'<td class="border-top px-2 py-4">'+
 								'<span> <button type="button" onclick="pegar('+obj.permuta_id+')" class="btn btn-success btn-circle">'+
-                                '<i class="fas fa-share-square"></i>'+'title="Pegar"'+
+                                '<i class="fas fa-share-square" data-toggle="tooltip" data-placement="top" title="Pegar"></i> '+
 								'</button>'+
 
 								'<span> <button type="button" class="btn btn-success btn-circle" <a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)"></a>'+
-                                '<i class="fab fa-whatsapp" aria-hidden="true"></i>'+'title="Falar"'+
+                                '<i class="fab fa-whatsapp" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Falar" ></i> '+
 								'</button>'+
 								
 
