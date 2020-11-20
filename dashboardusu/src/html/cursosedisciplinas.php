@@ -88,13 +88,21 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     </div>
 
                     <div class="col-5 align-self-center">
-                        <div class="customize-input float-right">
-                            <span><a>Cadastrar Disciplinas</a></span>
+                        <div style="padding: 10px;" class="customize-input float-right">
+                            <span><a>Cadastrar Disciplina</a></span>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal2"><i class="fa fa-book" aria-hidden="true"></i>
+
+                            
+                        </div>
+
+                        <div style="padding: 10px;" class="customize-input float-right">
+                            <span><a>Cadastrar Curso</a></span>
                             <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"><i class="fa fa-book" aria-hidden="true"></i>
 
-                            </button>
+                            
                         </div>
                     </div>
+                    
 
                 </div>
             </div>
@@ -105,105 +113,46 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="modal-body">
                             <div class="text-center mt-2 mb-4">
                                 <a href="index.html" class="text-success">
-                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55"></span>
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
                                 </a>
                             </div>
 
-                            <form action="" method="POST" class="pl-3 pr-3">
-                                <input name="usuCad" type="hidden" value="<?= $_SESSION['usuarioLogado']['cpf'] ?>">
+                            <form action="../../../control/cursosedisciplinas.php" method="POST" class="pl-3 pr-3">
+                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
 
                                 <div class="form-group">
-                                    <label for="instituicao">Instituição</label>
+                                    <label for="modalidade">Modalidade</label>
 
                                     <div class="input-group">
 
                                         <select class="custom-select" id="inputGroupSelect01">
                                             <option selected>Escolher...</option>
-                                            <option value="1">One</option>
+                                            <option value="1">Médio Integrado</option>
+                                            <option value="2">Subsequente</option>
+                                            <option value="4">Proeja</option>
+                                            <option value="5">Superior</option>
+                                            <option value="6">Pós-Graduação</option>
                                         </select>
                                     </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input class="form-control" type="text" id="nome" name="nome" required="true"
+                                        placeholder="Nome do Curso" >
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="professor">Professor(a)</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
+                                    <label for="coordenador">Coordenador</label>
+                                    <input class="form-control" type="text" required="true" name="coordenador" id="nome"
+                                        placeholder="Coordenador">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="professor">Coordenador</label>
-                                    <div class="input-group">
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">Sim</option>
-                                            <option value="0">Não</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="curso">Curso</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <label for="disciplina">Disciplinas</label>
-
-                                    <div class="input-group">
-
-
-                                        <select class="selectpicker" multiple title="Escolher..." data-style="btn-lucas" data-width="450px" data-live-search="true" data-selected-text-format="values">
-
-                                            <optgroup label="Sistemas para internet" data-max-options="">
-                                                <option data-tokens="1">Comércio Eletrônico</option>
-                                                <option data-tokens="2">Sistemas Distribuidos</option>
-                                                <option data-tokens="3">Gerência de Projetos</option>
-                                            </optgroup>
-                                            <optgroup label="informática" data-max-options="">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                            </optgroup>
-                                        </select>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="turma">Turmas</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div>
 
                                 <div class="form-group text-center">
-                                    <button class="btn btn-rounded btn-primary" id="btnCadastrarProfessor" type="submit">Cadastrar
-                                    </button>
+                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
+                                        </button>
                                 </div>
 
                             </form>
@@ -211,7 +160,59 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
-            </div>
+            </div><!-- /.modal -->
+
+            <script>
+                function upperCaseF(a){
+    setTimeout(function(){
+        a.value = a.value.toUpperCase();
+    }, 1);
+}
+            </script>
+
+            <div id="login-modal2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mt-2 mb-4">
+                                <a href="index.html" class="text-success">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
+                                </a>
+                            </div>
+
+                            <form action="../../../control/cursosedisciplinas.php" method="POST" class="pl-3 pr-3">
+                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
+
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input class="form-control" type="text" id="nome" name="nome" required="true"
+                                        placeholder="Nome da Disciplina" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="coordenador">Professor</label>
+                                    <input class="form-control" type="text" required="true" name="coordenador" id="nome"
+                                        placeholder="Coordenador">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sigla">Sigla</label>
+                                    <input  class="form-control" type="text" required="true" name="sigla" id="sigla" maxlength="2" onkeydown="upperCaseF(this)"
+                                        placeholder="Sigla">
+                                </div>
+
+
+                                <div class="form-group text-center">
+                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
+                                        </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
 
 
             <!-- ============================================================== -->
@@ -260,10 +261,11 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                 <table class="table">
                                                     <thead class="thead-light">
                                                         <tr>
-                                                            <th scope="col">CNPJ</th>
-                                                            <th scope="col">Nome</th>
-                                                            <th scope="col">Endereço</th>
-                                                            <th scope="col">Contato</th>
+                                                            <th scope="col">Curso/Nome</th>
+                                                            <th scope="col">Coordenador</th>
+                                                            <th scope="col">Disciplina/Nome</th>
+                                                            <th scope="col">Professor</th>
+                                                            <th scope="col">Sigla</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
