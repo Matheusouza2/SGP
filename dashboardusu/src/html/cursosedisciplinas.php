@@ -90,7 +90,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="col-5 align-self-center">
                         <div style="padding: 10px;" class="customize-input float-right">
                             <span><a>Cadastrar Disciplina</a></span>
-                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal2"><i class="fa fa-book" aria-hidden="true"></i>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal2"><i data-feather="book-open" class="feather-icon"></i>
 
                             
                         </div>
