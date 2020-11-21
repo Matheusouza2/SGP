@@ -94,6 +94,13 @@ if(isset($_POST['command'])){
 	    
 	    $retorno = $permutaDao->listarPermutaExpirada($_SESSION['usuarioLogado']['id']);
 	    
+		echo json_encode($retorno);
+		
+	}else if($_GET['command'] == 'listRc'){
+	    $permutaDao = new PermutaDao();
+	    
+		$retorno = $permutaDao->relatorioCoordenador($_SESSION['usuarioLogado']['id']);
+	    
 	    echo json_encode($retorno);
 	}
 

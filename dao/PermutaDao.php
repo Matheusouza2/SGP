@@ -138,5 +138,22 @@ class PermutaDao {
         
         $stmt->execute();
     }
+
+    function relatorioCoordenador($id){
+
+        $con = Conexao::getInstance();
+            /**-------------Cadastra a permuta------------------ */
+        $sql = "SELECT us.foto AS foto, us.nome AS nome,us.email AS email,p.status As statu ,(SELECT nome FROM usuario WHERE id=p.professorPresente ) AS presente,p.professorSedente AS sedente
+        FROM permuta p JOIN usuario us ON p.professorSedente = us.id WHERE p.professorSedente = ANY (SELECT DISTINCT  U.id AS professor  
+        FROM usuario AS U JOIN disciplina AS D ON D.id_professor = U.id
+        WHERE D.id_curso = (SELECT id_curso FROM coordenadorCurso WHERE id_coordenador=".$id."))ORDER BY p.professorSedente";
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
 }
 ?>

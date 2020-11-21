@@ -105,37 +105,26 @@ if (!isset($_SESSION['usuarioLogado'])) {
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Relatórios Gerais:</h4>
+                            <h4 class="card-title">Relatórios De Permutas Do curso:</h4>
                            
                         </div>
 
                         <div class="table-responsive">
 
-<table class="table">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">Professor(a)</th>
-            <th scope="col">Criadas</th>
-            <th scope="col">Pegas</th>
-            <th scope="col">Abertas</th>
-            <th scope="col">Expiradas</th>
-            
-        </tr>
-    </thead>
-    <tbody>
-
-
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-        </tr>
-
-    </tbody>
-</table>
+                        <table class="table no-wrap v-middle mb-0">
+                                        <thead>
+                                            <tr class="border-0">
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Professor</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Status da permuta</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Professor Presente</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">Quantidade de Aulas</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tabelaRelatorio">
+                                        
+                                        </tbody>
+                                    </table>
 
 </div>
 
@@ -233,6 +222,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     <script src="../dist/js/validaEconsultaCnpj.js"></script>
     <script src="../dist/js/buscarcep.js"></script>
+    <script src="../dist/js/consultasIndex.js"></script>
 
     <!-- Seta as mascaras dos campos -->
     <script>
