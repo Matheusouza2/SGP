@@ -113,6 +113,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <th scope="col">Pegas</th>
             <th scope="col">Abertas</th>
             <th scope="col">Expiradas</th>
+            
         </tr>
     </thead>
     <tbody>
