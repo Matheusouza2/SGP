@@ -208,7 +208,12 @@
                     echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"' .
                         'aria-expanded="false"><i class="fas fa-building"></i><span class="hide-menu">Instituição' .
                         '</span></a>' .
-                        '</li>'                      
+                        '</li>'.
+                        '<li class="sidebar-item" id="instituicao">'.
+                        '<a class="sidebar-link" href="cursosedisciplinas.php" aria-expanded="false">'.
+                            '<i data-feather="book-open" class="feather-icon"></i>'.
+                           '<span class="hide-menu">Cursos e Disciplinas</span></a>'.
+                    '</li>'                      
                         ;
                 }
                 ?>
@@ -217,12 +222,7 @@
                 if (isset($_SESSION['usuarioLogado']['coord']) || isset($_SESSION['usuarioLogado']['admin'])) {
                     echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="cadProfessores.php"' .
                         'aria-expanded="false"><i class="fas fa-address-book"></i><span class="hide-menu">Gerir Professores</span></a>' .
-                        '</li>'.
-                        '<li class="sidebar-item" id="instituicao">'.
-                        '<a class="sidebar-link" href="cursosedisciplinas.php" aria-expanded="false">'.
-                            '<i data-feather="book-open" class="feather-icon"></i>'.
-                           '<span class="hide-menu">Cursos e Disciplinas</span></a>'.
-                    '</li>';
+                        '</li>';
                 }
                 ?>
 
