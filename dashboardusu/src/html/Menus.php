@@ -237,6 +237,12 @@
                         <span class="hide-menu">Permutas</span></a>
                 </li>
 
+                <li class="sidebar-item" id="instituicao">
+                    <a class="sidebar-link" href="relatorios.php" aria-expanded="false">
+                        <i data-feather="bar-chart-2" class="feather-icon"></i>
+                        <span class="hide-menu">Relatórios</span></a>
+                </li>
+
 
 
 
