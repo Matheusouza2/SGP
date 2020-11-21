@@ -108,7 +108,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 <table class="table">
     <thead class="thead-light">
         <tr>
-            <th scope="col"></th>
+            <th scope="col">Professor(a)</th>
             <th scope="col">Criadas</th>
             <th scope="col">Pegas</th>
             <th scope="col">Abertas</th>
@@ -120,6 +120,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
 
         <tr>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
