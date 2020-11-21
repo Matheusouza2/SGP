@@ -1,6 +1,12 @@
 <?php session_start();
 if (!isset($_SESSION['usuarioLogado'])) {
     header('location: ../../../index.php');
+   
+   
+}else{
+    if(!isset($_SESSION['usuarioLogado']['coord'])){
+        header('location: ../../../index.php');
+    }
 }
 
 ?>
