@@ -230,12 +230,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 <li class="nav-item">
                                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sistemas para Internet</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Curso 2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Curso 3</a>
-                                </li>
+                               
                             </ul>
 
                             <div class="tab-content" id="pills-tabContent">

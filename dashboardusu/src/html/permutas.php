@@ -132,14 +132,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-home" aria-selected="true" onclick="consultaTable()">Minhas Permutas [<span id="all">0</span>]</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a  class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="consultaTableAberta()" >Permutas Abertas [<span id="abe">0</span>]</a>
+                                    <a  class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="consultaTableAberta()" >Permutas Abertas [<span id="abertas">0</span>]</a>
                                 </li>
                                 <li class="nav-item">
-                                   <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="consultaTablePega()"> Permutas Pegas [<span id="peg">0</span>]</a>
+                                   <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="consultaTablePega()"> Permutas Pegas [<span id="pegas">0</span>]</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="consultaTableExpirada()">Permutas Expiradas [<span id="exp">0</span>] </a>
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="consultaTableExpirada()">Permutas Expiradas [<span id="expiradas">0</span>] </a>
                                 </li>
                                 
                             </ul>

@@ -334,7 +334,7 @@ function consultaTableExpirada(){
 			$('#tablePermutas').html(tabela).show();
 
 		} else {
-			var tabelavazia = 'Você não pegou nenhuma permuta ainda!';
+			var tabelavazia = 'Nao ha permutas expiradas!';
 			$('#tablePermutas').html(tabelavazia).show();
 		}
 	});
