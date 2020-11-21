@@ -206,35 +206,49 @@
                 if (isset($_SESSION['usuarioLogado']['admin'])) {
 
                     echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="../../../control/listarInstituicoes.php"' .
-                        'aria-expanded="false"><i class="fas fa-building"></i><span' .
-                        'class="hide-menu">Instituição' .
+                        'aria-expanded="false"><i class="fas fa-building"></i><span class="hide-menu">Instituição' .
                         '</span></a>' .
-                        '</li>';
+                        '</li>'                      
+                        ;
                 }
                 ?>
 
                 <?php
                 if (isset($_SESSION['usuarioLogado']['coord']) || isset($_SESSION['usuarioLogado']['admin'])) {
                     echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="cadProfessores.php"' .
-                        'aria-expanded="false"><i class="fas fa-address-book"></i><span' .
-                        'class="hide-menu">Gerir Professores</span></a>' .
-                        '</li>';
+                        'aria-expanded="false"><i class="fas fa-address-book"></i><span class="hide-menu">Gerir Professores</span></a>' .
+                        '</li>'.
+                        '<li class="sidebar-item" id="instituicao">'.
+                        '<a class="sidebar-link" href="cursosedisciplinas.php" aria-expanded="false">'.
+                            '<i data-feather="book-open" class="feather-icon"></i>'.
+                           '<span class="hide-menu">Cursos e Disciplinas</span></a>'.
+                    '</li>';
                 }
                 ?>
 
-                <?php
-                if (isset($_SESSION['usuarioLogado']['coord']) || isset($_SESSION['usuarioLogado']['admin'])) {
-                    echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="permutas.php"' .
-                        'aria-expanded="false"><i data-feather="book" class="feather-icon"></i><span' .
-                        'class="hide-menu">Permutas</span></a>' .
-                        '</li>';
-                }
-                ?>
+                
 
 
 
 
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../../../control/logout.php" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span class="hide-menu">Logout</span></a></li>
+                <li class="sidebar-item" id="instituicao">
+                    <a class="sidebar-link" href="permutas.php" aria-expanded="false">
+                        <i data-feather="book" class="feather-icon"></i>
+                        <span class="hide-menu">Permutas</span></a>
+                </li>
+
+
+
+
+
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="../../../control/logout.php" aria-expanded="false">
+                        <i data-feather="log-out" class="feather-icon"></i>
+                        <span class="hide-menu">Logout</span>
+                    </a>
+                </li>
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

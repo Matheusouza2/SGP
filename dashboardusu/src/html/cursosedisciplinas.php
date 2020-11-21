@@ -74,12 +74,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Cadastro de Professores:</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Cursos e Disciplinas:</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><a href="index.php">Início</a>
-                                    <li class="breadcrumb-item"><a href="cadProfessores.php">Cadastro de Professores</a>
+                                    <li class="breadcrumb-item"><a href="cursosedisciplinas.php">Cursos e Disciplinas</a>
 
                                     </li>
                                 </ol>
@@ -88,13 +88,21 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     </div>
 
                     <div class="col-5 align-self-center">
-                        <div class="customize-input float-right">
-                            <span><a>Cadastrar Professor(a)</a></span>
-                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                        <div style="padding: 10px;" class="customize-input float-right">
+                            <span><a>Cadastrar Disciplina</a></span>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal2"><i data-feather="book-open" class="feather-icon"></i>
 
-                            </button>
+                            
+                        </div>
+
+                        <div style="padding: 10px;" class="customize-input float-right">
+                            <span><a>Cadastrar Curso</a></span>
+                            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"><i class="fa fa-book" aria-hidden="true"></i>
+
+                            
                         </div>
                     </div>
+                    
 
                 </div>
             </div>
@@ -105,105 +113,46 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="modal-body">
                             <div class="text-center mt-2 mb-4">
                                 <a href="index.html" class="text-success">
-                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55"></span>
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
                                 </a>
                             </div>
 
-                            <form action="" method="POST" class="pl-3 pr-3">
-                                <input name="usuCad" type="hidden" value="<?= $_SESSION['usuarioLogado']['cpf'] ?>">
+                            <form action="../../../control/controlCurso.php" method="POST" class="pl-3 pr-3">
+                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
 
                                 <div class="form-group">
-                                    <label for="instituicao">Instituição</label>
+                                    <label for="modalidade">Modalidade</label>
 
                                     <div class="input-group">
 
                                         <select class="custom-select" id="inputGroupSelect01">
                                             <option selected>Escolher...</option>
-                                            <option value="1">One</option>
+                                            <option value="1">Médio Integrado</option>
+                                            <option value="2">Subsequente</option>
+                                            <option value="4">Proeja</option>
+                                            <option value="5">Superior</option>
+                                            <option value="6">Pós-Graduação</option>
                                         </select>
                                     </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input class="form-control" type="text" id="nome" name="nome" required="true"
+                                        placeholder="Nome do Curso" >
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="professor">Professor(a)</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
+                                    <label for="coordenador">Coordenador</label>
+                                    <input class="form-control" type="text" required="true" name="coordenador" id="nome"
+                                        placeholder="Coordenador">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="professor">Coordenador</label>
-                                    <div class="input-group">
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">Sim</option>
-                                            <option value="0">Não</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="curso">Curso</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <label for="disciplina">Disciplinas</label>
-
-                                    <div class="input-group">
-
-
-                                        <select class="selectpicker" multiple title="Escolher..." data-style="btn-lucas" data-width="450px" data-live-search="true" data-selected-text-format="values">
-
-                                            <optgroup label="Sistemas para internet" data-max-options="">
-                                                <option data-tokens="1">Comércio Eletrônico</option>
-                                                <option data-tokens="2">Sistemas Distribuidos</option>
-                                                <option data-tokens="3">Gerência de Projetos</option>
-                                            </optgroup>
-                                            <optgroup label="informática" data-max-options="">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                            </optgroup>
-                                        </select>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="turma">Turmas</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div>
 
                                 <div class="form-group text-center">
-                                    <button class="btn btn-rounded btn-primary" id="btnCadastrarProfessor" type="submit">Cadastrar
-                                    </button>
+                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
+                                        </button>
                                 </div>
 
                             </form>
@@ -211,7 +160,100 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
-            </div>
+            </div><!-- /.modal -->
+
+            <script>
+                function upperCaseF(a){
+    setTimeout(function(){
+        a.value = a.value.toUpperCase();
+    }, 1);
+}
+            </script>
+
+            <div id="login-modal2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mt-2 mb-4">
+                                <a href="index.html" class="text-success">
+                                    <span><img class="mr-0" src="../assets/images/logomodal.svg" alt="" height="55">
+                                </a>
+                            </div>
+
+                            <form action="../../../control/controlDisciplina.php" method="POST" class="pl-3 pr-3">
+                                <input name="usuCad" type="hidden" value="<?=$_SESSION['usuarioLogado']['cpf']?>">
+
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input class="form-control" type="text" id="nome" name="nome" required="true"
+                                        placeholder="Nome da Disciplina" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="coordenador">Professor</label>
+                                    <input class="form-control" type="text" required="true" name="professor" id="professor"
+                                        placeholder="nome professor">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="curso">Curso</label>
+
+                                    <div class="input-group">
+
+                                        <select class="custom-select" id="inputGroupSelect01" name="curso">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">curso</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="coordenador2">Coordenador</label>
+
+                                    <div class="input-group">
+
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">Coordenador</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="turma">Turma</label>
+
+                                    <div class="input-group">
+
+                                        <select class="custom-select" id="inputGroupSelect01" name="turma">
+                                            <option selected>Escolher...</option>
+                                            <option value="1">turma</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+
+                                
+
+                                <div class="form-group">
+                                    <label for="sigla">Sigla</label>
+                                    <input  class="form-control" type="text" required="true" name="sigla" id="sigla" maxlength="2" onkeydown="upperCaseF(this)"
+                                        placeholder="Sigla">
+                                </div>
+
+
+                                <div class="form-group text-center">
+                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
+                                        </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
 
 
             <!-- ============================================================== -->
@@ -227,78 +269,74 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="card-body">
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sistemas para Internet</a>
+                                    <a class="nav-link active" id="pills-mediointegrado-tab" data-toggle="pill" href="#pills-mediointegrado" role="tab" aria-controls="pills-mediointegrado" aria-selected="true">Médio Integrado</a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Curso 2</a>
+                                    <a class="nav-link" id="pills-Subsequente-tab" data-toggle="pill" href="#pills-Subsequente" role="tab" aria-controls="pills-Subsequente" aria-selected="false">Subsequente</a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Curso 3</a>
+                                    <a class="nav-link" id="pills-Proeja-tab" data-toggle="pill" href="#pills-Proeja" role="tab" aria-controls="pills-Proeja" aria-selected="false">Proeja</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-Superior-tab" data-toggle="pill" href="#pills-Superior" role="tab" aria-controls="pills-Superior" aria-selected="false">Superior</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-PosGraduacao-tab" data-toggle="pill" href="#pills-PosGraduacao" role="tab" aria-controls="pills-PosGraduacao" aria-selected="false">Pós-Graduação</a>
+                                </li>
+                                
                             </ul>
 
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                                <div style="margin-top: 3%;" class="table-responsive">
-                <table class="table no-wrap v-middle mb-0">
-                    <thead>
-                        <tr class="border-0">
-                            <th class="border-0 font-14 font-weight-medium text-muted">Professor(a)
-                            <th class="border-0 font-14 font-weight-medium text-muted px-2">Curso
-                            </th>
-                            <th class="border-0 font-14 font-weight-medium text-muted">Disciplinas</th>
+                            
+                                <div class="tab-pane fade show active" id="pills-mediointegrado" role="tabpanel" aria-labelledby="pills-mediointegrado-tab">
 
-                            <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                Turma
-                            </th>
+                                <div class="table-responsive">
 
-                            <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                Operação:
-                            </th>
+                                                <table class="table">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th scope="col">Curso/Nome</th>
+                                                            <th scope="col">Coordenador</th>
+                                                            <th scope="col">Disciplina/Nome</th>
+                                                            <th scope="col">Professor</th>
+                                                            <th scope="col">Sigla</th>
+                                                            <th scope="col">Turma</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border-top px-2 py-4">
-                                <div class="d-flex no-block align-items-center">
-                                    <div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>
-                                    <div class="">
-                                        <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
-                                            Gover</h5>
-                                        <span class="text-muted font-14">hgover@gmail.com</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="border-top text-muted px-2 py-4 font-14">Sistemas para Internet</td>
-                            <td class="border-top px-2 py-4">
-                                <div class="popover-icon">
-                                    <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">CE</a>
 
-                                </div>
-                            </td>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
 
-                            <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
-                                5º Período Noturno
-                            </td>
+                                                        </tr>
 
-                            <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
-                                <button type="button" class="btn btn-danger btn-circle"><i class="ti-trash"></i>
-                                </button>
-                            </td>
+                                                    </tbody>
+                                                </table>
 
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
+                            </div>
 
 
                                 </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
-                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
+
+
+
+
+                                <div class="tab-pane fade" id="pills-Subsequente" role="tabpanel" aria-labelledby="pills-Subsequente-tab"></div>
+                                <div class="tab-pane fade" id="pills-Proeja" role="tabpanel" aria-labelledby="pills-Proeja-tab"></div>
+                                <div class="tab-pane fade" id="pills-Superior" role="tabpanel" aria-labelledby="pills-Superior-tab"></div>
+                                <div class="tab-pane fade" id="pills-PosGraduacao" role="tabpanel" aria-labelledby="pills-PosGraduacao"></div>
                             </div>
 
 

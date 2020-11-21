@@ -1,6 +1,6 @@
 <?php
 //Controle de permuta com put/update/delete | todos os comandos são compartilhados pela variavel COMMAND
-
+date_default_timezone_set('America/Recife');
 session_start();
 include_once '../dao/PermutaDao.php';
 include_once '../entidades/Permuta.php';
@@ -46,6 +46,18 @@ if(isset($_POST['command'])){
 
 		$retorno = $permutaDao->listarPermutaProfessor($_SESSION['usuarioLogado']['id']);
 
+		
+		
+		for($i = 0; $i < count($retorno); $i++){
+		    
+		    $date = DateTime::createFromFormat('d/m/Y H:i', $retorno[$i]['dataDisponivel']);
+		    
+		    if(strtotime($date->format('Y-m-d H:i:s')) < strtotime(date('Y-m-d H:i:s')) && $retorno[$i]['status'] == "Disponivel"){
+		        $permutaDao->updateExpiradas($retorno[$i]['permuta_id']);
+		        $retorno[$i]['status'] = 'Expirada';
+		    }
+		}
+		    		    
 		echo json_encode($retorno);
 	}else if($_GET['command'] == 'listPd'){
 				
@@ -64,6 +76,26 @@ if(isset($_POST['command'])){
 		$permutaDao = new PermutaDao();
 		$permutaDao->pegarPermuta($_GET['id'],$_SESSION['usuarioLogado']['id']);
 		
-	}	
+	}else if($_GET['command'] == 'listPA'){
+	    $permutaDao = new PermutaDao();
+
+		$retorno = $permutaDao->listarPermutaAberta($_SESSION['usuarioLogado']['id']);
+
+		echo json_encode($retorno);
+
+	}else if($_GET['command'] == 'listPG'){
+	    $permutaDao = new PermutaDao();
+
+		$retorno = $permutaDao->listarPermutaPega($_SESSION['usuarioLogado']['id']);
+
+		echo json_encode($retorno);
+	}else if($_GET['command'] == 'listEx'){
+	    $permutaDao = new PermutaDao();
+	    
+	    $retorno = $permutaDao->listarPermutaExpirada($_SESSION['usuarioLogado']['id']);
+	    
+	    echo json_encode($retorno);
+	}
+
 }
 ?>

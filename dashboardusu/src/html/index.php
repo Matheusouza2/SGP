@@ -232,8 +232,8 @@ date_default_timezone_set('America/Sao_Paulo');
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <a href="" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: green !important;">Visualizar</a>
+                                        <h2 class="text-dark mb-1 font-weight-medium" id="allPermutas">0</h2>
+                                        <a href="permutas.php" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: green !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Todas as Permutas</h5>
                                 </div>
@@ -295,11 +295,11 @@ date_default_timezone_set('America/Sao_Paulo');
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
+                                    <div class="d-inline-flex align-items-center" >
+                                        <h2 class="text-dark mb-1 font-weight-medium" id="expiradas">0</h2>
                                         <a href="permutas.php"class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">Visualizar</a>
                                     </div>
-                                    <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h5>
+                                    <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Expiradas</h5>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <span class="opacity-7 text-muted"><i data-feather="thumbs-down"></i></span>

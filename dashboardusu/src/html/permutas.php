@@ -78,8 +78,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Início</a>
-                                    <li class="breadcrumb-item"><a href="instituicao.html">Permutas</a>
+                                    <li class="breadcrumb-item"><a href="index.php">Início</a>
+                                    <li class="breadcrumb-item"><a href="permutas.php">Permutas</a>
 
                                     </li>
                                 </ol>
@@ -129,17 +129,17 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-home" aria-selected="true">Todas as Permutas (0)</a>
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-home" aria-selected="true" onclick="consultaTable()">Minhas Permutas [<span id="all">0</span>]</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a  class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#permutas-abertas" role="tab" aria-controls="pills-profile" aria-selected="false">Permutas Abertas (0)</a>
+                                    <a  class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="consultaTableAberta()" >Permutas Abertas [<span id="abe">0</span>]</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#permutas-pegas" role="tab" aria-controls="pills-contact" aria-selected="false">Permutas Pegas (0)</a>
+                                   <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="consultaTablePega()"> Permutas Pegas [<span id="peg">0</span>]</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#permutas-canceladas" role="tab" aria-controls="pills-contact" aria-selected="false">Permutas Canceladas (0)</a>
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="consultaTableExpirada()">Permutas Expiradas [<span id="exp">0</span>] </a>
                                 </li>
                                 
                             </ul>
@@ -262,6 +262,9 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../dist/js/validaEconsultaCnpj.js"></script>
     <script src="../dist/js/buscarcep.js"></script>
     <script src="../dist/js/consultasIndex.js"></script>
+
+   
+
 
     <!-- Seta as mascaras dos campos -->
     <script>
