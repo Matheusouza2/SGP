@@ -99,12 +99,40 @@ if (!isset($_SESSION['usuarioLogado'])) {
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Relatórios</h4>
-                            <h6 class="card-subtitle">Descrição</h6>
+                            <h4 class="card-title">Seus relatórios de Permutas:</h4>
+                            <h3>User</h3>
                         </div>
 
+                        <div class="table-responsive">
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Criadas</th>
+            <th scope="col">Pegas</th>
+            <th scope="col">Abertas</th>
+            <th scope="col">Expiradas</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+    </tbody>
+</table>
+
+</div>
+
                       
- <div class="card-content">
+ <!-- <div class="card-content">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
@@ -136,7 +164,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
  
     <div id="columnchart_material" style="width: 1500px; height: 500px; margin: 30px; "></div>
  
- </div>
+ </div> -->
 
 
 
