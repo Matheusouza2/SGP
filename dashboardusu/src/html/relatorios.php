@@ -99,8 +99,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Seus relatórios de Permutas:</h4>
-                            <h3>User</h3>
+                            <h4 class="card-title">Relatórios Gerais:</h4>
+                           
                         </div>
 
                         <div class="table-responsive">
