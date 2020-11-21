@@ -236,6 +236,14 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <div style="text-align: center;">
               <button type="submit" onclick="validar()" class="btn btn-success">Atualizar</button>
             </div>
+
+            <hr>
+
+            <div style="text-align: center; margin-left: 90%">
+              <button type="button" onclick="Apagar()" class="btn btn-danger">Apagar Conta</button>
+            </div>
+
+
           </form>
         </section>
 
@@ -256,6 +264,23 @@ if (!isset($_SESSION['usuarioLogado'])) {
             }, false);
           })();
         </script>
+
+        <script>
+        	function Apagar($id){
+				Swal.fire({
+					title: 'Deseja realmente apagar sua conta ?',
+					showDenyButton: true,
+					showCancelButton: true,
+					confirmButtonText: `Sim`,
+					cancelButtonText: `Não`,
+				}).then((result) => {
+					if (result.isConfirmed) {
+						Swal.fire('Conta apagada com sucesso!!', '', 'success')
+						$.getJSON('');
+					    ;
+					} 
+				})
+			} </script>
 
 
 
