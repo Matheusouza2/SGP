@@ -74,12 +74,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Cadastro de Professores:</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Gerenciamento de Professores:</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><a href="index.php">Início</a>
-                                    <li class="breadcrumb-item"><a href="cadProfessores.php">Cadastro de Professores</a>
+                                    <li class="breadcrumb-item"><a href="cadProfessores.php">Gerenciamento de Professores</a>
 
                                     </li>
                                 </ol>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
-                            <span><a>Cadastrar Professor(a)</a></span>
+                            <span><a>Gerir Cursos</a></span>
                             <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user-plus" aria-hidden="true"></i>
 
                             </button>
@@ -109,7 +109,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </a>
                             </div>
 
-                            <form action="" method="POST" class="pl-3 pr-3">
                                 <input name="usuCad" type="hidden" value="<?= $_SESSION['usuarioLogado']['cpf'] ?>">
 
                                 <div class="form-group">
@@ -117,97 +116,28 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
+                                        <select class="custom-select" id="selectInst">
                                         </select>
                                     </div>
                                 </div>
-
+                                
                                 <div class="form-group">
-                                    <label for="professor">Professor(a)</label>
+                                    <label for="curso">Buscar professor</label>
 
                                     <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                         <input class="form-control" type="text" id="cpf" name="cpf" required="true" placeholder="Digite o CPF do professor">
+                                         <input type="hidden" id="id_prof">
+                                         <a class="btn btn-rounded btn-primary" href="#" onclick="buscarProfessor()" title="Buscar"><i class="fas fa-search"></i></a>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="professor">Coordenador</label>
-                                    <div class="input-group">
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">Sim</option>
-                                            <option value="0">Não</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="curso">Curso</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <label for="disciplina">Disciplinas</label>
-
-                                    <div class="input-group">
-
-
-                                        <select class="selectpicker" multiple title="Escolher..." data-style="btn-lucas" data-width="450px" data-live-search="true" data-selected-text-format="values">
-
-                                            <optgroup label="Sistemas para internet" data-max-options="">
-                                                <option data-tokens="1">Comércio Eletrônico</option>
-                                                <option data-tokens="2">Sistemas Distribuidos</option>
-                                                <option data-tokens="3">Gerência de Projetos</option>
-                                            </optgroup>
-                                            <optgroup label="informática" data-max-options="">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                            </optgroup>
-                                        </select>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="turma">Turmas</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
+                                
+                                <div class="form-group" id="infos">
+                                    
                                 </div>
 
                                 <div class="form-group text-center">
-                                    <button class="btn btn-rounded btn-primary" id="btnCadastrarProfessor" type="submit">Cadastrar
-                                    </button>
+                                    <button class="btn btn-rounded btn-primary" onclick="vincularProfessor()">Vincular</button>
                                 </div>
-
-                            </form>
-
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -228,9 +158,13 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sistemas para Internet</a>
+                                    <select id="listInst" class="custom-select" title="Escolha a instituição" data-style="btn-lucas" data-width="250px" data-live-search="true" data-selected-text-format="values">		
+									</select>
                                 </li>
-                               
+                                <li class="nav-item">
+                                	<select id="listCurso" class="custom-select" title="Escolha o Curso" data-style="btn-lucas" data-width="350px" data-live-search="true" data-selected-text-format="values">
+									</select>
+                                </li>
                             </ul>
 
                             <div class="tab-content" id="pills-tabContent">
@@ -255,37 +189,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border-top px-2 py-4">
-                                <div class="d-flex no-block align-items-center">
-                                    <div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>
-                                    <div class="">
-                                        <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
-                                            Gover</h5>
-                                        <span class="text-muted font-14">hgover@gmail.com</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="border-top text-muted px-2 py-4 font-14">Sistemas para Internet</td>
-                            <td class="border-top px-2 py-4">
-                                <div class="popover-icon">
-                                    <a class="btn btn-primary rounded-circle btn-circle font-12" href="javascript:void(0)">CE</a>
-
-                                </div>
-                            </td>
-
-                            <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
-                                5º Período Noturno
-                            </td>
-
-                            <td class="border-top text-center font-weight-medium text-muted px-2 py-4">
-                                <button type="button" class="btn btn-danger btn-circle"><i class="ti-trash"></i>
-                                </button>
-                            </td>
-
-                        </tr>
-
+                    <tbody id="listProf">
                     </tbody>
                 </table>
             </div>
@@ -358,15 +262,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     <script src="../dist/js/validaEconsultaCnpj.js"></script>
-    <script src="../dist/js/buscarcep.js"></script>
+    <script src="../dist/js/consultasGerirProf.js"></script>
 
     <!-- Seta as mascaras dos campos -->
     <script>
         $(document).ready(function() {
-            $.get("../../../control/listarInstituicoes.php");
-            $('#cnpj').mask('00.000.000/0000-00');
-            $('#cep').mask('00000-000');
-            $('#estado').mask('AA');
+            $('#cpf').mask('000.000.000-00');
         });
     </script>
     <script src="../assets/bootstrapselect/dist/js/bootstrap-select.js"></script>

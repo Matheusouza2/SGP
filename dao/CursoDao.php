@@ -50,6 +50,26 @@ class CursoDao {
             echo "Ocorreu um erro! ---  " . $e;
         }
     }
+    
+    function list($inst){
+        try{
+            $con = Conexao::getInstance();
+            $sql = 'SELECT * FROM curso WHERE instituicao = '.$inst;
+            
+            $stmt = $con->prepare($sql);
+            
+            $stmt->execute();
+            
+            if($stmt->rowCount() > 0){
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }else{
+                return 'Nenhum curso cadastrado';
+            }
+            
+        }catch (Exception $e){
+            echo $e->getMessage();
+        }
+        
+    }
 }
-	
 ?>

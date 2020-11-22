@@ -84,6 +84,24 @@ if(isset($_POST['command'])){
 
             header('location: ../dashboardusu/src/html/usuAtualizar.php');	
         }
+    }elseif($_POST['command'] == 'list'){
+        $userDao = new UsuarioDao();
+        
+        $retorno = $userDao->list($_POST['curso']);
+        
+        echo json_encode($retorno);
+    }elseif($_POST['command'] == 'search'){
+        $userDao = new UsuarioDao();
+        
+        $retorno = $userDao->search($_POST['cpf']);
+        
+        echo json_encode($retorno);
+    }elseif($_POST['command'] = 'setInst'){
+        $userDao = new UsuarioDao();
+        
+        $retorno = $userDao->setInst($_POST['id'], $_POST['inst']);
+        
+        echo json_encode($retorno);
     }
 
 }

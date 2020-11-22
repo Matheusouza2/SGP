@@ -49,5 +49,22 @@ class DisciplinaDao {
         }
     }
 
-
+    function list($curso) {
+        try{
+            $con = Conexao::getInstance();
+            $sql = "SELECT d.id, d.nome FROM disciplina d INNER JOIN curso c ON c.id = d.id_curso WHERE c.id = ".$curso;
+            
+            $stmt = $con->prepare($sql);
+            
+            $stmt->execute();
+            
+            if($stmt->rowCount() > 0){
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }else{
+                return 0;
+            }
+        }catch (Exception $e){
+            echo $e->getMessage();
+        }
+    }
 }
