@@ -124,9 +124,16 @@ date_default_timezone_set('America/Sao_Paulo');
                                 </div>
 
                                 <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Quantidade de Aulas</label>
+                                    <input type='number' min="1" name='qtddeaulas' placeholder='Quantidade de Aulas' class='form-control'>
+                                </div>
+
+                                <div class="form-group">
                                     <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
                                     <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
                                 </div>
+
+                              
 
                                 <div class="form-group">
                                     <label for="nome">Data de criação:</label>
@@ -239,7 +246,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 </div>
 
                                 <div  class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="clipboard"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
                                 </div>
                                 
                             </div>
@@ -262,7 +269,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h5>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="clipboard"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -339,6 +346,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">Turma</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Data Disponivel</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Qtds. de Aulas</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Operação</th>
                                             </tr>
                                         </thead>
