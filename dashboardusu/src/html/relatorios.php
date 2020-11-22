@@ -117,7 +117,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Professor</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted px-2">Status da permuta</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Professor Presente</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">Quantidade de Aulas</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Qtds. de Aulas</th>
                                                 
                                             </tr>
                                         </thead>
