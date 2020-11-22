@@ -124,14 +124,16 @@ date_default_timezone_set('America/Sao_Paulo');
                                 </div>
 
                                 <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Quantidade de Aulas</label>
+                                    <input type='number' min="1" name='qtddeaulas' placeholder='Quantidade de Aulas' class='form-control'>
+                                </div>
+
+                                <div class="form-group">
                                     <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
                                     <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Quantidade de Aulas</label>
-                                    <input type='number' min="1" name='qtddeaulas' placeholder='Quantidade de Aulas' class='form-control'>
-                                </div>
+                              
 
                                 <div class="form-group">
                                     <label for="nome">Data de criação:</label>
