@@ -150,7 +150,7 @@ const options = {
 								'<span> <td class="border-top px-2 py-4">'+
                                 '<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
                                 '<i class="far fa-edit"></i>'+
-								'</button> </span> '+
+								'</button> </span></td> '+
 								
 								
 								
@@ -216,8 +216,7 @@ const options = {
 								
 								'<span> <button type="button" onclick="del('+obj.permuta_id+')" class="btn btn-danger btn-circle">'+
                                 '<i class="far fa-trash-alt"></i>'+
-                                '</button> </span>'+
-								'</td>'+
+                                '</button> </span> </td>'+
 								
 								
                                 '</tr>'
@@ -277,7 +276,7 @@ function consultaTablePega(){
 					'<span> <td class="border-top px-2 py-4">'+
 					'<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
 					'<i class="far fa-edit"></i>'+
-					'</button> </span> '+
+					'</button> </span> </td> '+
 					
 					
 					
@@ -338,7 +337,7 @@ function consultaTableExpirada(){
 					'<span> <td class="border-top px-2 py-4">'+
 					'<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
 					'<i class="far fa-edit"></i>'+
-					'</button> </span> '+
+					'</button> </span> </td>'+
 					
 					
 					
