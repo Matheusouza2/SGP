@@ -27,6 +27,7 @@ class CursoDao {
     function cadastrarCurso($curso)
     {
         $nome=$curso->getNome();
+        $modalidade=$curso->getModalidade();
         try {
             $con = Conexao::getInstance();
             $sql = "SELECT * FROM curso WHERE nome='$nome'";
@@ -37,7 +38,7 @@ class CursoDao {
                 return false;
             } else {
 
-                $sql = "INSERT INTO curso (nome) values ('$nome')";
+                $sql = "INSERT INTO curso (nome,modalidade) values ('$nome','$modalidade')";
 
                 $stmt = $con->prepare($sql);
                 $stmt->execute();

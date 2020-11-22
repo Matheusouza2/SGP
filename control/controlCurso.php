@@ -11,6 +11,7 @@ session_start();
 
         $curso = new Curso();
         $curso->setNome(addslashes($_POST['nome']));
+        $curso->setModalidade(addslashes($_POST['Modalidade']));
                 
         $cursoDao = new CursoDao();
      

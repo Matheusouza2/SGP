@@ -125,13 +125,13 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01">
+                                        <select class="custom-select" id="inputGroupSelect01" name="Modalidade">
                                             <option selected>Escolher...</option>
                                             <option value="1">Médio Integrado</option>
                                             <option value="2">Subsequente</option>
-                                            <option value="4">Proeja</option>
-                                            <option value="5">Superior</option>
-                                            <option value="6">Pós-Graduação</option>
+                                            <option value="3">Proeja</option>
+                                            <option value="4">Superior</option>
+                                            <option value="5">Pós-Graduação</option>
                                         </select>
                                     </div>
                                 </div>
@@ -143,11 +143,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                         placeholder="Nome do Curso" >
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="coordenador">Coordenador</label>
-                                    <input class="form-control" type="text" required="true" name="coordenador" id="nome"
-                                        placeholder="Coordenador">
-                                </div>
+                                
 
 
                                 <div class="form-group text-center">
