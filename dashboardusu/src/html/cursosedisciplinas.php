@@ -125,13 +125,13 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
+                                        <select class="custom-select" id="inputGroupSelect01" name="Modalidade" >
+                                            
                                             <option value="1">Médio Integrado</option>
                                             <option value="2">Subsequente</option>
-                                            <option value="4">Proeja</option>
-                                            <option value="5">Superior</option>
-                                            <option value="6">Pós-Graduação</option>
+                                            <option value="3">Proeja</option>
+                                            <option value="4">Superior</option>
+                                            <option value="5">Pós-Graduação</option>
                                         </select>
                                     </div>
                                 </div>
@@ -143,11 +143,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                         placeholder="Nome do Curso" >
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="coordenador">Coordenador</label>
-                                    <input class="form-control" type="text" required="true" name="coordenador" id="nome"
-                                        placeholder="Coordenador">
-                                </div>
+                                
 
 
                                 <div class="form-group text-center">
@@ -190,9 +186,15 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="coordenador">Professor</label>
-                                    <input class="form-control" type="text" required="true" name="professor" id="professor"
-                                        placeholder="nome professor">
+                                    <label for="curso">Professor</label>
+
+                                    <div class="input-group">
+
+                                        <select class="custom-select" id="selectProfessor" name="professor">
+                                           
+                                           
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
@@ -200,35 +202,22 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01" name="curso">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">curso</option>
+                                        <select class="custom-select" id="selectCurso" name="curso">
+                                           
                                            
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="coordenador2">Coordenador</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">Coordenador</option>
-                                           
-                                        </select>
-                                    </div>
-                                </div>
+                            
 
                                 <div class="form-group">
                                     <label for="turma">Turma</label>
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01" name="turma">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">turma</option>
+                                        <select class="custom-select" id="selectTurma" name="turma">
+                                            
                                            
                                         </select>
                                     </div>
@@ -402,6 +391,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     <script src="../dist/js/validaEconsultaCnpj.js"></script>
     <script src="../dist/js/buscarcep.js"></script>
+    <script src="../dist/js/consultasCursosDisciplinas.js"></script>
 
     <!-- Seta as mascaras dos campos -->
     <script>

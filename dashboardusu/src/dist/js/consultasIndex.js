@@ -19,7 +19,7 @@ const options = {
 				consultaTable();
 			
 				consultaTableDiponivel();
-				
+				consultaTableRelatorio();
 				contador();
 			});		
 
@@ -463,5 +463,55 @@ function consultaTableExpirada(){
 				    $('#expiradas').text(response.expiradas);
 				    $('#allPermutas').text(response.allPermutas);
 				    
+				});
+			}
+
+			function consultaTableRelatorio(){
+				progress();
+				$.getJSON('../../../control/controlPermuta.php?command=listRc', function (dados){
+					if(dados.length > 0){
+						var tabela = '';
+						var status = '';
+						var icone = '';
+						$.each(dados, function(i, obj){
+						
+							if(obj.status == "Disponivel"){
+								status = obj.status;
+								icone = "success"; 
+							}else if(obj.status == 'Indisponivel'){
+								status = obj.status;
+								icone = "warning"; 
+							}else if(obj.status == 'Expirada'){
+								icone = "danger";
+								status = obj.status; 
+							}
+						
+							tabela +=
+							'<tr>'+
+                                '<td class="border-top px-2 py-4">'+
+                                '<div class="d-flex no-block align-items-center">'+
+                                	'<div class="mr-3"><img src="../../../assets/img/users/'+obj.foto+'" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+                                		'<div class="">'+
+                                			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.nome+'</h5>'+
+											'<span class="text-muted font-14">'+obj.email+'</span>'+
+											'</div>'+
+                                '</div>'+
+                                '</td>'+
+                                '<td class="border-top text-muted px-2 py-4 font-14">'+obj.statu+'</td>'+
+                               
+                                '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.presente+'</td>'+
+								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.sedente+'</td>'+
+
+
+								'</tr>'
+
+																
+						});
+						$('#tabelaRelatorio').html(tabela).show();
+
+					}else {
+						var tabelavazia = 'Não há permuta!';
+						$('#tabelaRelatorio').html(tabelavazia).show();
+					}
 				});
 			}
