@@ -186,9 +186,15 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="coordenador">Professor</label>
-                                    <input class="form-control" type="text" required="true" name="professor" id="professor"
-                                        placeholder="nome professor">
+                                    <label for="curso">Professor</label>
+
+                                    <div class="input-group">
+
+                                        <select class="custom-select" id="selectProfessor" name="professor">
+                                           
+                                           
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">

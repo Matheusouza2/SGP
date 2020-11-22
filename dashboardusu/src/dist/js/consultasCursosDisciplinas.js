@@ -1,9 +1,10 @@
 $(document).ready(function(){
     consultaSelects();
+    consultaSelectProfessores();
 });
 //Consulta e preenchimento dos selects
 function consultaSelects(){
-
+   
     $.getJSON('../../../control/consultasExtras.php?opc=cadCursoSelec', function (dados){
         if(dados.length > 0){
 
@@ -26,5 +27,24 @@ function consultaSelects(){
             });
         }			
     });
+    
+
+}
+function consultaSelectProfessores(){
+$.getJSON('../../../control/consultasExtras.php?opc=cadProfessorSelec', function (dados){
+    if(dados.length > 0){
+
+        var professor = '<option>--</option>';
+        $.each(dados, function(i, obj){professor += '<option value="'+obj.id_professor+'">'+obj.nome_professor+'</option>';});
+        $('#selectProfessor').html(professor).show();
+
+        
+    }else{
+        var vazia = '<option>--</option>';
+                    
+        $('#selectProfessor').html(vazia).show('');
+
+    }		
+});
 
 }

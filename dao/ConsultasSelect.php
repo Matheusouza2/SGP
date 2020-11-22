@@ -53,6 +53,18 @@ class ConsultasSelect {
 		return $stmt->fetchAll();
 		
     }
+    function consultaCadProfessor() {
+        $con = Conexao::getInstance();
+
+        $sql = 'SELECT DISTINCT nome as nome_professor, id as id_professor FROM usuario';
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->execute();
+		
+		return $stmt->fetchAll();
+		
+    }
 
      function consultaDisciplina($turma) {
         $con = Conexao::getInstance();
