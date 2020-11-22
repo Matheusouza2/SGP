@@ -19,6 +19,14 @@ if (! empty($opcao)){
 		case 'disciplinaSelect':
 			getDisciplina();
 			break;
+// opçoes de cadastro de diciplinas lista os slects de cadastro de diciplinas
+		case 'cadCursoSelec':
+				getCadCurso();
+			break;
+		case 'cadTurmaSelec':
+			getCadTurma();
+			break;
+
 	}
 }
 
@@ -27,6 +35,13 @@ function getCurso(){
 	$consulta = new ConsultasSelect();
 	
 	$retorno = $consulta->consultaCurso();
+	
+	echo json_encode($retorno); 
+}
+function getCadCurso(){
+	$consulta = new ConsultasSelect();
+	
+	$retorno = $consulta->consultaCadCurso();
 	
 	echo json_encode($retorno); 
 }
@@ -39,6 +54,14 @@ function getTurma(){
 	
 	echo json_encode($retorno); 
 }
+function getCadTurma(){
+	$consulta = new ConsultasSelect();
+	
+	$retorno = $consulta->consultaCadTurma($_GET['curso']);
+	
+	echo json_encode($retorno); 
+}
+
 
 //Função que retorna a disciplina por Turma para a tela de criação de permuta.
 function getDisciplina(){

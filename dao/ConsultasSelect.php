@@ -17,11 +17,34 @@ class ConsultasSelect {
 		
 		return $stmt->fetchAll();
     }
+    function consultaCadCurso(){
+        $con = Conexao::getInstance();
+
+        $sql = 'SELECT DISTINCT curso.id as id_curso, curso.nome as nome_curso FROM curso';
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->execute();
+		
+		return $stmt->fetchAll();
+    }
 
     function consultaTurma($idProfessor, $idCurso) {
         $con = Conexao::getInstance();
 
         $sql = 'SELECT DISTINCT turma.id as turma_id, turma.nome as turma_nome FROM turma INNER JOIN relacaoTurmaDisciplina rtd ON rtd.id_turma = turma.id INNER JOIN disciplina ON disciplina.id = rtd.id_disciplina WHERE disciplina.id_professor = '.$idProfessor.' AND disciplina.id_curso = '.$idCurso;
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->execute();
+		
+		return $stmt->fetchAll();
+		
+    }
+    function consultaCadTurma($idCurso) {
+        $con = Conexao::getInstance();
+
+        $sql = 'SELECT DISTINCT turma.id as turma_id, turma.nome as turma_nome FROM turma INNER JOIN relacaoTurmaDisciplina rtd ON rtd.id_turma = turma.id INNER JOIN disciplina ON disciplina.id = rtd.id_disciplina WHERE disciplina.id_curso = '.$idCurso;
 
         $stmt = $con->prepare($sql);
 

@@ -125,8 +125,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01" name="Modalidade">
-                                            <option selected>Escolher...</option>
+                                        <select class="custom-select" id="inputGroupSelect01" name="Modalidade" >
+                                            
                                             <option value="1">Médio Integrado</option>
                                             <option value="2">Subsequente</option>
                                             <option value="3">Proeja</option>
@@ -196,35 +196,22 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01" name="curso">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">curso</option>
+                                        <select class="custom-select" id="selectCurso" name="curso">
+                                           
                                            
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="coordenador2">Coordenador</label>
-
-                                    <div class="input-group">
-
-                                        <select class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">Coordenador</option>
-                                           
-                                        </select>
-                                    </div>
-                                </div>
+                            
 
                                 <div class="form-group">
                                     <label for="turma">Turma</label>
 
                                     <div class="input-group">
 
-                                        <select class="custom-select" id="inputGroupSelect01" name="turma">
-                                            <option selected>Escolher...</option>
-                                            <option value="1">turma</option>
+                                        <select class="custom-select" id="selectTurma" name="turma">
+                                            
                                            
                                         </select>
                                     </div>
@@ -398,6 +385,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
     <script src="../dist/js/validaEconsultaCnpj.js"></script>
     <script src="../dist/js/buscarcep.js"></script>
+    <script src="../dist/js/consultasCursosDisciplinas.js"></script>
 
     <!-- Seta as mascaras dos campos -->
     <script>
