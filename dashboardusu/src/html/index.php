@@ -352,7 +352,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">Turma</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Data Disponivel</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Qtds. de Aulas</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Qtds.Aulas</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Operação</th>
                                             </tr>
                                         </thead>
