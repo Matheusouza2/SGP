@@ -144,9 +144,6 @@ const options = {
 
 								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
 
-								
-
-								
 								'<span> <td class="border-top px-2 py-4">'+
                                 '<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
                                 '<i class="far fa-edit"></i>'+
