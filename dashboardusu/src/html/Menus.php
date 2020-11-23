@@ -168,16 +168,17 @@
                         '<a class="sidebar-link" href="cursosedisciplinas.php" aria-expanded="false">'.
                             '<i data-feather="book-open" class="feather-icon"></i>'.
                            '<span class="hide-menu">Cursos e Disciplinas</span></a>'.
-                    '</li>'                      
+                    '</li>' .
+                    '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="cadProfessores.php"' .
+                    'aria-expanded="false"><i class="fas fa-address-book"></i><span class="hide-menu">Gerir Professores</span></a>' .
+                    '</li>'              
                         ;
                 }
                 ?>
 
                 <?php
                 if (isset($_SESSION['usuarioLogado']['coord']) || isset($_SESSION['usuarioLogado']['admin'])) {
-                    echo '<li class="sidebar-item" id="instituicao"> <a class="sidebar-link" href="cadProfessores.php"' .
-                        'aria-expanded="false"><i class="fas fa-address-book"></i><span class="hide-menu">Gerir Professores</span></a>' .
-                        '</li>'.
+                    echo 
                         '<li class="sidebar-item" id="instituicao">'.
                     '<a class="sidebar-link" href="relatorios.php" aria-expanded="false">'.
                         '<i data-feather="bar-chart-2" class="feather-icon"></i>'.
