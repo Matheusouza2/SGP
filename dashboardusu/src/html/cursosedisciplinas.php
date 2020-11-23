@@ -303,11 +303,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
 
                                                         <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
+                                                            <td>Sistema para Internet</td>
+                                                            <td>Orlnado silva</td>
+                                                            <td>Comércio Eletrônico</td>
+                                                            <td>Kelsen Oliveira</td>
+                                                            <td>CE</td>
+                                                            <td>5º Periodo</td>
 
                                                         </tr>
 
