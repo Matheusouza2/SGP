@@ -99,62 +99,92 @@ date_default_timezone_set('America/Sao_Paulo');
                                 </a>
                             </div>
 
-                            <form action="../../../control/controlPermuta.php" method="POST" class="pl-3 pr-3">
+                            <form action="../../../control/controlPermuta.php" method="POST" class="pl-3 pr-3 needs-validation" novalidate>
                                 <input type="hidden" name="command" value="put">
-                                <input name="professorSedente" type="hidden" value="<?= $_SESSION['usuarioLogado']['id'] ?>">
+                                <input class="form-control" name="professorSedente" type="hidden" value="<?= $_SESSION['usuarioLogado']['id'] ?>" required>
 
                                 <div class="form-group">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Curso:</label>
-                                    <select class="custom-select mr-sm-2" id="selectCurso" name="curso">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect validationCustom01">Curso:</label>
+                                    <select class="custom-select mr-sm-2 form-control" id="selectCurso" name="curso" required>
+                                    <option value="" selected></option>
                                     </select>
+
+                                    <div class="invalid-feedback">
+                                        Insira o curso!
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Turma:</label>
-                                    <select class="custom-select mr-sm-2" id="selectTurma" name="turma">
-                                        <option>Turma</option>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect validationCustom02">Turma:</label>
+                                    <select class="custom-select mr-sm-2 form-control" id="selectTurma" name="turma" required>
+                                    <option value="" selected></option>
                                     </select>
+
+                                    <div class="invalid-feedback">
+                                        Insira a turma!
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Disciplina</label>
-                                    <select class="custom-select mr-sm-2" id="selectDisciplina" name="disciplina">
-                                        <option> Disciplina </option>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect validationCustom03">Disciplina</label>
+                                    <select class="custom-select mr-sm-2 form-control" id="selectDisciplina" name="disciplina" required>
+                                    <option value="" selected></option>
                                     </select>
+
+                                    <div class="invalid-feedback">
+                                        Insira a Disciplina!
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Quantidade de Aulas</label>
-                                    <select class="custom-select mr-sm-2" id="selectQtd" name="qtd">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect validationCustom04">Quantidade de Aulas</label>
+                                    <select class="custom-select mr-sm-2 form-control" id="selectQtd" name="qtd" required>
+                                        <option value="" selected></option>
                                         <option value="1"> 1 </option>
                                         <option value="2"> 2 </option>
                                         <option value="3"> 3 </option>
                                         <option value="4"> 4 </option>
                                         <option value="5"> 5 </option>
                                     </select>
+
+                                    <div class="invalid-feedback">
+                                        Insira a Qtds. de Aulas!
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
-                                    <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect validationCustom05">Descrição</label>
+                                    <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control' required>
+
+                                    <div class="invalid-feedback">
+                                        Insira uma Descrição!
+                                    </div>
                                 </div>
 
-                              
+
 
                                 <div class="form-group">
-                                    <label for="nome">Data de criação:</label>
-                                    <input type="text" class="form-control" id="data-criacao" name="dataCriacao" readonly>
+                                    <label for="nome validationCustom06">Data de criação:</label>
+                                    <input class="form-control" type="text" class="form-control" id="data-criacao" name="dataCriacao" readonly required>
+
+                                    <div class="invalid-feedback">
+                                        Insira a Data de Criação!
+                                    </div>
 
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nome">Horário disponivel:</label>
-                                    <input type="datetime-local" min="<?= date('Y-m-d\TH:i'); ?>" class="form-control" id="data-disponivel" name="dataDisponivel">
+                                    <label for="nome validationCustom07">Horário disponivel:</label>
+                                    <input class="form-control" type="datetime-local" min="<?= date('Y-m-d\TH:i'); ?>" id="data-disponivel" name="dataDisponivel" required>
+
+                                    <div class="invalid-feedback">
+                                        Insira um Horário!
+                                    </div>
                                 </div>
 
 
                                 <div class="form-group text-center">
-                                    <button class="btn btn-rounded btn-primary" id="btnCadastrar" type="submit">Cadastrar
+                                    <button class="btn btn-rounded btn-primary form-control" id="btnCadastrar" type="submit" onclick="validar()">Cadastrar
                                     </button>
                                 </div>
 
@@ -164,6 +194,24 @@ date_default_timezone_set('America/Sao_Paulo');
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
+
+            <script>
+                (function validar() {
+                    'use strict';
+                    window.addEventListener('load', function() {
+                        var forms = document.getElementsByClassName('needs-validation');
+                        var validation = Array.prototype.filter.call(forms, function(form) {
+                            form.addEventListener('submit', function(event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
 
 
             <div id="permuta-feita" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -239,22 +287,22 @@ date_default_timezone_set('America/Sao_Paulo');
                 <!-- Start First Cards -->
                 <!-- *************************************************************** -->
                 <div class="card-group">
-                    
-                <div class="card border-right">
+
+                    <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium" id="allPermutas">0</h2>
-                                        <a href="permutas.php" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: green !important;">Visualizar</a>
+                                        <a href="permutas.php" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: green !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Todas as Permutas</h5>
                                 </div>
 
-                                <div  class="ml-auto mt-md-3 mt-lg-0">
+                                <div class="ml-auto mt-md-3 mt-lg-0">
                                     <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -263,7 +311,7 @@ date_default_timezone_set('America/Sao_Paulo');
                     <hr style="border:none; border-left:none;width: 1%;">
 
 
-                    
+
                     <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
@@ -291,7 +339,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium" id="pegas">0</h2>
-                                        <a href="permutas.php"class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">Visualizar</a>
+                                        <a href="permutas.php" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h5>
                                 </div>
@@ -301,16 +349,16 @@ date_default_timezone_set('America/Sao_Paulo');
                             </div>
                         </div>
                     </div>
-                    
+
                     <hr style="border:none; border-left:none;width: 1%;">
 
                     <div class="card border-right">
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
-                                    <div class="d-inline-flex align-items-center" >
+                                    <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium" id="expiradas">0</h2>
-                                        <a href="permutas.php"class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">Visualizar</a>
+                                        <a href="permutas.php" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Expiradas</h5>
                                 </div>
@@ -329,11 +377,11 @@ date_default_timezone_set('America/Sao_Paulo');
                 <!-- Start Top Leader Table -->
                 <!-- *************************************************************** -->
                 <div style="margin: 0.5rem;" class="progress" id="progress">
-                	<div id="dynamic" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                    	<span id="current-progress"></span>
+                    <div id="dynamic" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                        <span id="current-progress"></span>
                     </div>
-				</div>
-                
+                </div>
+
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -357,7 +405,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                             </tr>
                                         </thead>
                                         <tbody id="tablePermutasDp">
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -366,11 +414,7 @@ date_default_timezone_set('America/Sao_Paulo');
                     </div>
                 </div>
 
-                <script>
 
-
-
-                </script>
 
 
 
@@ -438,8 +482,8 @@ date_default_timezone_set('America/Sao_Paulo');
     }
     ?>
 
-<script>
-      feather.replace()
+    <script>
+        feather.replace()
     </script>
 
 </body>
