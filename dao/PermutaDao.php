@@ -143,7 +143,7 @@ class PermutaDao {
 
         $con = Conexao::getInstance();
             /**-------------Cadastra a permuta------------------ */
-        $sql = "SELECT us.foto AS foto, us.nome AS nome,us.email AS email,p.status As statu, p.qtd as qtd ,(SELECT nome FROM usuario WHERE id=p.professorPresente ) AS presente,(SELECT foto FROM usuario WHERE id=p.professorPresente ) AS foto_presente,(SELECT email FROM usuario WHERE id=p.professorPresente ) AS email_presente,p.professorSedente AS sedente
+        $sql = "SELECT us.foto AS foto, us.nome AS nome,us.email AS email,p.status As status, p.qtd as qtd ,(SELECT nome FROM usuario WHERE id=p.professorPresente ) AS presente,(SELECT foto FROM usuario WHERE id=p.professorPresente ) AS foto_presente,(SELECT email FROM usuario WHERE id=p.professorPresente ) AS email_presente,p.professorSedente AS sedente
         FROM permuta p JOIN usuario us ON p.professorSedente = us.id WHERE p.professorSedente = ANY (SELECT DISTINCT  U.id AS professor  
         FROM usuario AS U JOIN disciplina AS D ON D.id_professor = U.id
         WHERE D.id_curso = (SELECT id_curso FROM coordenadorCurso WHERE id_coordenador=".$id."))ORDER BY p.professorSedente";

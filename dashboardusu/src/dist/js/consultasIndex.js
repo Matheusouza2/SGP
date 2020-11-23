@@ -31,7 +31,7 @@ const options = {
 				$.getJSON('../../../control/consultasExtras.php?opc=cursoSelect', function (dados){
 					if(dados.length > 0){
 
-						var curso = '<option>Curso</option>';
+						var curso = '<option value="" selected>Curso</option>';
 						$.each(dados, function(i, obj){curso += '<option value="'+obj.id_curso+'">'+obj.nome_curso+'</option>';});
 						$('#selectCurso').html(curso).show();
 
@@ -39,14 +39,14 @@ const options = {
 
 							$.getJSON('../../../control/consultasExtras.php?opc=turmaSelect&curso='+$(this).val(), function (dados){
 							
-								var turma = '<option>Turma</option>';
+								var turma = '<option value="" selected>Turma</option>';
 								$.each(dados, function(i, obj){turma += '<option value="'+obj.turma_id+'">'+obj.turma_nome+'</option>';})
 								$('#selectTurma').html(turma).show();
 
 								
 								$('#selectTurma').on('change', function(){
 									$.getJSON('../../../control/consultasExtras.php?opc=disciplinaSelect&turma='+$(this).val(), function (dados){
-										var disciplina = '<option>Disciplina</option>';
+										var disciplina = '<option value="" selected>Disciplina</option>';
 										$.each(dados, function(i, obj){disciplina += '<option value="'+obj.disciplina_id+'">'+obj.disciplina_nome+'</option>';});
 										$('#selectDisciplina').html(disciplina).show();		
 									});
@@ -476,6 +476,12 @@ function consultaTableExpirada(){
 								icone = "danger";
 								status = obj.status; 
 							}
+							
+							if(obj.presente == null){
+								obj.presente = "";
+								obj.email_presente = "Nenhum professor pegou essa aula ainda ou a mesma expirou";
+								obj.foto_presente = "";
+							}
 						
 							tabela +=
 							'<tr>'+
@@ -488,7 +494,7 @@ function consultaTableExpirada(){
 											'</div>'+
                                 '</div>'+
                                 '</td>'+
-                                '<td class="border-top text-muted px-2 py-4 font-14">'+obj.statu+'</td>'+
+                                 '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-'+icone+' font-12" data-toggle="tooltip" data-placement="top" title="'+status+'"></i></td>'+
                                
                                 '<td class="border-top px-2 py-4">'+
                                 '<div class="d-flex no-block align-items-center">'+
