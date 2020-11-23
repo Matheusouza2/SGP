@@ -125,7 +125,7 @@ const options = {
 							tabela += '<tr>'+
                                 '<td class="border-top px-2 py-4">'+
                                 '<div class="d-flex no-block align-items-center">'+
-                                	'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+                                	'<div class="mr-3"><img src="../../../assets/img/users/'+obj.foto+'" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
                                 		'<div class="">'+
                                 			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
                                 			'<span class="text-muted font-14">'+obj.email+'</span>'+
@@ -186,7 +186,7 @@ const options = {
 							tabela += '<tr>'+
                                 '<td class="border-top px-2 py-4">'+
                                 '<div class="d-flex no-block align-items-center">'+
-                                	'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+                                	'<div class="mr-3"><img src="../../../assets/img/users/'+obj.foto+'" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
                                 		'<div class="">'+
                                 			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
                                 			'<span class="text-muted font-14">'+obj.email+'</span>'+
@@ -246,7 +246,7 @@ function consultaTablePega(){
 				tabela += '<tr>'+
 					'<td class="border-top px-2 py-4">'+
 					'<div class="d-flex no-block align-items-center">'+
-						'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+						'<div class="mr-3"><img src="../../../assets/img/users/'+obj.foto+'" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
 							'<div class="">'+
 								'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
 								'<span class="text-muted font-14">'+obj.email+'</span>'+
@@ -301,7 +301,7 @@ function consultaTableExpirada(){
 				tabela += '<tr>'+
 					'<td class="border-top px-2 py-4">'+
 					'<div class="d-flex no-block align-items-center">'+
-						'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+						'<div class="mr-3"><img src="../../../assets/img/users/'+obj.foto+'" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
 							'<div class="">'+
 								'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
 								'<span class="text-muted font-14">'+obj.email+'</span>'+
@@ -360,7 +360,7 @@ function consultaTableExpirada(){
 							'<tr>'+
                                 '<td class="border-top px-2 py-4">'+
                                 '<div class="d-flex no-block align-items-center">'+
-                                	'<div class="mr-3"><img src="../assets/images/users/widget-table-pic1.jpg" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+                                	'<div class="mr-3"><img src="../../../assets/img/users/'+obj.foto+'" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
                                 		'<div class="">'+
                                 			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.professor_nome+'</h5>'+
 											'<span class="text-muted font-14">'+obj.email+'</span>'+
@@ -382,7 +382,7 @@ function consultaTableExpirada(){
 								'<td class="border-top px-2 py-4">'+
 								'<a onclick="pegar('+obj.permuta_id+')" class="btn btn-primary rounded-circle btn-circle font-16" href="javascript:void(0)" title="Pegar">'+ '<i class="fas fa-share-square"></i></a>'+
 
-								'<span> <a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)" class="btn btn-primary rounded-circle btn-circle font-16" href="javascript:void(0)" title="Conversar">'+ '<i class="fab fa-whatsapp"></i></a></span>'+
+								'<span> <a href="https://api.whatsapp.com/send?phone=55'+obj.contato+'&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)" class="btn btn-primary rounded-circle btn-circle font-16" href="javascript:void(0)" title="Conversar" target="_blank">'+ '<i class="fab fa-whatsapp"></i></a></span>'+
 
 
 								// '<span> <button type="button" class="btn btn-success btn-circle" <a href="https://api.whatsapp.com/send?phone=5587998211561&text=Ol%C3%A1%2C%20Desejo%20pegar%20sua%20permuta%20%3A)"></a>'+
