@@ -106,7 +106,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                 <div class="form-group">
                                     <label class="mr-sm-2" for="inlineFormCustomSelect validationCustom01">Curso:</label>
                                     <select class="custom-select mr-sm-2 form-control" id="selectCurso" name="curso" required>
-                                    <option value="" selected></option>
+                                    
                                     </select>
 
                                     <div class="invalid-feedback">
