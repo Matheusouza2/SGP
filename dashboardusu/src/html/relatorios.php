@@ -1,6 +1,12 @@
 <?php session_start();
 if (!isset($_SESSION['usuarioLogado'])) {
     header('location: ../../../index.php');
+   
+   
+}else{
+    if(!isset($_SESSION['usuarioLogado']['coord'])){
+        header('location: ../../../index.php');
+    }
 }
 
 ?>
@@ -23,7 +29,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../dist/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/bootstrapselect/dist/css/bootstrap-select.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -74,165 +79,130 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Permutas:</h3>
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Relatórios</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><a href="index.php">Início</a>
-                                    <li class="breadcrumb-item"><a href="permutas.php">Permutas</a>
+                                    <li class="breadcrumb-item"><a href="relatorios.php">Relatórios</a>
 
                                     </li>
                                 </ol>
                             </nav>
                         </div>
-    </div>
+                    </div>
 
                 </div>
             </div>
 
-            
 
 
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <script>
-                function del($id){
-				Swal.fire({
-					title: 'Deseja confirmar Permuta?',
-					showDenyButton: true,
-					showCancelButton: true,
-					confirmButtonText: `Sim`,
-					denyButtonText: `Não`,
-				}).then((result) => {
-					if (result.isConfirmed) {
-						Swal.fire('Tudo certo, permuta pega com sucesso :)', '', 'success')
-						$.getJSON('../../../control/controlPermuta.php?command=delete&id='+$id, function (dados){});
-					    consultaTable();
-					} else if (result.isDenied) {
-						Swal.fire('', '', 'info')
-					}
-				})
-			}
-            </script>
-
-            
             <div class="container-fluid">
 
-                <div class="col-xl">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-
+                            <h4 class="card-title">Relatórios De Permutas Do curso:</h4>
+                            
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-home" aria-selected="true" onclick="consultaTable()">Minhas Permutas [<span id="all">0</span>]</a>
+                                    <select id="listInst" class="custom-select" title="Escolha a instituição" data-style="btn-lucas" data-width="250px" data-live-search="true" data-selected-text-format="values">		
+									</select>
                                 </li>
                                 <li class="nav-item">
-                                    <a  class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="consultaTableAberta()" >Permutas Abertas [<span id="abertas">0</span>]</a>
+                                	<select id="listCurso" class="custom-select" title="Escolha o Curso" data-style="btn-lucas" data-width="350px" data-live-search="true" data-selected-text-format="values">
+									</select>
                                 </li>
-                                <li class="nav-item">
-                                   <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="consultaTablePega()"> Permutas Pegas [<span id="pegas">0</span>]</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#permutas-todas" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="consultaTableExpirada()">Permutas Expiradas [<span id="expiradas">0</span>] </a>
-                                </li>
-                                
                             </ul>
+                        </div>
 
-                            <div class="tab-content" id="pills-tabContent">
+                        <div class="table-responsive">
 
-                                <div class="tab-pane fade show active" id="permutas-todas" role="tabpanel" aria-labelledby="pills-home-tab">
-                                
-                           
-                                <div class="table-responsive">
-                                    <table class="table no-wrap v-middle mb-0">
+                        <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Professor</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Curso</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Disciplina</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">Turma</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Data Disponivel</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Qtds.Aulas</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Operação</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Status da permuta</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Professor Presente</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Qtds. de Aulas</th>
+                                                
                                             </tr>
                                         </thead>
-
-                                        <tbody id="tablePermutas">
-
-                                       
-
-
-                                    
+                                        <tbody id="tabelaRelatorio">
+                                        
                                         </tbody>
                                     </table>
-                                </div>
 
+</div>
 
-                            </div>
                       
-                  
-                                
-                                
-                                
-                              
+ <!-- <div class="card-content">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
 
-                                <div class="tab-pane fade" id="permutas-abertas" role="tabpanel" aria-labelledby="pills-profile-tab">
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Periodos', 'Criadas', 'Pegas', 'Expiradas'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
 
-
-                                </div>
-
-                                <div class="tab-pane fade" id="permutas-pegas" role="tabpanel" aria-labelledby="pills-contact-tab">
-
-
-                                </div>
-
-                                <div class="tab-pane fade" id="permutas-canceladas" role="tabpanel" aria-labelledby="pills-contact-tab">
-
-                                </div>
-
-                            </div>
-
-
-
-
-                        </div>
-
-                    </div> <!-- end card-body-->
-                </div> <!-- end card-->
-            </div>
-
-
-
+        var options = {
+          chart: {
+            title: 'Gráfico Comparativo',
+            subtitle: 'Permutas Criadas, pegas e expiradas',
             
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+ 
+ 
+    <div id="columnchart_material" style="width: 1500px; height: 500px; margin: 30px; "></div>
+ 
+ </div> -->
 
 
 
 
 
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center text-muted">
+                <a href="https://www.ifsertao-pe.edu.br">IF-Sertão Pernambucano</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Container fluid  -->
+        <!-- End Page wrapper  -->
         <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <footer class="footer text-center text-muted">
-            <a href="https://www.ifsertao-pe.edu.br">IF-Sertão Pernambucano</a>.
-        </footer>
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
-    <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
@@ -264,9 +234,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../dist/js/buscarcep.js"></script>
     <script src="../dist/js/consultasIndex.js"></script>
 
-   
-
-
     <!-- Seta as mascaras dos campos -->
     <script>
         $(document).ready(function() {
@@ -276,7 +243,6 @@ if (!isset($_SESSION['usuarioLogado'])) {
             $('#estado').mask('AA');
         });
     </script>
-    <script src="../assets/bootstrapselect/dist/js/bootstrap-select.js"></script>
 
 
 

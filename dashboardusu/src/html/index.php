@@ -124,9 +124,22 @@ date_default_timezone_set('America/Sao_Paulo');
                                 </div>
 
                                 <div class="form-group">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Quantidade de Aulas</label>
+                                    <select class="custom-select mr-sm-2" id="selectQtd" name="qtd">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
                                     <label class="mr-sm-2" for="inlineFormCustomSelect">Descrição</label>
                                     <input type='text' name='descricao' placeholder='Porque não pode ministrar esta aula ?' class='form-control'>
                                 </div>
+
+                              
 
                                 <div class="form-group">
                                     <label for="nome">Data de criação:</label>
@@ -232,14 +245,14 @@ date_default_timezone_set('America/Sao_Paulo');
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
-                                        <a href="" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: green !important;">Visualizar</a>
+                                        <h2 class="text-dark mb-1 font-weight-medium" id="allPermutas">0</h2>
+                                        <a href="permutas.php" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none"style="background-color: green !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Todas as Permutas</h5>
                                 </div>
 
                                 <div  class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="clipboard"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
                                 </div>
                                 
                             </div>
@@ -256,13 +269,13 @@ date_default_timezone_set('America/Sao_Paulo');
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium" id="abertas">0</h2>
                                         <a href="permutas.php" class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(255, 208, 0) !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Abertas</h5>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
-                                    <span class="opacity-7 text-muted"><i data-feather="check-square"></i></span>
+                                    <span class="opacity-7 text-muted"><i data-feather="clipboard"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -277,7 +290,7 @@ date_default_timezone_set('America/Sao_Paulo');
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium" id="pegas">0</h2>
                                         <a href="permutas.php"class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: rgb(0, 47, 255) !important;">Visualizar</a>
                                     </div>
                                     <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Pega</h5>
@@ -295,11 +308,11 @@ date_default_timezone_set('America/Sao_Paulo');
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
-                                    <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">0</h2>
+                                    <div class="d-inline-flex align-items-center" >
+                                        <h2 class="text-dark mb-1 font-weight-medium" id="expiradas">0</h2>
                                         <a href="permutas.php"class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none" style="background-color: red !important;">Visualizar</a>
                                     </div>
-                                    <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Canceladas</h5>
+                                    <h5 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Permutas Expiradas</h5>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
                                     <span class="opacity-7 text-muted"><i data-feather="thumbs-down"></i></span>
@@ -339,6 +352,7 @@ date_default_timezone_set('America/Sao_Paulo');
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted text-center">Turma</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Data Disponivel</th>
+                                                <th class="border-0 font-14 font-weight-medium text-muted">Qtds.Aulas</th>
                                                 <th class="border-0 font-14 font-weight-medium text-muted">Operação</th>
                                             </tr>
                                         </thead>

@@ -10,6 +10,8 @@ class Permuta{
 	private $professorSedente;
 	private $professorPresente;
 	private $status;
+	private $idTurma;
+	private $qtd;
 
 	function __construct() {
         
@@ -74,6 +76,20 @@ class Permuta{
 
 	public function setStatus($status){
 		$this->status = $status;
+	}
+	public function getIdTurma(){
+		return $this->idTurma;
+	}
+
+	public function setIdTurma($idTurma){
+		$this->idTurma = $idTurma;
+	}
+	public function getQtd(){
+		return $this->qtd;
+	}
+	
+	public function setQtd($qtd){
+		$this->qtd = $qtd;
 	}
 }
 ?>

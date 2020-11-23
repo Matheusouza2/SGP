@@ -34,9 +34,7 @@ $(document).ready(function () {
                         document.getElementById("cidadeInput").disabled = true;
                     } //end if.
                     else {
-                        $('#titulo-erro').text('Erro ao identificar cep');
-                        $('#mensagem-erro').text('O cep não foi encontrado!');
-                        $("#modal-erro").modal('show');
+                        Swal.fire('Erro ao identificar o CEP', 'CEP não encontrado, coloque um CEP valido e tente novamente', 'error')
                     }
 
                 });

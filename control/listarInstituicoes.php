@@ -4,14 +4,13 @@ include_once '../dao/InstituicaoDao.php';
 session_start();
 
 
-if(isset($_GET['list'])){
+if(isset($_POST['list'])){
     $lista = new InstituicaoDao();
     $instituicoes = $lista->listar($_SESSION['usuarioLogado']['cpf']);
 
     echo json_encode($instituicoes);
-
-    return;
-
+    
+    return null;
 }
 
 $lista = new InstituicaoDao();

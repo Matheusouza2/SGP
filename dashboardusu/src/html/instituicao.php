@@ -78,8 +78,8 @@ if (!isset($_SESSION['usuarioLogado'])) {
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Início</a>
-                                    <li class="breadcrumb-item"><a href="instituicao.html">Instituição</a>
+                                    <li class="breadcrumb-item"><a href="index.php">Início</a>
+                                    <li class="breadcrumb-item"><a href="instituicao.php">Instituição</a>
 
                                     </li>
                                 </ol>

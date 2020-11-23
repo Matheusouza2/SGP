@@ -55,6 +55,11 @@ if (isset($_SESSION['nome']))
 		</section>
 	</div>
 
+	<!-- <div style="text-align: center; ">
+				<button type="button" class="btn btn-outline-success movebutton">
+                <span class="btn-label"><i data-feather="user"></i></span>Entrar como aluno</button>
+				</div> -->
+
 
 
 
