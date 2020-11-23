@@ -101,6 +101,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+            
+            	<div style="margin: 0.5rem;" class="progress" id="progress">
+                    <div id="dynamic" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                        <span id="current-progress"></span>
+                    </div>
+                </div>
 
                 <div class="col-12">
                     <div class="card">
@@ -109,11 +115,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item">
-                                    <select id="listInst" class="custom-select" title="Escolha a instituição" data-style="btn-lucas" data-width="250px" data-live-search="true" data-selected-text-format="values">		
-									</select>
-                                </li>
-                                <li class="nav-item">
-                                	<select id="listCurso" class="custom-select" title="Escolha o Curso" data-style="btn-lucas" data-width="350px" data-live-search="true" data-selected-text-format="values">
+                                    <select id="filtroSedente" class="custom-select" title="Escolha a instituição" data-style="btn-lucas" data-width="250px" data-live-search="true" data-selected-text-format="values">		
 									</select>
                                 </li>
                             </ul>
@@ -233,6 +235,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
     <script src="../dist/js/validaEconsultaCnpj.js"></script>
     <script src="../dist/js/buscarcep.js"></script>
     <script src="../dist/js/consultasIndex.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/underscore@1.11.0/underscore-min.js"></script>
 
     <!-- Seta as mascaras dos campos -->
     <script>

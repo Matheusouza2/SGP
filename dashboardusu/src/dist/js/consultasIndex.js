@@ -464,25 +464,28 @@ function consultaTableExpirada(){
 						var tabela = '';
 						var status = '';
 						var icone = '';
+						var uniqueNames = [];
+						var option = '<option value="0" selected>Professor Sedente</option>';
 						$.each(dados, function(i, obj){
 						
 							if(obj.status == "Disponivel"){
+								obj.presente = "";
+								obj.email_presente = "Nenhum professor pegou essa aula ainda, mais a permuta continua ativa.";
+								obj.foto_presente = "userx.svg";
 								status = obj.status;
 								icone = "success"; 
 							}else if(obj.status == 'Indisponivel'){
 								status = obj.status;
 								icone = "warning"; 
 							}else if(obj.status == 'Expirada'){
+								obj.presente = "";
+								obj.email_presente = "Esta permuta expirou, isso significa que nenhum professor pegou essa aula.";
+								obj.foto_presente = "userx.svg";
 								icone = "danger";
 								status = obj.status; 
 							}
 							
-							if(obj.presente == null){
-								obj.presente = "";
-								obj.email_presente = "Nenhum professor pegou essa aula ainda ou a mesma expirou";
-								obj.foto_presente = "";
-							}
-						
+												
 							tabela +=
 							'<tr>'+
                                 '<td class="border-top px-2 py-4">'+
@@ -507,11 +510,77 @@ function consultaTableExpirada(){
                                 '</td>'+
 								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
 
-								'</tr>'
-
-																
+								'</tr>'				
 						});
+						
+						for(i = 0; i< dados.length; i++){    
+							if(uniqueNames.indexOf(dados[i].nome) === -1){
+								option += '<option value="'+dados[i].nome+'">'+dados[i].nome+'</option>'
+								uniqueNames.push(dados[i].nome);        
+							}        
+						}			
+						
 						$('#tabelaRelatorio').html(tabela).show();
+						$('#filtroSedente').html(option).show();
+						
+						$('#filtroSedente').on('change', function(){
+							var nome = $(this).val();
+							console.log(nome);
+							var tabela2 = "";
+							$('#tabelaRelatorio').html("").show();
+								$.each(dados, function(i, obj){
+								if(obj.nome === nome){
+									if(obj.status == "Disponivel"){
+									obj.presente = "";
+									obj.email_presente = "Nenhum professor pegou essa aula ainda, mais a permuta continua ativa.";
+									obj.foto_presente = "userx.svg";
+									status = obj.status;
+									icone = "success"; 
+									}else if(obj.status == 'Indisponivel'){
+										status = obj.status;
+										icone = "warning"; 
+									}else if(obj.status == 'Expirada'){
+										obj.presente = "";
+										obj.email_presente = "Esta permuta expirou, isso significa que nenhum professor pegou essa aula.";
+										obj.foto_presente = "userx.svg";
+										icone = "danger";
+										status = obj.status; 
+									}
+									
+														
+									tabela2 +=
+									'<tr>'+
+		                                '<td class="border-top px-2 py-4">'+
+		                                '<div class="d-flex no-block align-items-center">'+
+		                                	'<div class="mr-3"><img src="../../../assets/img/users/'+obj.foto+'" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+		                                		'<div class="">'+
+		                                			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.nome+'</h5>'+
+													'<span class="text-muted font-14">'+obj.email+'</span>'+
+													'</div>'+
+		                                '</div>'+
+		                                '</td>'+
+		                                 '<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-'+icone+' font-12" data-toggle="tooltip" data-placement="top" title="'+status+'"></i></td>'+
+		                               
+		                                '<td class="border-top px-2 py-4">'+
+		                                '<div class="d-flex no-block align-items-center">'+
+		                                	'<div class="mr-3"><img src="../../../assets/img/users/'+obj.foto_presente+'" alt="user" class="rounded-circle" width="45" height="45" /></div>'+
+		                                		'<div class="">'+
+		                                			'<h5 class="text-dark mb-0 font-16 font-weight-medium">'+obj.presente+'</h5>'+
+													'<span class="text-muted font-14">'+obj.email_presente+'</span>'+
+													'</div>'+
+		                                '</div>'+
+		                                '</td>'+
+										'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
+		
+										'</tr>'
+								}				
+							});
+							if(nome === '0'){
+								$('#tabelaRelatorio').html(tabela).show();
+							}else{
+								$('#tabelaRelatorio').html(tabela2).show();
+							}
+						});
 
 					}else {
 						var tabelavazia = 'Não há permuta!';
