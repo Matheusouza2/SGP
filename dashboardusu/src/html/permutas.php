@@ -121,6 +121,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
             
             <div class="container-fluid">
+            
+            <div style="margin: 0.5rem;" class="progress" id="progress">
+                    <div id="dynamic" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                        <span id="current-progress"></span>
+                    </div>
+                </div>
 
                 <div class="col-xl">
                     <div class="card">
