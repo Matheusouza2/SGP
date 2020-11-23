@@ -142,7 +142,7 @@ const options = {
                                 '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
 								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
 
-								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+'  '+'</td>'+
+								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
 
 								
 
@@ -205,7 +205,7 @@ const options = {
                                 '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
 								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
 
-								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+'  '+'</td>'+
+								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
 
 
 								
@@ -269,10 +269,7 @@ function consultaTablePega(){
 					'<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
 					'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
 
-					'<td class="font-weight-medium text-dark border-top px-2 py-4">'+'  '+'</td>'+
-
-
-					
+					'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
 					'<span> <td class="border-top px-2 py-4">'+
 					'<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
 					'<i class="far fa-edit"></i>'+
@@ -329,11 +326,7 @@ function consultaTableExpirada(){
 					'<td class="border-top text-center px-2 py-4"><i class="fa fa-circle text-'+icone+' font-12" data-toggle="tooltip" data-placement="top" title="'+status+'"></i></td>'+
 					'<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
 					'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
-
-					'<td class="font-weight-medium text-dark border-top px-2 py-4">'+'  '+'</td>'+
-
-
-					
+					'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
 					'<span> <td class="border-top px-2 py-4">'+
 					'<button type="button" class="btn btn-warning btn-circle" data-toggle="modal" data-target="#permuta-feita">'+
 					'<i class="far fa-edit"></i>'+
@@ -396,9 +389,7 @@ function consultaTableExpirada(){
                                 '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.turma_nome+'</td>'+
 								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.dataDisponivel+'</td>'+
 								
-								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+'  '+'</td>'+
-
-
+								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
 													
 								'<td class="border-top px-2 py-4">'+
 								'<a onclick="pegar('+obj.permuta_id+')" class="btn btn-primary rounded-circle btn-circle font-16" href="javascript:void(0)" title="Pegar">'+ '<i class="fas fa-share-square"></i></a>'+
