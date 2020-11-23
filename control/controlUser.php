@@ -11,23 +11,41 @@ if(isset($_POST['command'])){
     if($_POST['command'] == 'put'){
         
         $nome = addslashes($_POST['nome']);
-        $endereco = addslashes($_POST['endereco']);
+        $endereco = addslashes($_POST['logradouro']);
         $bairro = addslashes($_POST['bairro']);
         $numero = addslashes($_POST['numero']);
         $cidade = addslashes($_POST['cidade']);
         $estado = addslashes($_POST['estado']);
         $cep = addslashes($_POST['cep']);
+        $cep = str_replace("-", "", $cep);
         $telefone = addslashes($_POST['telefone']);
+        $telefone = str_replace("(", "", $telefone);
+        $telefone = str_replace(")", "", $telefone);
+        $telefone = str_replace(" ", "", $telefone);
+        $telefone = str_replace("-", "", $telefone);
         $email = addslashes($_POST['email']);
         $cpf = addslashes($_POST['cpf']);
+        $cpf = str_replace("-", "", $cpf);
+        $cpf = str_replace(".", "", $cpf);
         $rg = addslashes($_POST['rg']);
         $senha = addslashes($_POST['senha']);
+        $foto = '';
+        
+        if(isset($_POST['avatar'])){
+            if($_POST['avatar'] == 'avatarF'){
+                $foto = 'avatarF.svg';
+            }else{
+                $foto = 'avatarM.svg';
+            }
+        }else{
+          $foto = 'avatarM.svg';
+        }
         
         
         
         $usuarioDao = new UsuarioDao();
-
-        $verifica = $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha);
+        
+        $verifica = $usuarioDao->cadastrar($nome,$endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha, $foto);
         
         if ($verifica){
             
@@ -35,7 +53,6 @@ if(isset($_POST['command'])){
             header('location: ../index.php');
            
         }else  {
-
             $_SESSION['msg']['usuCadSuccess'] = "<script> Swal.fire({icon: 'error', title: 'ERRO...', text: 'Email ou CPF já cadastrados ! Faça Login na sua conta!!'}); </script>";
             header('location: ../index.php');
            

@@ -89,7 +89,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
                     <div class="col-5 align-self-center">
                         <div class="customize-input float-right">
-                            <span><a>Gerir Cursos</a></span>
+                            <span><a>Gerir Professor(a)</a></span>
                             <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user-plus" aria-hidden="true"></i>
 
                             </button>

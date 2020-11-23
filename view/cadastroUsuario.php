@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 
 
 <head>
@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="../assets/css/bootstrap.css" />
 
-  <link rel="stylesheet" href="../seletorCursos\css\bootstrap4\tail.select-default.css">
+  <link rel="stylesheet" href="../seletorCursos/css/bootstrap4/tail.select-default.css">
 
   <link rel="stylesheet" href="../assets/css/cadusu.css" />
 
@@ -108,7 +108,7 @@
               <div class="form-row">
                 <div class="col-md-12 mb-6">
                   <label for="validationCustom06">Rua</label>
-                  <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua" required>
+                  <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Rua" required>
                   <div class="invalid-feedback">
                     Por favor, informe um Endereço.
                   </div>
@@ -276,7 +276,7 @@
               <div class="row">
               <div class="col-md-3">
                   <div class="custom-control custom-radio image-checkbox">
-                    <input type="radio" class="custom-control-input" id="avatarF" name="avatares">
+                    <input type="radio" class="custom-control-input" id="avatarF" name="avatar" value="avatarF">
                     <label class="custom-control-label" for="avatarF">
                       <img src="../assets/img/users/avatarF.svg" alt="#" width="80" class="img-fluid">
                     </label>
@@ -284,7 +284,7 @@
                 </div>
                 <div class="col-md-3">
                   <div class="custom-control custom-radio image-checkbox">
-                    <input type="radio" class="custom-control-input" id="avatarM" name="avatares">
+                    <input type="radio" class="custom-control-input" id="avatarM" name="avatar" value="avatarM">
                     <label class="custom-control-label" for="avatarM">
                       <img src="../assets/img/users/avatarM.svg" alt="#" width="80" class="img-fluid">
                     </label>
@@ -340,16 +340,21 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="../seletorCursos\js\tail.select-full.js"></script>
+  <script src="../seletorCursos/js/tail.select-full.js"></script>
+	<script src="../dashboardusu/src/dist/js/buscarcep.js"></script>
   <script src="../assets/js/source.js"></script>
-
-  <script>
-    tail.select("#select2", {
-
-
-
-    });
-  </script>
+<!--CDN import JQueryMask -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+   
+   <script>
+        $(document).ready(function(){
+            $('#cep').mask('00000-000');
+            $('#cpf').mask('000.000.000-00');
+            $('#telefone').mask('(00) 00000-0000');
+        });
+    </script>
 
 </body>
 

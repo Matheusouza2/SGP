@@ -83,12 +83,17 @@ function buscarProfessor(){
 		dataType: "html"
 	}).done(function(resposta) {
 		var response = $.parseJSON(resposta);
-		$('#id_prof').val(response.id);
-		var infos = '<label>Nome: '+response.nome+'</label><br>'+
-					'<label>E-mail: '+response.email+'</label><br>'+
-                    '<label>Contato: '+response.contato+'</label><br>'+
-                    '<label>Localidade: '+response.cidade+' - '+response.uf+'</label>';
-		$('#infos').html(infos).show();			
+		if(response.id > 0){
+		
+			$('#id_prof').val(response.id);
+			var infos = '<label>Nome: '+response.nome+'</label><br>'+
+						'<label>E-mail: '+response.email+'</label><br>'+
+	                    '<label>Contato: '+response.contato+'</label><br>'+
+	                    '<label>Localidade: '+response.cidade+' - '+response.uf+'</label>';
+			$('#infos').html(infos).show();
+		}else{
+			Swal.fire('CPF não encontrado', 'Verifique com o professor se ele já está cadastrado no sistema', 'info');
+		}			
 	});	
 }
 
@@ -96,7 +101,7 @@ function vincularProfessor(){
 	if($('#selectInst').val() == 0){
 		Swal.fire('Selecione uma instituição para vincular o professor', '', 'info');
 	}else if($('#id_prof').val() == ''){
-		Swal.fire('Insira um CPF e verifique os dados do professor antes de vincular', '', 'info');
+		Swal.fire('Insira um CPF', 'Insira um CPF valido e verifique os dados do professor antes de prosseguir', 'info');
 	}else{
 		$.ajax({
 		url: "../../../control/controlUser.php",

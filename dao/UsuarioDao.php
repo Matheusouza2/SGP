@@ -23,7 +23,7 @@ class UsuarioDao
         }
     }
 
-    function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha)
+    function cadastrar($nome, $endereco, $bairro, $numero, $cidade, $estado, $cep, $telefone, $email, $cpf, $rg, $senha, $foto)
     {
         try {
             $con = Conexao::getInstance();
@@ -35,7 +35,7 @@ class UsuarioDao
                 return false;
             } else {
 
-                $sql = "INSERT INTO usuario (nome,logradouro,bairro,numero,cidade,uf,cep,contato,email,cpf,rg,senha) values ('$nome','$endereco','$bairro','$numero','$cidade','$estado','$cep','$telefone','$email','$cpf','$rg','$senha')";
+                $sql = "INSERT INTO usuario (nome,logradouro,bairro,numero,cidade,uf,cep,contato,email,cpf,rg,senha, foto) values ('$nome','$endereco','$bairro','$numero','$cidade','$estado','$cep','$telefone','$email','$cpf','$rg','$senha', '$foto')";
 
                 $stmt = $con->prepare($sql);
                 $stmt->execute();

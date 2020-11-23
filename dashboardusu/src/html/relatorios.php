@@ -106,7 +106,17 @@ if (!isset($_SESSION['usuarioLogado'])) {
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Relatórios De Permutas Do curso:</h4>
-                           
+                            
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <select id="listInst" class="custom-select" title="Escolha a instituição" data-style="btn-lucas" data-width="250px" data-live-search="true" data-selected-text-format="values">		
+									</select>
+                                </li>
+                                <li class="nav-item">
+                                	<select id="listCurso" class="custom-select" title="Escolha o Curso" data-style="btn-lucas" data-width="350px" data-live-search="true" data-selected-text-format="values">
+									</select>
+                                </li>
+                            </ul>
                         </div>
 
                         <div class="table-responsive">
