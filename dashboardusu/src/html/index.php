@@ -125,7 +125,13 @@ date_default_timezone_set('America/Sao_Paulo');
 
                                 <div class="form-group">
                                     <label class="mr-sm-2" for="inlineFormCustomSelect">Quantidade de Aulas</label>
-                                    <input type='number' min="1" name='qtddeaulas' placeholder='Quantidade de Aulas' class='form-control'>
+                                    <select class="custom-select mr-sm-2" id="selectQtd" name="qtd">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
