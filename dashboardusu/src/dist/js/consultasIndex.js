@@ -487,7 +487,7 @@ function consultaTableExpirada(){
                                 '<td class="border-top text-muted px-2 py-4 font-14">'+obj.statu+'</td>'+
                                
                                 '<td class="border-top text-center font-weight-medium text-muted px-2 py-4">'+obj.presente+'</td>'+
-								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.sedente+'</td>'+
+								'<td class="font-weight-medium text-dark border-top px-2 py-4">'+obj.qtd+'</td>'+
 
 
 								'</tr>'
