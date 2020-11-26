@@ -6,18 +6,22 @@ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
     __output_header__(false, "Método de requisição não aceito.", null);
 }
 
-$nome = addslashes($_POST['nome']);
-$endereco = addslashes($_POST['endereco']);
-$bairro = addslashes($_POST['bairro']);
-$numero = addslashes($_POST['numero']);
-$cidade = addslashes($_POST['cidade']);
-$estado = addslashes($_POST['estado']);
-$cep = addslashes($_POST['cep']);
-$telefone = addslashes($_POST['telefone']);
-$email = addslashes($_POST['email']);
-$cpf = addslashes($_POST['cpf']);
-$rg = addslashes($_POST['rg']);
-$senha = addslashes($_POST['senha']);
+$parametros = array();
+$parametros = file_get_contents('php://input');
+$parametros = json_decode($parametros, true);
+
+$nome = $parametros['nome'];
+$endereco = $parametros['endereco'];
+$bairro = $parametros['bairro'];
+$numero = $parametros['numero'];
+$cidade = $parametros['cidade'];
+$estado = $parametros['estado'];
+$cep = $parametros['cep'];
+$telefone = $parametros['telefone'];
+$email = $parametros['email'];
+$cpf = $parametros['cpf'];
+$rg = $parametros['rg'];
+$senha = $parametros['senha'];
 
 $usuarioDao = new UsuarioDao();
 

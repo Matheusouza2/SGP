@@ -10,8 +10,13 @@ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
     __output_header__(false, "Método de requisição não aceito.", null);
 }
 
-$email = addslashes($_POST['email']);
-$senha = addslashes($_POST['senha']);
+$parametros = array();
+$parametros = file_get_contents('php://input');
+$parametros = json_decode($parametros, true);
+
+
+$email = $parametros['email'];
+$senha = $parametros['senha'];
 
 $dados = array();
 
