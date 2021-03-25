@@ -1,5 +1,5 @@
 <?php
-
+ini_set("allow_url_fopen", true);
 require_once 'rest_init.php';
 include_once '../dao/UsuarioDao.php';
 include_once '../dao/InstituicaoDao.php';

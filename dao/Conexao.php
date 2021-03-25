@@ -12,7 +12,7 @@ class Conexao{
         if (!isset(self::$instance)) {
             self::$instance = new PDO('mysql:host=sgp.cjc1awbmii0v.us-east-2.rds.amazonaws.com;
             dbname=sgp',
-                'root', 'sgp_2020', array(PDO::MYSQL_ATTR_INIT_COMMAND
+                'admin', 'sgp_2020', array(PDO::MYSQL_ATTR_INIT_COMMAND
                     => "SET NAMES utf8"));
             self::$instance->setAttribute(PDO::ATTR_ERRMODE,
                 PDO::ERRMODE_EXCEPTION);

@@ -260,7 +260,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-mediointegrado-tab" data-toggle="pill" href="#pills-mediointegrado" role="tab" aria-controls="pills-mediointegrado" aria-selected="true">Médio Integrado</a>
+                                    <a class="nav-link active" id="pills-mediointegrado-tab" data-toggle="pill" href="#pills-mediointegrado" role="tab" aria-controls="pills-mediointegrado" aria-selected="true">Superior</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -272,7 +272,7 @@ if (!isset($_SESSION['usuarioLogado'])) {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-Superior-tab" data-toggle="pill" href="#pills-Superior" role="tab" aria-controls="pills-Superior" aria-selected="false">Superior</a>
+                                    <a class="nav-link" id="pills-Superior-tab" data-toggle="pill" href="#pills-Superior" role="tab" aria-controls="pills-Superior" aria-selected="false">Médio Integrado</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -303,11 +303,12 @@ if (!isset($_SESSION['usuarioLogado'])) {
 
 
                                                         <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
+                                                            <td>Sistema para Internet</td>
+                                                            <td>Orlnado silva</td>
+                                                            <td>Comércio Eletrônico</td>
+                                                            <td>Kelsen Oliveira</td>
+                                                            <td>CE</td>
+                                                            <td>5º Periodo</td>
 
                                                         </tr>
 
